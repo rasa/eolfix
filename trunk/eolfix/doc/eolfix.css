@@ -1,0 +1,24 @@
+/*
+
+*/
+
+body
+{
+  border:	1px solid #000000;
+  color:	#000000;
+  margin:	0px 0px 0px 0px;
+  padding:	0px 5px 5px 5px;
+}
+
+a, body, div, table, th, td 
+{ 
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+.screen {
+	background-color: #DDDDDD;
+}
+
+#screen {
+	background-color: #DDDDDD;
+}
