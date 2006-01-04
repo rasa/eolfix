@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl"
+   href="http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+"http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+  <!ENTITY % global SYSTEM "global.ent">
+  %global;
+]>
+<refentry>
+  <refentryinfo>
+    <title>eolfix Manual</title>
+
+    <copyright>
+      <year>2005</year>
+    </copyright>
+
+    <author>
+      <firstname>Ross</firstname>
+
+      <surname>Smith</surname>
+    </author>
+
+    <address><email>rossta@users.sourceforge.net</email></address>
+
+    <releaseinfo>This is release 0.1.0 of the eolfix Manual.</releaseinfo>
+  </refentryinfo>
+
+  <refmeta>
+    <refentrytitle>eolfix</refentrytitle>
+
+    <manvolnum>1</manvolnum>
+  </refmeta>
+
+  <refnamediv>
+    <refname>eolfix</refname>
+
+    <refpurpose>command line <acronym>EOL</acronym> correction utility</refpurpose>
+  </refnamediv>
+
+  <refsynopsisdiv>
+    <cmdsynopsis>
+      <command>eolfix</command>
+
+      <arg><option><replaceable>&lt;option(s)&gt;</replaceable></option></arg>
+
+      <arg><option><replaceable>&lt;file(s)&gt;</replaceable></option></arg>
+
+    </cmdsynopsis>
+  </refsynopsisdiv>
+
+  <refsect1 id="introduction">
+    <title>Introduction</title>
+
+    <para>eolfix is a command line utility to query and correct end-of-line (EOL) characters in ASCII text files.</para>
+  </refsect1>
+
+  <refsect1 id="options_summary">
+    <title>Options Summary</title>
+
+	<para>
+		Here is a short summary of the options available in eolfix.
+		Please refer to the detailed description below for a complete description.
+	</para>
+
+<screen>
+&help_xml;
+</screen>
+
+<!--
+		<term>
+			<option>-u</option>, <option>-!-unix</option>
+		</term>
+    <variablelist>
+      <varlistentry>
+        <term><option>-!-help</option></term>
+
+        <listitem>
+          <simpara>Display the command options.</simpara>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-!-license</option></term>
+
+        <listitem>
+          <simpara>Display the license of
+          <application>eolfix</application>.</simpara>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-!-version</option></term>
+
+        <listitem>
+          <simpara>Display the version of
+          <application>eolfix</application>.</simpara>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+  </refsect1>
+
+  <refsect1 id="options">
+    <title>Options</title>
+
+    <variablelist>
+      <varlistentry>
+        <term><option>-!-help</option></term>
+
+        <listitem>
+          <simpara>Display the command options.</simpara>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-!-license</option></term>
+
+        <listitem>
+          <simpara>Display the license of
+          <application>eolfix</application>.</simpara>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-!-version</option></term>
+
+        <listitem>
+          <simpara>Display the version of
+          <application>eolfix</application>.</simpara>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+-->
+  </refsect1>
+
+  <refsect1>
+    <title>Bugs</title>
+
+    <para></para>
+  </refsect1>
+
+  <refsect1>
+    <title>References</title>
+
+    <para>eolfix is a command line tool to fix EOL characters in ASCII text file.
+    (for more information see <ulink url="http://eolfix.sourceforge.net/">http://eolfix.sourceforge.net</ulink>).</para>
+  </refsect1>
+</refentry>

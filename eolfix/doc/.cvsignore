@@ -1,0 +1,15 @@
+*.1
+*.chm
+*.fo
+*.hhc
+*.hhp
+*.html
+*.out
+*.pdf
+*.tmp
+*.txt
+
+Makefile
+Makefile.in
+help.xml
+gfx
