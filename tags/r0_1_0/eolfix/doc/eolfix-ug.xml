@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+"http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+  <!ENTITY % global SYSTEM "global.ent">
+  %global;
+]>
+<book lang="en">
+  <title>eolfix User's Guide</title>
+
+  <bookinfo>
+    <date>January, 2 2006</date>
+
+    <author>
+      <firstname>Ross</firstname>
+
+      <surname>Smith</surname>
+    </author>
+  </bookinfo>
+
+  <chapter>
+    <title id="s.1">Introduction</title>
+
+    <sect1>
+      <title>About eolfix</title>
+
+      <para><ulink url="http://eolfix.sourceforge.net/">eolfix</ulink> is
+      a command line utility to ....</para>
+
+      <para>eolfix is open source freeware under the GPL version 2 license.</para>
+
+      <para>We welcome any user's feedback on this project which would greatly
+      help us to improve its quality. Comments, suggestions, feature requests,
+      bug reports can be done via SourceForge project web site (see <ulink
+      url="http://sourceforge.net/forum/?group_id=146787">eolfix
+      Sourceforge forums</ulink>, or <ulink
+      url="http://lists.sourceforge.net/lists/listinfo/eolfix-devel/">eolfix
+      mailing list</ulink>)</para>
+    </sect1>
+
+    <sect1>
+      <title>Main Features</title>
+
+      <para>The toolkit's feature set includes options to:</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>todo</para>
+        </listitem>
+
+      </itemizedlist>
+
+      <para></para>
+    </sect1>
+
+    <sect1>
+      <title>Supported Platforms</title>
+
+      <para>Here is a list of platforms on which eolfix is known to
+      work.</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>FreeBSD</para>
+        </listitem>
+      </itemizedlist>
+
+      <itemizedlist>
+        <listitem>
+          <para>Linux</para>
+        </listitem>
+      </itemizedlist>
+<!--
+      <itemizedlist>
+        <listitem>
+          <para>MacOS X</para>
+        </listitem>
+      </itemizedlist>
+-->
+      <itemizedlist>
+        <listitem>
+          <para>MS-DOS</para>
+        </listitem>
+      </itemizedlist>
+
+      <itemizedlist>
+        <listitem>
+          <para>NetBSD</para>
+        </listitem>
+      </itemizedlist>
+
+      <itemizedlist>
+        <listitem>
+          <para>OpenBSD</para>
+        </listitem>
+      </itemizedlist>
+
+      <itemizedlist>
+        <listitem>
+          <para>Solaris</para>
+        </listitem>
+      </itemizedlist>
+
+      <itemizedlist>
+        <listitem>
+          <para>Windows</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>You might be able to compile and make it on others too.
+      Please let Ross know about the success or failure in porting eolfix to another platform.</para>
+    </sect1>
+<!--
+    <sect1>
+      <title>Finding binary packages</title>
+
+      <para>Here is a list of sites where you can also find eolfix binary
+      packages.</para>
+
+      <itemizedlist>
+        <listitem>
+          <para><ulink
+          url="http://www.suse.com/us/private/products/suse_linux/prof/packages_professional/eolfix.html">SuSE
+          Packages</ulink></para>
+        </listitem>
+      </itemizedlist>
+
+      <itemizedlist>
+        <listitem>
+          <para><ulink
+          url="http://linux01.gwdg.de/~pbleser/rpm-navigation.php?cat=%2FUtilities%2Feolfix/">SuSE
+          Guru's RPM Site</ulink></para>
+        </listitem>
+      </itemizedlist>
+
+      <itemizedlist>
+        <listitem>
+          <para><ulink
+          url="http://www.freebsd.org/cgi/ports.cgi?query=eolfix&amp;stype=all">FreeBSD
+          Ports</ulink></para>
+        </listitem>
+      </itemizedlist>
+
+      <itemizedlist>
+        <listitem>
+          <para><ulink
+          url="http://www.freshports.org/textproc/eolfix/">FreeBSD Fresh
+          Ports</ulink></para>
+        </listitem>
+      </itemizedlist>
+
+      <itemizedlist>
+        <listitem>
+          <para><ulink
+          url="http://fink.sourceforge.net/pdb/package.php/eolfix">Mac OS
+          Fink</ulink></para>
+        </listitem>
+      </itemizedlist>
+
+      <itemizedlist>
+        <listitem>
+          <para><ulink
+          url="http://rpms.mandrakeclub.com/linux/rpm2html/search.php?query=eolfix">Mandrake
+          RPMs</ulink></para>
+        </listitem>
+      </itemizedlist>
+
+      <itemizedlist>
+        <listitem>
+          <para><ulink
+          url="http://gentoo-portage.com/app-text/eolfix">Gentoo
+          Portage</ulink></para>
+        </listitem>
+      </itemizedlist>
+
+      <itemizedlist>
+        <listitem>
+          <para><ulink
+          url="http://packages.debian.org/stable/text/eolfix">Debian</ulink></para>
+        </listitem>
+      </itemizedlist>
+    </sect1>
+-->
+  </chapter>
+
+  <chapter>
+    <title id="s.2">Installation</title>
+
+    <sect1>
+      <title id="s.2.1">Installation on Linux</title>
+
+      <para>Execute the following command as root<programlisting>rpm -i eolfix-x.x.x-1.i386.rpm</programlisting></para>
+
+      <para>where x.x.x indicates package version.</para>
+
+      <para>You can use <ulink
+      url="http://fr2.rpmfind.net/linux/rpm2html/search.php?query=eolfix&amp;system=&amp;arch=">http://rpmfind.net</ulink>
+      to search for RPM appropriate for your distribution.</para>
+    </sect1>
+
+<!--
+    <sect1>
+      <title id="s.2.2">Installation on Solaris</title>
+
+      <para>Execute the following commands as root<programlisting>gunzip eolfix-x.x.x-sol8-sparc-local.gz
+pkgadd -d eolfix-x.x.x-sol8-sparc-local all</programlisting></para>
+    </sect1>
+
+    <sect1>
+      <title id="s.2.3">Installation on MacOS X</title>
+
+      <para>eolfix is available on MacOS in Fink. <ulink
+      url="http://fink.sourceforge.net/pdb/package.php/eolfix">See
+      fink.sourceforge.net</ulink></para>
+    </sect1>
+-->
+
+    <sect1>
+      <title>Installation on Windows</title>
+
+      <para>Unzip the file eolfix-x.x.x-win32.zip to some directory. To
+      take advantage of UNIX shell scripting you might want to run eolfix
+      from Cygwin. Consider installing <ulink
+      url="http://www.cygwin.com/">Cygwin</ulink> on your Windows
+      machine.</para>
+    </sect1>
+  </chapter>
+
+  <chapter>
+    <title>Getting Started</title>
+
+    <sect1>
+      <title>Basic Command-Line Options</title>
+
+      <para>Basic command line syntax: 
+<screen>
+&help_xml;
+</screen>
+     </para>
+    </sect1>
+  </chapter>
+</book>

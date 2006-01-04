@@ -1,0 +1,5 @@
+<!-- -*- SGML -*-
+ Contains global "macros" for all the XML documents.
+-->
+
+<!ENTITY help_xml			SYSTEM "help.xml">
