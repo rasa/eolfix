@@ -385,7 +385,7 @@ struct _options {
 	bool	recursive;
 	char	temp_dir[PATH_MAX];
 	int		verbose;
-	int		ignore_case;
+	bool	ignore_case;
 	
 	bool	std_in;
 	bool	std_out;
@@ -416,8 +416,11 @@ static options_t opt = {
 	false,				/* recursive */
 	"",					/* temp_dir */
 	0,					/* verbose */
-	-1,					/* ignore_case (-1 == undefined) */
-
+#ifdef IS_CASE_INSENSITIVE_FILESYSTEM		
+	true,				/* ignore_case */
+#else
+	false,
+#endif
 	false,				/* stdin */
 	false,				/* stdout */
 	false,				/* wildcard_found */
@@ -1461,7 +1464,6 @@ static List *filespec_append(List **head, char *filespec, output_t output_format
 	char *p;
 	void *data;
 	List *node = *head;
-	int (__cdecl *)(const void *, const void *) strcmp_ptr;
 
 	if (dont_alloc)
 		p = filespec;
@@ -1473,16 +1475,17 @@ static List *filespec_append(List **head, char *filespec, output_t output_format
 		opt.wildcards_used = true;
 	}
 
-#ifdef IS_CASE_INSENSITIVE_FILESYSTEM		
-# define FILENAME_COMPARE stricmp
-#else
-# define FILENAME_COMPARE strcmp
-#endif
-
 	while (node) {
 		File *data = (File *) node->data;
+		bool filespecs_equal;
 
-		if (FILENAME_COMPARE(data->filespec, filespec) == 0) {
+		if (opt.ignore_case) {
+				filespecs_equal = stricmp(data->filespec, filespec) == 0;
+		} else {
+				filespecs_equal = strcmp(data->filespec, filespec) == 0;
+		}
+
+		if (filespecs_equal) {
 			/* free(data->filespec); */
 			data->filespec = p;
 			data->include = include;
@@ -1828,18 +1831,10 @@ static int process_directory(char *directory, List *file_list) {
 		return 1;
 	}
 
-	switch (opt.ignore_case) {
-		case 0: /* false */
-			fnmatch_flags &= ~FNM_CASEFOLD;
-			break;
-		case 1: /* true */
-			fnmatch_flags |= FNM_CASEFOLD;
-			break;
-		default: /* undefined (-1) */
-#ifdef IS_CASE_INSENSITIVE_FILESYSTEM
-			fnmatch_flags |= FNM_CASEFOLD;
-#endif
-			break;
+	if (opt.ignore_case) {
+		fnmatch_flags |= FNM_CASEFOLD;
+	} else {
+		fnmatch_flags &= ~FNM_CASEFOLD;
 	}
 
 	for (;;) {
@@ -2425,7 +2420,7 @@ static int process_options(List **file_list, int argc, char **argv) {
 				opt.dry_run = true;
 				break;
 			case 'z':	/* --ignore_case */
-				opt.ignore_case = 1;
+				opt.ignore_case = true;
 				break;
 			case '?':	/* --help */
 				if (optopt != '?') {
@@ -2487,7 +2482,7 @@ static int process_options(List **file_list, int argc, char **argv) {
 				opt.dry_run = false;
 				break;
 			case 'Z':	/* --no-ignore_case */
-				opt.ignore_case = 0;
+				opt.ignore_case = false;
 				break;
 #ifdef CONV_SUPPORT_ENABLED
 			case OPT_AUTO:	/* --auto */
