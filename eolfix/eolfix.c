@@ -7,6 +7,15 @@ Copyright (c) 2002-2006, Ross Smith. All Rights Reserved
 TODO
 ====
 
+http://packages.debian.org/stable/text/flip
+
+flip
+This program converts line endings of text files between MS-DOS and **IX formats.
+It detects binary files in a nearly foolproof way and leaves them alone unless you override this.
+It will also leave files alone that are already in the right format and preserves file timestamps.
+User interrupts are handled gracefully and no garbage or corrupted files left behind.
+'flip' does not convert files to a different character set, and it can not handle Apple Macintosh line endings (CR only). For that (and more), you can use the 'recode' program (package 'recode').
+
 fix: eolfix -v -s *.c -l *.c
 
 support runon options: eolfix -vib -d
@@ -2537,10 +2546,26 @@ static int process_options(List **file_list, int argc, char **argv) {
 int main(int argc, char **argv) {
 	List *file_list	= NULL;
 
-	if (signal(SIGINT, sighandler) == SIG_IGN)
-		signal(SIGINT, SIG_IGN);
-	if (signal(SIGTERM, sighandler) == SIG_IGN)
-		signal(SIGTERM, SIG_IGN);
+#ifdef SIGHUP
+	if (signal(SIGHUP, SIG_IGN) != SIG_IGN)
+		signal(SIGHUP, sighandler);
+#endif
+#ifdef SIGINT
+	if (signal(SIGINT, SIG_IGN) != SIG_IGN)
+		signal(SIGINT, sighandler);
+#endif
+#ifdef SIGPIPE
+	if (signal(SIGPIPE, SIG_IGN) != SIG_IGN)
+		signal(SIGPIPE, sighandler);
+#endif
+#ifdef SIGQUIT
+	if (signal(SIGQUIT, SIG_IGN) != SIG_IGN)
+		signal(SIGQUIT, sighandler);
+#endif
+#ifdef SIGTERM
+	if (signal(SIGTERM, SIG_IGN) != SIG_IGN)
+		signal(SIGTERM, sighandler);
+#endif
 
 	progname = basename(argv[0]);
 
