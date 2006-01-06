@@ -3,9 +3,9 @@
 # $Id$
 
 ifneq ('$(DEBUG)', '')
-CFLAGS+=-D_DEBUG
+CFLAGS+=-O0 -g -D_DEBUG
 else
-CFLAGS+=-DNDEBUG
+CFLAGS+=-02 -DNDEBUG
 endif
 
 OBJS=eolfix.o fnmatch.o # getopt.o 

@@ -2,7 +2,9 @@
 
 # $Id$
 
-VERSION=0.1.0
+# Cygwin shell script to create Win32 binary & source distributions
+
+VERSION=`cat version`
 
 FILES="\
 AUTHORS \
@@ -27,11 +29,20 @@ ${FILES} \
 *.h \
 *.mak \
 makedist-win32.sh \
+-x config.h \
 "
 
+ZIP="zip -j -9"
+
+rm -f \
+eolfix-${VERSION}-win32.zip \
+eolfix-${VERSION}-src-win32.zip
+
 # upx Release/eolfix.exe
-zip -j -9 eolfix-${VERSION}-win32.zip ${FILES}
+${ZIP} eolfix-${VERSION}-win32.zip ${FILES}
 
-rm -f config.h
+# test -f config.h && mv -f config.h config.h.sav
 
-zip -j -9 eolfix-${VERSION}-src-win32.zip ${SRC_FILES}
+${ZIP} eolfix-${VERSION}-src-win32.zip ${SRC_FILES}
+
+# test -f config.h.sav && mv -f config.h.sav config.h
