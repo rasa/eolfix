@@ -1,0 +1,14 @@
+Source: eolfix
+Section: text
+Priority: optional
+Maintainer: Ross Smith (rossta@users.sourceforge.net)
+Build-Depends: debhelper (>> 4.0.0)
+Standards-Version: 3.5.8
+
+Package: eolfix
+Architecture: any
+Description: Command line utility to report, and optionally convert, 
+the line endings of text files between MS-DOS, Unix and Macintosh formats.
+It detects and ignores binary files unless instructed to include them.
+It does not modify files if the file is already in the requested format.
+It properly handles "mixed" format files (files having more than one type of line ending format).

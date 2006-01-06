@@ -14,7 +14,14 @@ This program converts line endings of text files between MS-DOS and **IX formats
 It detects binary files in a nearly foolproof way and leaves them alone unless you override this.
 It will also leave files alone that are already in the right format and preserves file timestamps.
 User interrupts are handled gracefully and no garbage or corrupted files left behind.
-'flip' does not convert files to a different character set, and it can not handle Apple Macintosh line endings (CR only). For that (and more), you can use the 'recode' program (package 'recode').
+'flip' does not convert files to a different character set, and it can not handle Apple Macintosh line endings (CR only).
+ For that (and more), you can use the 'recode' program (package 'recode').
+
+Command line utility to report, and optionally convert, the line endings of text files between MS-DOS, Unix and Macintosh formats.
+It detects and ignores binary files unless instructed to include them.
+It does not modify files if the file is already in the requested format.
+It properly handles "mixed" format files (files having more than one type of line ending format).
+It does not, currently, handle character encodings other than 7-bit ASCII.
 
 fix: eolfix -v -s *.c -l *.c
 
