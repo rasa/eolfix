@@ -5,7 +5,7 @@
 ifneq ('$(DEBUG)', '')
 CFLAGS+=-O0 -g -D_DEBUG
 else
-CFLAGS+=-02 -DNDEBUG
+CFLAGS+=-O2 -DNDEBUG
 endif
 
 OBJS=eolfix.o fnmatch.o # getopt.o 
