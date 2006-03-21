@@ -3,11 +3,11 @@ dnl Process this file with autoconf to produce a configure script.
 dnl $Id$
 
 MAJOR_VERSION=0
-MINOR_VERSION=1
+MINOR_VERSION=2
 RELEASE_NUMBER=0
 SUBRELEASE_NUMBER=0
 
-AC_INIT(eolfix, 0.1.0, [rossta@users.sf.net])
+AC_INIT(eolfix, 0.2.0, [rossta@users.sf.net])
 
 AC_CONFIG_SRCDIR([eolfix.c])
 

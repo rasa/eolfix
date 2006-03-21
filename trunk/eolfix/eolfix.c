@@ -764,7 +764,26 @@ static char* basename(char* s) {
 /****************************************************************************/
 
 /* per http://www.scit.wlv.ac.uk/cgi-bin/mansec?3C+dirname */
-static char* dirname(char* s) {
+static char* dirname(char* path) {
+	char *p;
+
+	if (path == NULL || *path == '\0')
+		return ".";
+	p = path + strlen(path) - 1;
+	while (IS_PATH_SEPARATOR(*p)) {
+		if (p == path)
+			return path;
+		*p-- = '\0';
+	}
+
+	while (p >= path && !IS_PATH_SEPARATOR(*p))
+		p--;
+
+	return
+		p < path ? "." :
+		p == path ? "/" :
+		(*p = '\0', path);
+/*
 	int i;
 	static char rv[PATH_MAX];
 	int at_end = 1;
@@ -776,7 +795,7 @@ static char* dirname(char* s) {
 					if (i > 0) {
 						if (i > PATH_MAX - 1)
 							return NULL;
-						strncpy(rv, s, i - 1);
+						strncpy(rv, s, i);
 					}
 					rv[i] = '\0';
 					return rv;
@@ -787,6 +806,7 @@ static char* dirname(char* s) {
 	}
 
 	return ".";
+*/
 }
 
 #define HAVE_DIRNAME 1
@@ -2229,6 +2249,7 @@ static bool process_filename(List **file_list, char *arg) {
 
 static int process_options(List **file_list, int argc, char **argv) {
 	int last_optind = 0;
+	int c = 0;
 
 	/* turn off getopt's error messages */
 	opterr = 0;
@@ -2236,17 +2257,21 @@ static int process_options(List **file_list, int argc, char **argv) {
 	optreset = 1;
 	
 	while (optind < argc) {
-		int c;
 		int option_index = 0;
 
-		if (optind <= last_optind)
-			optind = last_optind + 1;
+//		if (optind <= last_optind)
+//			optind = last_optind + 1;
 
 		if (optind >= argc)
 			break;
 
 		if (last_optind < optind)
 			last_optind = optind;
+
+#if defined(__WINDOWS__)
+		if (optind < argc && argv[optind] && argv[optind][0] == '/')
+			argv[optind][0] = '-';
+#endif
 
 		c = getopt_long(argc, argv, short_options, long_options, &option_index);
 
@@ -2259,6 +2284,7 @@ static int process_options(List **file_list, int argc, char **argv) {
 				break;
 			}
 			process_filename(file_list, argv[last_optind]);
+			++optind;
 			continue;
 		}
 
@@ -2553,6 +2579,10 @@ static int process_options(List **file_list, int argc, char **argv) {
 int main(int argc, char **argv) {
 	List *file_list	= NULL;
 
+#ifdef SIGABRT
+	if (signal(SIGABRT, SIG_IGN) != SIG_IGN)
+		signal(SIGABRT, sighandler);
+#endif
 #ifdef SIGHUP
 	if (signal(SIGHUP, SIG_IGN) != SIG_IGN)
 		signal(SIGHUP, sighandler);
