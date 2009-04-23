@@ -802,6 +802,10 @@ static char* dirname(char* path) {
 		return "/";
 	}
 
+	if (i > PATH_MAX - 1) {
+		return "";
+	}
+
 	strncpy(rv, path, i);
 	rv[i] = '\0';
 
