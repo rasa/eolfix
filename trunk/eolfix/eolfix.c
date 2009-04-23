@@ -127,7 +127,7 @@ CRCRLF	LF		CR LF			CR
 
 #undef CONV_SUPPORT_ENABLED
 
-#define COPYRIGHT "Copyright (c) 2002-2006, Ross Smith. All rights reserved."
+#define COPYRIGHT "Copyright (c) 2002-2009, Ross Smith. All rights reserved."
 
 #ifdef HAVE_CONFIG_H
 # include "config.h"
