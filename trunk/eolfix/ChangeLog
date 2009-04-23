@@ -1,5 +1,9 @@
 $Id$
 
+* 2009-04-21 Ross Smith II <rossta@users.sf.net>
+	- Fixed directory recursion issues
+	- *: Version 0.2.0
+
 * 2006-01-04 Ross Smith II <rossta@users.sf.net>
 	- Initial release
 	- *: Version 0.1.0

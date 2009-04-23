@@ -73,6 +73,7 @@ AC_CHECK_FUNCS(\
 	lstat \
 	mkstemps \
 	opendir \
+	strcasecmp \
 )
 
 if test "$ac_cv_func_getopt_long" = "no"; then

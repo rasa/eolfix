@@ -2,7 +2,7 @@
 
 $Id$
 
-Copyright (c) 2002-2006, Ross Smith. All Rights Reserved
+Copyright (c) 2002-2009, Ross Smith. All Rights Reserved
 
 TODO
 ====
@@ -162,7 +162,15 @@ CRCRLF	LF		CR LF			CR
 #endif
 
 #ifdef HAVE_FNMATCH_H
+# ifdef _POSIX_SOURCE
+#  define _POSIX_SOURCE_SAVE _POSIX_SOURCE
+#  undef _POSIX_SOURCE
+# endif
 # include <fnmatch.h> /* fnmatch() */
+# ifdef _POSIX_SOURCE_SAVE
+#  define _POSIX_SOURCE _POSIX_SOURCE_SAVE
+#  undef _POSIX_SOURCE_SAVE
+# endif
 #else
 # include "fnmatch.h" /* local version */
 #endif
@@ -402,7 +410,7 @@ struct _options {
 	char	temp_dir[PATH_MAX];
 	int		verbose;
 	bool	ignore_case;
-	
+
 	bool	std_in;
 	bool	std_out;
 	bool	wildcards_used;
@@ -432,7 +440,7 @@ static options_t opt = {
 	false,				/* recursive */
 	"",					/* temp_dir */
 	0,					/* verbose */
-#ifdef IS_CASE_INSENSITIVE_FILESYSTEM		
+#ifdef IS_CASE_INSENSITIVE_FILESYSTEM
 	true,				/* ignore_case */
 #else
 	false,
@@ -765,24 +773,39 @@ static char* basename(char* s) {
 
 /* per http://www.scit.wlv.ac.uk/cgi-bin/mansec?3C+dirname */
 static char* dirname(char* path) {
+	static char rv[PATH_MAX];
+
 	char *p;
+	unsigned int i = 0;
 
 	if (path == NULL || *path == '\0')
 		return ".";
-	p = path + strlen(path) - 1;
+	i = strlen(path) - 1;
+	p = path + i;
 	while (IS_PATH_SEPARATOR(*p)) {
 		if (p == path)
 			return path;
 		*p-- = '\0';
+		--i;
 	}
 
-	while (p >= path && !IS_PATH_SEPARATOR(*p))
-		p--;
+	while (p >= path && !IS_PATH_SEPARATOR(*p)) {
+		--p;
+		--i;
+	}
 
-	return
-		p < path ? "." :
-		p == path ? "/" :
-		(*p = '\0', path);
+	if (p < path) {
+		return ".";
+	}
+
+	if (p == path) {
+		return "/";
+	}
+
+	strncpy(rv, path, i);
+	rv[i] = '\0';
+
+	return rv;
 /*
 	int i;
 	static char rv[PATH_MAX];
@@ -1516,7 +1539,7 @@ static List *filespec_append(List **head, char *filespec, output_t output_format
 		bool filespecs_equal;
 
 		if (opt.ignore_case) {
-				filespecs_equal = stricmp(data->filespec, filespec) == 0;
+				filespecs_equal = strcasecmp(data->filespec, filespec) == 0;
 		} else {
 				filespecs_equal = strcmp(data->filespec, filespec) == 0;
 		}
@@ -1856,7 +1879,7 @@ static int process_directory(char *directory, List *file_list) {
 	DIR *dirp;
 	int rv = 0;
 	int fnmatch_flags = 0;
-	
+
 	List *dir_list = NULL;
 	List *node;
 
@@ -2055,7 +2078,7 @@ static int process_envvar(List **file_list, char *envvar) {
 	if (!pstart || !*pstart) {
 		return 0;
 	}
-		
+
 	pend = strstr(pstart, COMMENT_DELIMETER);
 	if (pend)
 		*pend = '\0';
@@ -2094,7 +2117,7 @@ static int process_envvar(List **file_list, char *envvar) {
 	process_options(file_list, argc, argv);
 
 	free(argv);
-	
+
 	list_free(argv_list);
 
 	return 0;
@@ -2120,7 +2143,7 @@ static int process_option_file(List **file_list, char *filename) {
 		char *pend;
 		char *pnew;
 		char *token;
-		
+
 		pstart = fgets(buf, sizeof(buf), fp);
 
 		if (pstart == NULL) {
@@ -2137,10 +2160,10 @@ static int process_option_file(List **file_list, char *filename) {
 			*pend = '\0';
 
 		pstart = str_trim(pstart);
-	
+
 		if (strlen(pstart) == 0)
 			continue;
-		
+
 		if (*pstart == '-') {
 			pnew = xstrdup(pstart);
 		} else {
@@ -2160,7 +2183,7 @@ static int process_option_file(List **file_list, char *filename) {
 
 			token = strtok(NULL, TOKEN_DELIMETERS);
 		}
-		
+
 		free(pnew);
 	}
 
@@ -2168,7 +2191,7 @@ static int process_option_file(List **file_list, char *filename) {
 
 	if (argc == 1)
 		return 0;
-	
+
 	argv = (char **) xalloc((argc + 1) * sizeof(char *));
 	p = argv;
 	*p++ = xstrdup(progname);
@@ -2254,8 +2277,8 @@ static int process_options(List **file_list, int argc, char **argv) {
 	/* turn off getopt's error messages */
 	opterr = 0;
 	optind = 1;
-	optreset = 1;
-	
+//	optreset = 1;
+
 	while (optind < argc) {
 		int option_index = 0;
 
