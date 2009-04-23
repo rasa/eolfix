@@ -9,9 +9,9 @@ if USE_LOCAL_GETOPT
 eolfix_SOURCES += getopt.c getopt.h
 endif
 
-SUBDIRS = doc
+#SUBDIRS = doc
 
-DIST_SUBDIRS = doc
+#DIST_SUBDIRS = doc
 
 EXTRA_DIST = autogen.sh README COPYING
 

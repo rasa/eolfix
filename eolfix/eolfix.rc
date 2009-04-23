@@ -54,10 +54,10 @@ BEGIN
             VALUE "FileDescription", "View and Correct EOL characters\0"
             VALUE "FileVersion", "0, 2, 0, 0\0"
             VALUE "InternalName", "eolfix\0"
-            VALUE "LegalCopyright", "Copyright © 2005-2006 Ross Smith\0"
+            VALUE "LegalCopyright", "Copyright © 2005-2009 Ross Smith\0"
             VALUE "OriginalFilename", "eolfix.exe\0"
             VALUE "ProductName", "View and Correct EOL characters\0"
-            VALUE "ProductVersion", "1, 0, 0, 0\0"
+            VALUE "ProductVersion", "0, 2, 0, 0\0"
         END
     END
     BLOCK "VarFileInfo"
@@ -75,18 +75,18 @@ END
 // TEXTINCLUDE
 //
 
-1 TEXTINCLUDE DISCARDABLE 
+1 TEXTINCLUDE DISCARDABLE
 BEGIN
     "windows.h\0"
 END
 
-2 TEXTINCLUDE DISCARDABLE 
+2 TEXTINCLUDE DISCARDABLE
 BEGIN
     "#include ""afxres.h""\r\n"
     "\0"
 END
 
-3 TEXTINCLUDE DISCARDABLE 
+3 TEXTINCLUDE DISCARDABLE
 BEGIN
     "\r\n"
     "\0"
