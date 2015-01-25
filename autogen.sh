@@ -89,7 +89,6 @@ then
 		config.sub \
 		depcomp \
 		install-sh \
-		ltmain.sh \
 		missing
 	do
 		sed -e "s/\r\n/\n/" $file >$file.tmp || die
