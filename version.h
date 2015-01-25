@@ -1,8 +1,6 @@
 /*
 
-$Id$
-
-Copyright (c) 2002-2006, Ross Smith. All Rights Reserved
+Copyright (c) 2002-2015, Ross Smith. All Rights Reserved
 
 */
 
@@ -17,7 +15,7 @@ Copyright (c) 2002-2006, Ross Smith. All Rights Reserved
 #define PACKAGE_VERSION "0.2.0"
 
 /* Define to the address where bug reports for this package should be sent. */
-#define PACKAGE_BUGREPORT "rossta@users.sourceforge.net"
+#define PACKAGE_BUGREPORT "ross@smithii.com"
 
 /* Define to the full name of this package. */
 #define PACKAGE_NAME PACKAGE
