@@ -1,6 +1,6 @@
 /*
 
-$Id$
+$Id: eolfix.c 22 2009-04-23 00:51:51Z rossta $
 
 Copyright (c) 2002-2009, Ross Smith. All Rights Reserved
 
@@ -1127,7 +1127,7 @@ static void warning(char *fmt, ...) {
 	if (errno) {
 		exit_value |= errno;
 		fprintf(stderr, ": ");
-		fprintf(stderr, strerror(errno));
+		fprintf(stderr, "%s", strerror(errno));
 	}
 	fprintf(stderr, "\n");
 	fflush(stderr);
@@ -1144,7 +1144,7 @@ static void error(char *fmt, ...) {
 	if (errno) {
 		exit_value |= errno;
 		fprintf(stderr, ": ");
-		fprintf(stderr, strerror(errno));
+		fprintf(stderr, "%s", strerror(errno));
 	}
 	fprintf(stderr, "\n");
 	fflush(stderr);
@@ -1369,13 +1369,13 @@ static int copy_file(char *src, char *dst, int dst_options) {
 	int fh2;
 	int rv = 0;
 
-	fh = open(src, O_RDONLY | O_BINARY);
+	fh = open(src, O_RDONLY | O_BINARY, 0600);
 	if (fh == -1) {
 		error("cannot open %s", src);
 		return errno;
 	}
 
-	fh2 = open(dst, O_WRONLY | O_TRUNC | O_BINARY | dst_options);
+	fh2 = open(dst, O_WRONLY | O_TRUNC | O_BINARY | dst_options, 0600);
 	if (fh2 == -1) {
 		error("cannot open %s", dst);
 		close(fh);
@@ -1704,7 +1704,7 @@ static int process_file(char *filename, output_t output_format, int include, boo
 			}
 		}
 
-		fh = open(real_filename, O_RDONLY | O_BINARY);
+		fh = open(real_filename, O_RDONLY | O_BINARY, 0600);
 		if (fh == -1) {
 			int e = errno;
 			error("cannot open %s", filename);
@@ -2695,7 +2695,7 @@ int main(int argc, char **argv) {
 
 		if (*opt.output_filename) {
 			strcpy(temp_filename, opt.output_filename);
-			output_handle = open(temp_filename, O_CREAT | O_WRONLY | O_TRUNC | O_BINARY);
+			output_handle = open(temp_filename, O_CREAT | O_WRONLY | O_TRUNC | O_BINARY, 0600);
 			if (output_handle == -1) {
 				error("cannot open %s", temp_filename);
 				close(output_handle);
