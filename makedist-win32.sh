@@ -10,9 +10,9 @@ FILES="\
 AUTHORS \
 LICENSE \
 CHANGELOG.md \
-NEWS \
+CONTRIBUTING.md \
 README.md \
-Release/eolfix.exe \
+eolfix.exe \
 doc/*.1 \
 doc/*.chm \
 doc/*.pdf \
