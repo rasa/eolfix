@@ -1,10 +1,4 @@
-/*
-
-$Id$
-
-Copyright (c) 2002-2006, Ross Smith. All Rights Reserved
-
-*/
+/* Copyright (c) 2002-2015, Ross Smith II. MIT licensed. */
 
 #ifndef	IS_UNIX
 # if defined(__NetBSD__)

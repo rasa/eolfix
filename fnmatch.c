@@ -1,5 +1,3 @@
-/* $Id$ */
-
 /*	$OpenBSD: fnmatch.c,v 1.7 2000/03/23 19:13:51 millert Exp $	*/
 
 /*

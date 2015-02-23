@@ -1,17 +1,17 @@
 #!/bin/sh
 
-# $Id$
+# Copyright (c) 2005-2015 Ross Smith II. MIT Licensed.
 
 # Cygwin shell script to create Win32 binary & source distributions
 
-VERSION=`cat version`
+VERSION="$(grep PACKAGE_VERSION version.h | head -n 1 | cut -d'"' -f 2)"
 
 FILES="\
 AUTHORS \
-COPYING \
-ChangeLog \
+LICENSE \
+CHANGELOG.md \
 NEWS \
-README \
+README.md \
 Release/eolfix.exe \
 doc/*.1 \
 doc/*.chm \

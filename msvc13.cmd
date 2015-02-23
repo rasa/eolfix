@@ -8,7 +8,7 @@ if not defined targets set targets=clean all
 
 title %~n0
 
-set path=%bcc_home%\bin;%path%
+call "%VS130COMNTOOLS%\vsvars32.bat"
 
-make -f bcc55.mak %targets% 
+nmake -f msvc13.mak %targets%
 

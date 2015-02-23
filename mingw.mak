@@ -1,7 +1,5 @@
 # gcc version 3.4.2 (mingw-special)
 
-# $Id$
-
 ifneq ('$(DEBUG)', '')
 CFLAGS+=-O0 -g -D_DEBUG
 else

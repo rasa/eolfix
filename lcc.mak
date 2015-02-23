@@ -1,7 +1,5 @@
 # Logiciels/Informatique lcc-win32 version 3.8. Compilation date: Aug 14 2005 09:28:06
 
-# $Id$
-
 OBJS=eolfix.obj fnmatch.obj # getopt.obj 
 EXE=eolfix.exe
 

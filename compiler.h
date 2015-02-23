@@ -1,10 +1,4 @@
-/*
-
-$Id$
-
-Copyright (c) 2002-2006, Ross Smith. All Rights Reserved
-
-*/
+/* Copyright (c) 2002-2015, Ross Smith II. MIT licensed. */
 
 #ifndef _COMPILER_H
 #define _COMPILER_H
@@ -33,7 +27,7 @@ Copyright (c) 2002-2006, Ross Smith. All Rights Reserved
 
 #ifdef __DMC__
 # define COMPILER "__DMC__"
-# define COMPILER_VERSION __DMC__ 
+# define COMPILER_VERSION __DMC__
 #endif
 
 /* Metaware High C (untested) */
@@ -86,7 +80,7 @@ Copyright (c) 2002-2006, Ross Smith. All Rights Reserved
 #endif
 
 /* (untested) */
-#ifdef THINK_C 
+#ifdef THINK_C
 # define COMPILER "THINK_C"
 # define COMPILER_VERSION THINK_C
 #endif
@@ -204,23 +198,25 @@ EXPAND_WILDCARDS;
 
 
 #ifdef __LCC__
-# define HAVE__BOOL
+# define HAVE__BOOL 1
 # define HAVE_GETOPT_H 1
 # define HAVE_GETOPT 1
 # define HAVE_GETOPT_LONG 1
 # define HAVE_SYS_UTIME_H 1
 # define utime _utime
-/* lcc has getopt.h, but fails to define struct option - emailed jacob@jacob.remcomp.fr */
+/* older versions of lcc have getopt.h, but fail to define struct option
 struct option {
 	const char *name;
 	int  has_arg;
 	int *flag;
 	int val;
 };
+*/
 #endif /* __LCC__ */
 
 
 #ifdef __MINGW32__
+# define HAVE_STDBOOL_H 1
 # define HAVE_DIRENT_H 1
 # define HAVE_GETOPT_H 1
 # define HAVE_GETOPT 1
@@ -235,6 +231,9 @@ struct option {
 #  define inline __inline
 # endif
 # define HAVE_SYS_UTIME_H 1
+# if _MSC_VER >= 1800 /* Visual Studio 2013+ */
+#  define HAVE_STDBOOL_H 1
+# endif
 #endif /* _MSC_VER */
 
 

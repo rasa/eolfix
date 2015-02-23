@@ -1,8 +1,4 @@
-/*
-
-Copyright (c) 2002-2015, Ross Smith. All Rights Reserved
-
-*/
+/* Copyright (c) 2002-2015, Ross Smith II. MIT licensed. */
 
 #ifndef HAVE_CONFIG_H
 #ifndef _VERSION_H

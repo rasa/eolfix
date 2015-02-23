@@ -5,7 +5,7 @@
 
 Summary: End-of-line character fix utility.
 Name: eolfix
-Version: 0.1.0
+Version: 0.2.0
 %if "%DATE" == ""
 Release: 1
 Source: %{name}-%{version}.tar.bz2
@@ -13,7 +13,7 @@ Source: %{name}-%{version}.tar.bz2
 Release: 0.cvs%DATE.1
 Source: %{name}-%DATE.tar.bz2
 %endif
-License: GPL
+License: MIT
 Group: Applications/System
 URL: http://www.smithii.com/eolfix/
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
@@ -51,11 +51,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n eolfix
 %defattr(-,root,root)
-%doc ChangeLog NEWS AUTHORS README*
+%doc CHANGELOG.md NEWS AUTHORS README.md*
 %{_bindir}/eolfix
 %{_mandir}/man1/eolfix.1*
 
 %changelog
-* 2005-12-01 Ross Smith II <eolfix@smithii.com>
+* 2005-12-01 Ross Smith II <ross@smithii.com>
 - Initial release
 - *: Version 0.1.0

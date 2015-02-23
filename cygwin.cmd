@@ -1,29 +1,23 @@
-@echo off
-
-:: $Id$
+@setlocal EnableDelayedExpansion EnableExtensions
+@if defined EOLFIX_DEBUG (@echo on) else (@echo off)
 
 call config.cmd
 
 set targets=%*
-if "%targets%" == "" set targets=eolfix.exe
+if not defined targets set targets=eolfix.exe
 
 title %~n0
 
 set path=%cygwin_home%\bin;%path%
 
-::for %%i in (%targets%) do bash -c "make %%i"
+if defined debug set configure_opts=--enable-debug
 
-if not "%debug%" == "" goto debug
+if exist config.h goto make
 
-if not exist cygwin.debug goto make
-del cygwin.debug 
-goto configure
+if exist configure goto configure
 
-:debug
-if exist cygwin.debug goto make
-set configure_opts=--enable-debug
-echo %configure_opts% >cygwin.debug
-goto configure
+:autogen
+bash -c "./autogen.sh"
 
 :configure
 bash -c "./configure %configure_opts%"
@@ -31,4 +25,3 @@ bash -c "./configure %configure_opts%"
 :make
 bash -c "make %targets%"
 
-set path=%path_save%

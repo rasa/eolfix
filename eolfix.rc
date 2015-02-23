@@ -54,7 +54,7 @@ BEGIN
             VALUE "FileDescription", "View and Correct EOL characters\0"
             VALUE "FileVersion", "0, 2, 0, 0\0"
             VALUE "InternalName", "eolfix\0"
-            VALUE "LegalCopyright", "Copyright © 2005-2009 Ross Smith\0"
+            VALUE "LegalCopyright", "Copyright © 2002-2015 Ross Smith II\0"
             VALUE "OriginalFilename", "eolfix.exe\0"
             VALUE "ProductName", "View and Correct EOL characters\0"
             VALUE "ProductVersion", "0, 2, 0, 0\0"

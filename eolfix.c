@@ -125,7 +125,7 @@ CRCRLF  LF    CR LF     CR
 
 #undef CONV_SUPPORT_ENABLED
 
-#define COPYRIGHT "Copyright (c) 2002-2009, Ross Smith. All rights reserved."
+#define COPYRIGHT "Copyright (c) 2002-2015, Ross Smith II. MIT Licensed."
 
 #ifdef HAVE_CONFIG_H
 # include "config.h"
@@ -185,19 +185,19 @@ CRCRLF  LF    CR LF     CR
 
 #ifdef HAVE_STDBOOL_H
 # include <stdbool.h>
-#else
+#else /* !HAVE_STDBOOL_H */
 # ifndef HAVE__BOOL
 #  ifdef __cplusplus
-typedef bool _Bool;
-#   else
-typedef unsigned char _Bool;
+    typedef bool _Bool;
+#  else
+    typedef unsigned char _Bool;
 #  endif
 # endif
 # define bool _Bool
 # define false 0
 # define true 1
 # define __bool_true_false_are_defined 1
-#endif
+#endif /* HAVE_STDBOOL_H */
 
 #ifdef HAVE_STDLIB_H
 # include <stdlib.h> /* NULL, EXIT_SUCCESS */
@@ -2300,6 +2300,10 @@ static int process_options(List **file_list, int argc, char **argv) {
 
     c = getopt_long(argc, argv, short_options, long_options, &option_index);
 
+	if (opterr) {
+		usage(EINVAL);
+	}
+
     if (c <= 1) {
       if (strcmp(argv[optind - 1], "--") == 0) {
         ++last_optind;
@@ -2579,9 +2583,13 @@ static int process_options(List **file_list, int argc, char **argv) {
         break;
 
 #endif /* CONV_SUPPORT_ENABLED */
+      case ':':
+      	error("Option -%c requires an operand\n", optopt);
+        usage(EINVAL);
+        break;
       default:
         errno = 0;
-        error("invalid option: %s", argv[optind - 1]);
+		error("invalid option: %c", c);
         usage(EINVAL);
     } /* switch (c) { */
 

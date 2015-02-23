@@ -1,7 +1,5 @@
 ## Process this file with automake to produce Makefile.in
 
-## $Id$
-
 bin_PROGRAMS = eolfix
 eolfix_SOURCES = eolfix.c compiler.h version.h
 
@@ -13,6 +11,6 @@ endif
 
 #DIST_SUBDIRS = doc
 
-EXTRA_DIST = autogen.sh README COPYING
+EXTRA_DIST = autogen.sh README.md LICENSE
 
 ## Makefile.am ends here

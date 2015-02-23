@@ -1,6 +1,5 @@
-# Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 14.00.50215.44 for 80x86
-
-# $Id$
+# Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 14.00.50727.762 for 80x86
+# aka Visual Studio 2005
 
 OBJS=eolfix.obj fnmatch.obj getopt.obj
 EXE=eolfix.exe

@@ -1,6 +1,5 @@
-# Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 12.00.8804 for 80x86 AKA MSVC 6.0
-
-# $Id$
+# Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 12.00.8804 for 80x86
+# aka Visual Studio 6.0
 
 OBJS=eolfix.obj fnmatch.obj getopt.obj
 EXE=eolfix.exe

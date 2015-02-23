@@ -1,6 +1,5 @@
-@echo off
-
-:: $Id$
+@setlocal EnableDelayedExpansion EnableExtensions
+@if defined EOLFIX_DEBUG (@echo on) else (@echo off)
 
 call config.cmd
 

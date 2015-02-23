@@ -1,11 +1,9 @@
 @echo off
 
-:: $Id$
-
 call config.cmd
 
 set targets=%*
-if "%targets%" == "" set targets=clean all
+if not defined targets set targets=clean all
 
 title %~n0
 
@@ -14,4 +12,3 @@ set djgpp=%djgpp_home%\djgpp.env
 
 make -f djgpp.mak %targets%
 
-set path=%path_save%

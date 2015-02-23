@@ -1,5 +1,3 @@
-/* $Id$ */
-
 /*      $OpenBSD: fnmatch.h,v 1.5 2000/03/24 17:13:23 millert Exp $        */
 /*      $NetBSD: fnmatch.h,v 1.5 1994/10/26 00:55:53 cgd Exp $        */
 

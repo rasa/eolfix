@@ -1,19 +1,17 @@
-@echo off
-
-:: $Id$
+@setlocal EnableDelayedExpansion EnableExtensions
+@if defined EOLFIX_DEBUG (@echo on) else (@echo off)
 
 call config.cmd
 
 set targets=%*
-if "%targets%" == "" set targets=clean all
+if not defined targets set targets=clean all
 	
 title %~n0
 
 set path=%lcc_home%\bin;%path%
 
 set _cflags=-A -O -DNDEBUG
-if not "%debug%" == "" set _cflags=-A -g5 -D_DEBUG
+if defined debug set _cflags=-A -g5 -D_DEBUG
 
 make -f lcc.mak CFLAGS="%_cflags%" %targets%
 
-set path=%path_save%

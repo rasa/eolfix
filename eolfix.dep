@@ -1,0 +1,17 @@
+# Microsoft Developer Studio Generated Dependency File, included by eolfix.mak
+
+.\eolfix.c : \
+	".\compiler.h"\
+	".\fnmatch.h"\
+	".\getopt.h"\
+	".\version.h"\
+	{$(INCLUDE)}"getopt.h"\
+	
+
+.\fnmatch.c : \
+	".\fnmatch.h"\
+	
+
+.\getopt.c : \
+	".\getopt.h"\
+	

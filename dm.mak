@@ -1,7 +1,5 @@
 # Digital Mars Compiler Version 8.42n
 
-# $Id$
-
 OBJS=eolfix.obj fnmatch.obj getopt.obj
 EXE=eolfix.exe
 

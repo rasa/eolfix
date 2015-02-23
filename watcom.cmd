@@ -1,22 +1,15 @@
-@echo off
-
-:: $Id$
+@setlocal EnableDelayedExpansion EnableExtensions
+@if defined EOLFIX_DEBUG (@echo on) else (@echo off)
 
 call config.cmd
 
 set targets=%*
-if "%targets%" == "" set targets=clean all
+if not defined targets set targets=clean all
 
 title %~n0
 
-set include=
-set lib=
-call "%watcom_home%\setvars.bat"
-echo include=%include%
-echo lib=%lib%
+if exist "%watcom_home%\setvars.bat" call "%watcom_home%\setvars.bat"
+if exist "%watcom_home%\owsetenv.bat" call "%watcom_home%\owsetenv.bat"
 
 nmake -f watcom.mak %targets%
 
-set path=%path_save%
-set include=%include_save%
-set lib=%lib_save%

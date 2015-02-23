@@ -1,22 +1,18 @@
-# Intel(R) C++ Compiler for 32-bit applications, Version 9.0
-# Intel(R) Parallel Studio XE 2015 Update 2 Composer Edition (package 179)
+# Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 19
+# aka Visual Studio 2015
 
 OBJS=eolfix.obj fnmatch.obj getopt.obj
 EXE=eolfix.exe
 
-CC=icl.exe 
-CPP=icl.exe
-LINK32=xilink.exe 
-
-CFLAGS=/nologo /W3 /GX /YX /FD /c /D "WIN32" /D "_CONSOLE" /D "_MBCS" /Wall
-
+LINK32=link.exe
+CFLAGS=/nologo /W3 /EHsc /FD /c /D "WIN32" /D "_CONSOLE" /D "_MBCS" /wd4996 /wd4710 /wd4711
 LINK32_FLAGS=/nologo /subsystem:console /machine:I386 # setargv.obj
 
 !if defined(debug) || defined(DEBUG)
-CFLAGS=$(CFLAGS) /MLd /Od /D "_DEBUG" /Gm /ZI /GZ
+CFLAGS=$(CFLAGS) /Od /D "_DEBUG" /Gm /ZI /RTC1
 LINK32_FLAGS=$(LINK32_FLAGS) /incremental:yes /debug
 !else
-CFLAGS=$(CFLAGS) /ML  /O2 /D "NDEBUG"                                                  
+CFLAGS=$(CFLAGS) /O2 /D "NDEBUG"                                                  
 LINK32_FLAGS=$(LINK32_FLAGS) /incremental:no
 !endif
 
@@ -34,4 +30,4 @@ fnmatch.obj: fnmatch.c fnmatch.h
 getopt.obj: getopt.c getopt.h
 
 clean:
-	-del $(EXE) $(OBJS) *.pdb *.ilk >nul 2>nul
+	-del $(EXE) $(OBJS) *.idb *.ilk *.ncb *.opt *.pch *.pdb *.plg >nul 2>nul

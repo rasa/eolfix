@@ -8,12 +8,12 @@
   <title>eolfix User's Guide</title>
 
   <bookinfo>
-    <date>January, 2 2006</date>
+    <date>February 23, 2015</date>
 
     <author>
       <firstname>Ross</firstname>
 
-      <surname>Smith</surname>
+      <surname>Smith II</surname>
     </author>
   </bookinfo>
 
@@ -23,18 +23,16 @@
     <sect1>
       <title>About eolfix</title>
 
-      <para><ulink url="http://eolfix.sourceforge.net/">eolfix</ulink> is
+      <para><ulink url="https://github.com/rasa/eolfix/">eolfix</ulink> is
       a command line utility to ....</para>
 
-      <para>eolfix is open source freeware under the GPL version 2 license.</para>
+      <para>eolfix is open source freeware under the MIT license.</para>
 
       <para>We welcome any user's feedback on this project which would greatly
       help us to improve its quality. Comments, suggestions, feature requests,
-      bug reports can be done via SourceForge project web site (see <ulink
-      url="http://sourceforge.net/forum/?group_id=146787">eolfix
-      Sourceforge forums</ulink>, or <ulink
-      url="http://lists.sourceforge.net/lists/listinfo/eolfix-devel/">eolfix
-      mailing list</ulink>)</para>
+      bug reports can be done via (see <ulink
+      url="https://github.com/rasa/eolfix/issues">Github 
+      </ulink></para>
     </sect1>
 
     <sect1>

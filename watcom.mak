@@ -1,7 +1,5 @@
 # Open Watcom C/C++ CL Clone for 386  Version 1.3
 
-# $Id$
-
 OBJS=eolfix.obj fnmatch.obj getopt.obj # wildargv.obj
 EXE=eolfix.exe
 LINK=link.exe

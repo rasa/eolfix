@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $Id$
-
 PROG=`basename $0`
 
 KEYFILE=eolfix.c
