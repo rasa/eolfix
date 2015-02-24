@@ -85,8 +85,7 @@ To view existing bugs, or report a new bug, please see the [issues](/issues) pag
 ## Supported Compilers
 
 * Borland C++ 5.5.1 for Win32
-* Digital Mars Compiler Version 8.42n
-* Digital Mars Compiler Version 8.57
+* Digital Mars Compiler Version 8.42n - 8.57
 * gcc version 3.4.3 (DJGPP version)
 * gcc version 3.4.2 (mingw-special)
 * gcc (Cygwin)
@@ -94,15 +93,9 @@ To view existing bugs, or report a new bug, please see the [issues](/issues) pag
 * Intel(R) C++ Compiler for 32-bit applications, Version 9.0
 * Intel(R) Parallel Studio XE 2015 Update 2 Composer Edition (package 179)
 * Logiciels/Informatique lcc-win32 version 3.8
-* Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 12.00.8804 for 80x86 (aka MSVC 6)
-* Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 13.10.3077 for 80x86 (aka MSVC 7 / Visual Studio .NET 2002/3)
-* Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 14.00.50727.762 for 80x86 (aka MSVC 8 / Visual Studio 2005)
-* Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 15.00.30729.01 for 80x86 (aka MSVC 9 / Visual Studio 2008)
-* Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 16.00.30319.01 for 80x86 (aka MSVC 10 / Visual Studio 2010)
-* Microsoft (R) C/C++ Optimizing Compiler Version 17.00.50727.1 for x86 (aka MSVC 11 / Visual Studio 2012)
-* Microsoft (R) C/C++ Optimizing Compiler Version 18.00.31101 for x86 (aka MSVC 12 / Visual Studio 2013)
-* Watcom C/C++ CL Clone for 386  Version 1.3
-* Open Watcom C/C++ NMAKE Clone for 386  Version 1.9
+* Microsoft Visual C++ 6.0
+* Microsoft Visual Studio 2013, 2012, 2010, 2008, 2005, .NET
+* Open Watcom C/C++ NMAKE Clone for 386  Version 1.3 - 1.9
 
 ## License
 
