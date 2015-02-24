@@ -107,7 +107,12 @@ Please see [CHANGELOG.md](CHANGELOG.md) for the version history for this project
 
 ## Contact
 
-This project was originally developed by [Ross Smith II](mailto:ross@smithii.com).
-Any enhancements and suggestions are welcome.
+Current Maintainer: [Ross Smith II](mailto:ross@smithii.com)
+ [![endorse](https://api.coderwall.com/dolmen/endorsecount.png)](https://coderwall.com/dolmen)
+
+Original Author: [Ross Smith II](mailto:ross@smithii.com) [![endorse](https://api.coderwall.com/nojhan/endorsecount.png)](https://coderwall.com/nojhan)
+
+Feedback, suggestions, and enhancements are welcome.
+
 
 
