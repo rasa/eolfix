@@ -90,8 +90,8 @@ To view existing bugs, or report a new bug, please see the [issues](/issues) pag
 * gcc version 3.4.2 (mingw-special)
 * gcc (Cygwin)
 * gcc (Linux)
-* Intel(R) C++ Compiler for 32-bit applications, Version 9.0
-* Intel(R) Parallel Studio XE 2015 Update 2 Composer Edition (package 179)
+* Intel<sup>&reg;</sup> C++ Compiler for 32-bit applications, Version 9.0
+* Intel<sup>&reg;</sup> Parallel Studio XE 2015 Update 2 Composer Edition (package 179)
 * Logiciels/Informatique lcc-win32 version 3.8
 * Microsoft Visual C++ 6.0
 * Microsoft Visual Studio 2013, 2012, 2010, 2008, 2005, .NET
