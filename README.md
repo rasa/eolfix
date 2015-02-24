@@ -108,9 +108,9 @@ Please see [CHANGELOG.md](CHANGELOG.md) for the version history for this project
 ## Contact
 
 Current Maintainer: [Ross Smith II](mailto:ross@smithii.com)
- [![endorse](https://api.coderwall.com/dolmen/endorsecount.png)](https://coderwall.com/dolmen)
+ [![endorse](https://api.coderwall.com/rasa/endorsecount.png)](https://coderwall.com/rasa)
 
-Original Author: [Ross Smith II](mailto:ross@smithii.com) [![endorse](https://api.coderwall.com/nojhan/endorsecount.png)](https://coderwall.com/nojhan)
+Original Author: [Ross Smith II](mailto:ross@smithii.com) [![endorse](https://api.coderwall.com/rasa/endorsecount.png)](https://coderwall.com/rasa)
 
 Feedback, suggestions, and enhancements are welcome.
 
