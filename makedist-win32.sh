@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # Copyright (c) 2005-2015 Ross Smith II. MIT Licensed.
 
@@ -34,15 +34,16 @@ makedist-win32.sh \
 
 ZIP="zip -j -9"
 
-rm -f \
-eolfix-${VERSION}-win32.zip \
-eolfix-${VERSION}-src-win32.zip
+EOLFIX_ZIP="eolfix-${VERSION}-win32.zip"
+EOLFIX_SRC_ZIP="eolfix-${VERSION}-src-win32.zip"
+
+rm -f "${EOLFIX_ZIP}" "${EOLFIX_SRC_ZIP}"
 
 # upx Release/eolfix.exe
-${ZIP} eolfix-${VERSION}-win32.zip ${FILES}
+${ZIP} "${EOLFIX_ZIP}" ${FILES}
 
 # test -f config.h && mv -f config.h config.h.sav
 
-${ZIP} eolfix-${VERSION}-src-win32.zip ${SRC_FILES}
+${ZIP} "${EOLFIX_SRC_ZIP}" ${SRC_FILES}
 
 # test -f config.h.sav && mv -f config.h.sav config.h
