@@ -1,131 +1,25 @@
-/*
+/* eolfix - Report & fix end-of-line characters
+   Copyright (c) 2002-2015 Ross Smith II
 
-Copyright (c) 2002-2015, Ross Smith II (http://smithii.com)
+   The MIT License (MIT)
 
-TODO
-====
+   Permission is hereby granted, free of charge, to any person obtaining a copy of
+   this software and associated documentation files (the "Software"), to deal in
+   the Software without restriction, including without limitation the rights to
+   use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+   the Software, and to permit persons to whom the Software is furnished to do so,
+   subject to the following conditions:
 
-http://packages.debian.org/stable/text/flip
+   The above copyright notice and this permission notice shall be included in all
+   copies or substantial portions of the Software.
 
-flip
-This program converts line endings of text files between MS-DOS and **IX formats.
-It detects binary files in a nearly foolproof way and leaves them alone unless you override this.
-It will also leave files alone that are already in the right format and preserves file timestamps.
-User interrupts are handled gracefully and no garbage or corrupted files left behind.
-'flip' does not convert files to a different character set, and it can not handle Apple Macintosh line endings (CR only).
- For that (and more), you can use the 'recode' program (package 'recode').
-
-Command line utility to report, and optionally convert, the line endings of text files between MS-DOS, Unix and Macintosh formats.
-It detects and ignores binary files unless instructed to include them.
-It does not modify files if the file is already in the requested format.
-It properly handles "mixed" format files (files having more than one type of line ending format).
-It does not, currently, handle character encodings other than 7-bit ASCII.
-
-fix: eolfix -v -s *.c -l *.c
-
-support runon options: eolfix -vib -d
-
-support comments in @files
-
-only process files in @files
-
-one filename per line?
-
-deal with embedded spaces in @file files
-
-documentation
-
-add asserts()
-
-implement -o directory_name ?
-
-  "-o | --output filespec Send output to a file/dir named 'filespec' (-=stdout)\n"
-
-implement reading options from EOLFIX environment variable
-
-implement reading options from ~/.eolfix settings file
-
-
-remove debugging code
-
-move basename/dirname/mkstemp/gettimeofday to separate files ?
-
-use ruby code to add windows CE port
-
-todo:
-
-  only support conv compatibility, if program is named conv, or the user uses -C or --conv option
-
-  how to implement the opposite of an option if the user uses the capital of it:
-
-test symlink code
-
-research how cp deals with permissions
-
-dynamically assign BUFSIZ from statbuf.st_blksize?
-
-if windows, copy windows rights specially
-
--c | --compress        Compress doubled-spaced files to be single-spaced
-
-flush out license() contents
-
-support reading unicode files?
-
-shr long            sht long
---- --------------------------- --- -----------------
--a  --Abort           -A  --no-abort
--b  --Backup          -B  --no-backup
--c  --Compress          -C  --no-compress
--d  --Dos
--e: --Exclude
--f  --Force           -F  --no-force
--g: --confiG
--h  --Help (undocumented)
--i: --Include
--j  --in-place          -J  --no-in-place
--k: --bacKup-ext        -K  --no-backup-ext
--l  --Leave
--m  --Mac
--n  --Native
--o  --Output          -O  --no-output
--p  --Preserve          -P  --no-preserve
--q  --Quiet           -Q  --no-quiet
--r  --Recursive         -R  --no-recursive
--s  --Skip
--t: --Temp-dir          -T  --no-temp-dir
--u  --Unix
--v  --Verbose         -V  --no-verbose
--w  --Windows (undocumented)
--x (unused)
--y  --drY-run         -Y  --no-dry-run
--z  --ignore-case               -Z  --no-ignore-case
--?  --Help
-
-    --license
-  --version
-
-conv_mode:
-
--A  --auto (conv_mode)        --no-auto
--D  --dos (conv_mode)
--F  --force (conv_mode)       --no-force
--M  --mac (conv_mode)
--U  --unix (conv_mode)
--S  --safe (conv_mode)
-
-input --unix  --dos     --mac
-======= ======= ============  =====
-LF    LF    CR LF     CR
-CR    LF    CR LF     CR
-CRLF  LF    CR LF     CR
-CRCR  LF LF CR LF CR LF   CR CR
-CRCRLF  LF    CR LF     CR
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+   FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+   COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+   IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+   CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
-
-#undef CONV_SUPPORT_ENABLED
-
-#define COPYRIGHT "Copyright (c) 2002-2015, Ross Smith II. MIT Licensed."
 
 #ifdef HAVE_CONFIG_H
 # include "config.h"
@@ -288,6 +182,10 @@ extern void exit();
 #  define S_IWUSR S_IWRITE
 # endif
 #endif
+
+#define COPYRIGHT "Copyright (c) 2002-2015, Ross Smith II. MIT Licensed."
+
+#undef CONV_SUPPORT_ENABLED
 
 /* unix EOF marker */
 #define CTRL_D '\x04'
