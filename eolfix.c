@@ -323,6 +323,12 @@ typedef struct _options options_t;
 
 #define BACKUP_EXT ".bak"
 
+#ifdef IS_CASE_INSENSITIVE_FILESYSTEM
+#define IGNORE_CASE (true)
+#else
+#define IGNORE_CASE (false)
+#endif
+
 static options_t opt = {
   false,			/* abort */
   false,			/* backup */
@@ -338,12 +344,8 @@ static options_t opt = {
   false,			/* quiet */
   false,			/* recursive */
   "",				/* temp_dir */
-  0,				/* verbose */
-#ifdef IS_CASE_INSENSITIVE_FILESYSTEM
-  true,				/* ignore_case */
-#else
-  false,
-#endif
+  1,				/* verbose */
+  IGNORE_CASE,			/* ignore_case */
   false,			/* stdin */
   false,			/* stdout */
   false,			/* wildcard_found */
