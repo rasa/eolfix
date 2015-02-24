@@ -3,7 +3,7 @@
 XSLTPROC	?=xsltproc --xinclude --nonet
 
 FOP_HOME	?=c:/fop-0.20.5
-HHC_HOME	?=c:/progra~1/htmlhe~1
+HHC_HOME	?=c:/progra~2/htmlhe~1
 JAVA_HOME	?=c:/j2sdk1.4.2_08
 
 XSL_DIR		?=/usr/share/xml/docbook/stylesheet/docbook-xsl
@@ -62,7 +62,6 @@ htmlhelp.hhp:	$(PACKAGE_UG).xml global.ent help.xml gfx
 	$(XSLTPROC) $(HTMLHELP_XSL) $<
 
 $(PACKAGE_UG).chm:	htmlhelp.hhp
-	test ! -f $@ || rm $@
 	-$(HHC) $<
 	test -s $@
 
