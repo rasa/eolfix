@@ -14,7 +14,7 @@ Options:
 -u | --unix    [files] Convert text files to have UNIX line endings
 -d | --dos     [files] Convert text files to have DOS/Windows line endings
 -m | --mac     [files] Convert text files to have Macintosh line endings
--n | --native  [files] Convert text files to have DOS/Windows line endings
+-n | --native  [files] Convert text files to have native line endings
 -l | --leave   [files] Report on the type of file, but do not convert (default)
 -s | --skip    [files] Skip these files entirely
 -i | --include type    Include types: unix, dos, mac, varied, binary and all
