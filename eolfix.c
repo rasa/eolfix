@@ -219,7 +219,8 @@ enum input_e
   INPUT_DOS = 2,
   INPUT_MAC = 4,
   INPUT_VARIED = 8,
-  INPUT_BINARY = 16
+  INPUT_BINARY = 16,
+  INPUT_UNSET = 32
 };
 
 typedef enum input_e input_t;
@@ -336,7 +337,7 @@ static options_t opt = {
   false,			/* compress */
   false,			/* dry_run */
   false,			/* force */
-  INPUT_ALL_ASCII,		/* include */
+  INPUT_UNSET,			/* include */
   false,			/* in_place */
   "",				/* output_filename */
   OUTPUT_LEAVE,			/* output_format */
@@ -2428,9 +2429,19 @@ unimplemented_option (int c)
   exit (EINVAL);
 }
 
+static inline void
+init_include ()
+{
+  if (opt.include == INPUT_UNSET)
+    {
+      opt.include = INPUT_ALL_ASCII;
+    }
+}
+
 static bool
 process_filename (List ** file_list, char *arg)
 {
+  init_include ();
   if (*arg == '@')
     {
       process_filelist (file_list, ++arg);
@@ -2552,6 +2563,8 @@ process_options (List ** file_list, int argc, char **argv)
 #endif /* CONV_SUPPORT_ENABLED */
 	  break;
 	case 'e':		/* --exclude */
+	  init_include ();
+
 	  while (optarg && *optarg)
 	    {
 	      _DBG ("Processing exclude option %c (%s)", *optarg, optarg);
@@ -2764,6 +2777,7 @@ process_options (List ** file_list, int argc, char **argv)
 	  opt._auto = false;
 	  break;
 	case OPT_FORCE:	/* --force */
+	  init_include ();
 	  opt.include |= INPUT_BINARY;
 	  break;
 	case 'M':		/* -M */
@@ -2771,6 +2785,7 @@ process_options (List ** file_list, int argc, char **argv)
 	  opt._auto = false;
 	  break;
 	case OPT_SAFE:		/* --safe */
+	  init_include ();
 	  opt.include &= ~INPUT_BINARY;
 	  break;
 	case 'U':		/* -U */
@@ -2781,9 +2796,11 @@ process_options (List ** file_list, int argc, char **argv)
 	  opt._auto = false;
 	  break;
 	case OPT_NO_FORCE:	/* --no-force */
+	  init_include ();
 	  opt.include &= ~INPUT_BINARY;
 	  break;
 	case OPT_NO_SAFE:	/* --no-safe */
+	  init_include ();
 	  opt.include |= INPUT_BINARY;
 	  break;
 
@@ -2799,6 +2816,8 @@ process_options (List ** file_list, int argc, char **argv)
 	}			/* switch (c) { */
 
     }				/* while (optind < argc) { */
+
+  init_include ();
 
   if (opt.include == INPUT_NONE)
     {
