@@ -1,10 +1,32 @@
 # eolfix
 
-eolfix is a command line utility to report, and optionally convert, 
+eolfix is a command line utility to report, and optionally convert,
 the line endings of text files between MS-DOS, Unix and Macintosh formats.
 It detects and ignores binary files unless instructed to include them.
 It does not modify files if the file is already in the requested format.
 It properly handles "mixed" format files (files having more than one type of line ending format).
+
+## Quick Start
+
+To compile and install eolfix in `~/bin`, type:
+````
+git clone https://github.com/rasa/eolfix.git
+cd eolfix
+./autogen.sh
+./configure
+make
+make install
+````
+
+To compile and install eolfix in `/usr/local/bin`, type:
+````
+git clone https://github.com/rasa/eolfix.git
+cd eolfix
+./autogen.sh
+./configure --prefix=/usr/local
+make
+sudo make install
+````
 
 ## Usage
 

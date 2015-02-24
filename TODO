@@ -1,1 +1,103 @@
-See the beginning of eolfix.c for details.
+TODO
+====
+
+Command line utility to report, and optionally convert, the line endings of text files between MS-DOS, Unix and Macintosh formats.
+It detects and ignores binary files unless instructed to include them.
+It does not modify files if the file is already in the requested format.
+It properly handles "mixed" format files (files having more than one type of line ending format).
+It does not, currently, handle character encodings other than 7-bit ASCII.
+
+support comments in @files
+
+only process files in @files
+
+one filename per line?
+
+deal with embedded spaces in @file files
+
+documentation
+
+add asserts()
+
+implement -o directory_name ?
+
+  "-o | --output filespec Send output to a file/dir named 'filespec' (-=stdout)\n"
+
+implement reading options from EOLFIX environment variable
+
+implement reading options from ~/.eolfix settings file
+
+
+remove debugging code
+
+move basename/dirname/mkstemp/gettimeofday to separate files ?
+
+use ruby code to add windows CE port
+
+todo:
+
+  only support conv compatibility, if program is named conv, or the user uses -C or --conv option
+
+  how to implement the opposite of an option if the user uses the capital of it:
+
+test symlink code
+
+research how cp deals with permissions
+
+dynamically assign BUFSIZ from statbuf.st_blksize?
+
+if windows, copy windows rights specially
+
+-c | --compress        Compress doubled-spaced files to be single-spaced
+
+support reading unicode files?
+
+shr long                        sht long
+--- --------------------------- --- -----------------
+-a  --Abort                     -A  --no-abort
+-b  --Backup                    -B  --no-backup
+-c  --Compress                  -C  --no-compress
+-d  --Dos
+-e: --Exclude
+-f  --Force                     -F  --no-force
+-g: --confiG
+-h  --Help (undocumented)
+-i: --Include
+-j  --in-place                  -J  --no-in-place
+-k: --bacKup-ext                -K  --no-backup-ext
+-l  --Leave
+-m  --Mac
+-n  --Native
+-o  --Output                    -O  --no-output
+-p  --Preserve                  -P  --no-preserve
+-q  --Quiet                     -Q  --no-quiet
+-r  --Recursive                 -R  --no-recursive
+-s  --Skip
+-t: --Temp-dir                  -T  --no-temp-dir
+-u  --Unix
+-v  --Verbose                   -V  --no-verbose
+-w  --Windows (undocumented)
+-x (unused)
+-y  --drY-run                   -Y  --no-dry-run
+-z  --ignore-case               -Z  --no-ignore-case
+-?  --Help
+
+    --license
+    --version
+
+conv_mode:
+
+-A  --auto (conv_mode)        --no-auto
+-D  --dos (conv_mode)
+-F  --force (conv_mode)       --no-force
+-M  --mac (conv_mode)
+-U  --unix (conv_mode)
+-S  --safe (conv_mode)
+
+input --unix  --dos     --mac
+======= ======= ============  =====
+LF    LF    CR LF     CR
+CR    LF    CR LF     CR
+CRLF  LF    CR LF     CR
+CRCR  LF LF CR LF CR LF   CR CR
+CRCRLF  LF    CR LF     CR
