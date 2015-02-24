@@ -1,7 +1,7 @@
 # eolfix
 
 eolfix is a command line utility to report, and optionally convert,
-the line endings of text files between MS-DOS, Unix and Macintosh formats.
+the line endings of text files between Unix, Windows (MS-DOS), and Macintosh formats.
 It detects and ignores binary files unless instructed to include them.
 It does not modify files if the file is already in the requested format.
 It properly handles "mixed" format files (files having more than one type of line ending format).
@@ -33,10 +33,10 @@ sudo make install
 ````
 Usage: eolfix [options] [files...]
 Options:
--u | --unix    [files] Convert text files to have UNIX line endings
--d | --dos     [files] Convert text files to have DOS/Windows line endings
--m | --mac     [files] Convert text files to have Macintosh line endings
--n | --native  [files] Convert text files to have native line endings
+-u | --unix    [files] Convert text files to have UNIX line endings (LF)
+-d | --dos     [files] Convert text files to have DOS/Windows line endings (CRLF)
+-m | --mac     [files] Convert text files to have Macintosh line endings (CR)
+-n | --native  [files] Convert text files to have line endings native to your system
 -l | --leave   [files] Report on the type of file, but do not convert (default)
 -s | --skip    [files] Skip these files entirely
 -i | --include type    Include types: unix, dos, mac, varied, binary and all
