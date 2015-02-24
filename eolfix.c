@@ -1599,7 +1599,7 @@ static int process_file(char *filename, output_t output_format, int include, boo
 
   strncpy(tmp_filename, filename, sizeof(tmp_filename));
 
-#define DEBUG_STAT
+#undef DEBUG_STAT
 
 #ifdef DEBUG_STAT
   _DBG("tmp_filename='%s'", tmp_filename);
