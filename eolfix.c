@@ -666,7 +666,7 @@ void _DBG(char *fmt, ...) {
 # if defined(__WINDOWS__)
   OutputDebugString(buffer);
 # endif
-  fprintf(stdout, buffer);
+  fprintf(stdout, "%s", buffer);
   fflush(stdout);
   va_end(args);
 #endif
