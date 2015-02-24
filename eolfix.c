@@ -2300,9 +2300,9 @@ static int process_options(List **file_list, int argc, char **argv) {
 
     c = getopt_long(argc, argv, short_options, long_options, &option_index);
 
-	if (opterr) {
-		usage(EINVAL);
-	}
+    if (opterr) {
+      usage(EINVAL);
+    }
 
     if (c <= 1) {
       if (strcmp(argv[optind - 1], "--") == 0) {
@@ -2312,8 +2312,12 @@ static int process_options(List **file_list, int argc, char **argv) {
         }
         break;
       }
+      if (last_optind >= argc) {
+        break;
+      }
       process_filename(file_list, argv[last_optind]);
       ++optind;
+      ++last_optind;
       continue;
     }
 
@@ -2584,12 +2588,12 @@ static int process_options(List **file_list, int argc, char **argv) {
 
 #endif /* CONV_SUPPORT_ENABLED */
       case ':':
-      	error("Option -%c requires an operand\n", optopt);
+        error("Option -%c requires an operand\n", optopt);
         usage(EINVAL);
         break;
       default:
         errno = 0;
-		error("invalid option: %c", c);
+    error("invalid option: %c", c);
         usage(EINVAL);
     } /* switch (c) { */
 
@@ -2679,9 +2683,11 @@ int main(int argc, char **argv) {
 
   process_options(&file_list, argc, argv);
 
+  /* @todo fixme
   if (file_list == NULL && !isatty(fileno(stdin))) {
     opt.std_in = true;
   }
+  */
 
   /* user specified - on the command line, so let's process stdin */
   if (opt.std_in) {
