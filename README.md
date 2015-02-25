@@ -1,4 +1,4 @@
-# eolfix
+# eolfix [![Flattr this][4]][3]
 
 eolfix is a command line utility to report, and optionally convert,
 the line endings of text files between Unix, Windows (MS-DOS), and Macintosh formats.
@@ -107,10 +107,9 @@ Please see [CHANGELOG.md](CHANGELOG.md) for the version history for this project
 
 ## Contact
 
-Current Maintainer: [Ross Smith II][2]
- [![endorse][5]][6] [![Flattr this][4]][3]
+Current Maintainer: [Ross Smith II][2] [![endorse][5]][6] 
 
-Original Author: [Ross Smith II][2] [![endorse][5]][6]
+Original Author:    [Ross Smith II][2] [![endorse][5]][6]
 
 Feedback, suggestions, and enhancements are welcome.
 
