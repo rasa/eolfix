@@ -10,7 +10,7 @@ It properly handles "mixed" format files (files having more than one type of lin
 
 To compile and install eolfix in `~/bin`, type:
 ````
-git clone https://github.com/rasa/eolfix.git
+git clone https://github.com/rasa/eolfix
 cd eolfix
 ./autogen.sh
 ./configure
@@ -20,7 +20,7 @@ make install
 
 To compile and install eolfix in `/usr/local/bin`, type:
 ````
-git clone https://github.com/rasa/eolfix.git
+git clone https://github.com/rasa/eolfix
 cd eolfix
 ./autogen.sh
 ./configure --prefix=/usr/local
@@ -107,12 +107,18 @@ Please see [CHANGELOG.md](CHANGELOG.md) for the version history for this project
 
 ## Contact
 
-Current Maintainer: [Ross Smith II](mailto:ross@smithii.com)
- [![endorse](https://api.coderwall.com/rasa/endorsecount.png)](https://coderwall.com/rasa)
+Current Maintainer: [Ross Smith II][2]
+ [![endorse][5]][6] [![Flattr this][4]][3]
 
-Original Author: [Ross Smith II](mailto:ross@smithii.com) [![endorse](https://api.coderwall.com/rasa/endorsecount.png)](https://coderwall.com/rasa)
+Original Author: [Ross Smith II][2] [![endorse][5]][6]
 
 Feedback, suggestions, and enhancements are welcome.
+
+  [2]: mailto:ross@smithii.com
+  [3]: https://flattr.com/submit/auto?user_id=rasa&url=https%3A%2F%2Fgithub.com%2Frasa%2Feolfix
+  [4]: http://button.flattr.com/flattr-badge-large.png (Flattr this)
+  [5]: https://api.coderwall.com/rasa/endorsecount.png
+  [6]: https://coderwall.com/rasa
 
 
 
