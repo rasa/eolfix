@@ -27,30 +27,30 @@
 
 #include "compiler.h"
 
-#include <stdio.h>		/* fprintf() */
-#include <assert.h>		/* assert() */
-#include <ctype.h>		/* iscntrl() */
-#include <errno.h>		/* errno() */
-#include <limits.h>		/* PATH_MAX */
-#include <signal.h>		/* signal() */
-#include <stdarg.h>		/* vfprintf() */
-#include <sys/stat.h>		/* stat() */
-#include <sys/types.h>		/* stat() */
+#include <stdio.h>              /* fprintf() */
+#include <assert.h>             /* assert() */
+#include <ctype.h>              /* iscntrl() */
+#include <errno.h>              /* errno() */
+#include <limits.h>             /* PATH_MAX */
+#include <signal.h>             /* signal() */
+#include <stdarg.h>             /* vfprintf() */
+#include <sys/stat.h>           /* stat() */
+#include <sys/types.h>          /* stat() */
 
 #ifdef HAVE_CONIO_H
-#include <conio.h>		/* getch() */
+#include <conio.h>              /* getch() */
 #endif
 
 #ifdef HAVE_DIRECT_H
-#include <direct.h>		/* opendir() (on Watcom) */
+#include <direct.h>             /* opendir() (on Watcom) */
 #endif
 
 #ifdef HAVE_DIRENT_H
-#include <dirent.h>		/* opendir() */
+#include <dirent.h>             /* opendir() */
 #endif
 
 #ifdef HAVE_FCNTL_H
-#include <fcntl.h>		/* O_RDWR, etc. */
+#include <fcntl.h>              /* O_RDWR, etc. */
 #endif
 
 #ifdef HAVE_FNMATCH_H
@@ -58,23 +58,23 @@
 #define _POSIX_SOURCE_SAVE _POSIX_SOURCE
 #undef _POSIX_SOURCE
 #endif
-#include <fnmatch.h>		/* fnmatch() */
+#include <fnmatch.h>            /* fnmatch() */
 #ifdef _POSIX_SOURCE_SAVE
 #define _POSIX_SOURCE _POSIX_SOURCE_SAVE
 #undef _POSIX_SOURCE_SAVE
 #endif
 #else
-#include "fnmatch.h"		/* local version */
+#include "fnmatch.h"            /* local version */
 #endif
 
 #ifdef HAVE_GETOPT_LONG
-#include <getopt.h>		/* getopt() */
+#include <getopt.h>             /* getopt() */
 #else
-#include "getopt.h"		/* local version */
+#include "getopt.h"             /* local version */
 #endif
 
 #ifdef HAVE_IO_H
-#include <io.h>			/* open() */
+#include <io.h>                 /* open() */
 #endif
 
 #ifdef HAVE_STDBOOL_H
@@ -94,45 +94,45 @@ typedef unsigned char _Bool;
 #endif /* HAVE_STDBOOL_H */
 
 #ifdef HAVE_STDLIB_H
-#include <stdlib.h>		/* NULL, EXIT_SUCCESS */
+#include <stdlib.h>             /* NULL, EXIT_SUCCESS */
 #else
 extern void exit ();
 #endif
 
 #ifdef HAVE_STRING_H
-#include <string.h>		/* strlen */
+#include <string.h>             /* strlen */
 #endif
 
 #ifdef HAVE_STRINGS_H
-#include <strings.h>		/* strlen */
+#include <strings.h>            /* strlen */
 #endif
 
 #ifdef HAVE_SYS_FILE_H
-#include <sys/file.h>		/* O_RDWR, etc. */
+#include <sys/file.h>           /* O_RDWR, etc. */
 #endif
 
 #ifdef HAVE_SYS_TIME_H
-#include <sys/time.h>		/* struct timeval */
+#include <sys/time.h>           /* struct timeval */
 #endif
 
 #ifdef HAVE_SYS_UTIME_H
-#include <sys/utime.h>		/* utime() */
+#include <sys/utime.h>          /* utime() */
 #endif
 
 #ifdef HAVE_TIME_H
-#include <time.h>		/* struct timeval */
+#include <time.h>               /* struct timeval */
 #endif
 
 #ifdef HAVE_UTIME_H
-#include <utime.h>		/* utime() */
+#include <utime.h>              /* utime() */
 #endif
 
 #ifdef HAVE_UNISTD_H
-#include <unistd.h>		/* open() */
+#include <unistd.h>             /* open() */
 #endif
 
 #ifdef HAVE_WINDOWS_H
-#include <windows.h>		/* GetSystemTimeAsFileTime(), OutputDebugString() */
+#include <windows.h>            /* GetSystemTimeAsFileTime(), OutputDebugString() */
 #endif
 
 #ifndef longlong_t
@@ -263,33 +263,33 @@ typedef enum output_e output_t;
 #define T_ALL     "all"
 
 static char *input_desc[] = {
-  T_NONE,			/* no cr/lf's found */
-  T_UNIX,			/* unix */
-  T_DOS,			/* dos */
-  T_VARIED,			/* dos & unix */
-  T_MAC,			/* mac */
-  T_VARIED,			/* mac & unix */
-  T_VARIED,			/* mac & dos */
-  T_VARIED			/* mac & dos & unix */
+  T_NONE,                       /* no cr/lf's found */
+  T_UNIX,                       /* unix */
+  T_DOS,                        /* dos */
+  T_VARIED,                     /* dos & unix */
+  T_MAC,                        /* mac */
+  T_VARIED,                     /* mac & unix */
+  T_VARIED,                     /* mac & dos */
+  T_VARIED                      /* mac & dos & unix */
 };
 
 static char *input_descv[] = {
-  T_NONE,			/* no cr/lf's found */
-  T_UNIX,			/* unix */
-  T_DOS,			/* dos */
-  T_DOS "/" T_UNIX,		/* dos & unix */
-  T_MAC,			/* mac */
-  T_MAC "/" T_UNIX,		/* mac & unix */
-  T_DOS "/" T_MAC,		/* mac & dos */
-  T_DOS "/" T_MAC "/" T_UNIX	/* mac & dos & unix */
+  T_NONE,                       /* no cr/lf's found */
+  T_UNIX,                       /* unix */
+  T_DOS,                        /* dos */
+  T_DOS "/" T_UNIX,             /* dos & unix */
+  T_MAC,                        /* mac */
+  T_MAC "/" T_UNIX,             /* mac & unix */
+  T_DOS "/" T_MAC,              /* mac & dos */
+  T_DOS "/" T_MAC "/" T_UNIX    /* mac & dos & unix */
 };
 
 static char *output_desc[] = {
-  T_UNCHANGED,			/* OUTPUT_LEAVE (0) */
-  T_UNIX,			/* OUTPUT_UNIX (1) */
-  T_DOS,			/* OUTPUT_DOS (2) */
-  NULL,				/* not used */
-  T_MAC				/* OUTPUT_MAC (4) */
+  T_UNCHANGED,                  /* OUTPUT_LEAVE (0) */
+  T_UNIX,                       /* OUTPUT_UNIX (1) */
+  T_DOS,                        /* OUTPUT_DOS (2) */
+  NULL,                         /* not used */
+  T_MAC                         /* OUTPUT_MAC (4) */
 };
 
 struct _options
@@ -300,7 +300,7 @@ struct _options
   bool compress;
   bool dry_run;
   bool force;
-  int include;			/* input_t */
+  int include;                  /* input_t */
   bool in_place;
   char output_filename[PATH_MAX];
   output_t output_format;
@@ -317,7 +317,7 @@ struct _options
 #ifdef CONV_SUPPORT_ENABLED
   bool conv_mode;
   bool _auto;
-#endif				/* CONV_SUPPORT_ENABLED */
+#endif                          /* CONV_SUPPORT_ENABLED */
 };
 
 typedef struct _options options_t;
@@ -331,28 +331,28 @@ typedef struct _options options_t;
 #endif
 
 static options_t opt = {
-  false,			/* abort */
-  false,			/* backup */
-  BACKUP_EXT,			/* backup-ext */
-  false,			/* compress */
-  false,			/* dry_run */
-  false,			/* force */
-  INPUT_UNSET,			/* include */
-  false,			/* in_place */
-  "",				/* output_filename */
-  OUTPUT_LEAVE,			/* output_format */
-  false,			/* preserve */
-  false,			/* quiet */
-  false,			/* recursive */
-  "",				/* temp_dir */
-  1,				/* verbose */
-  IGNORE_CASE,			/* ignore_case */
-  false,			/* stdin */
-  false,			/* stdout */
-  false,			/* wildcard_found */
+  false,                        /* abort */
+  false,                        /* backup */
+  BACKUP_EXT,                   /* backup-ext */
+  false,                        /* compress */
+  false,                        /* dry_run */
+  false,                        /* force */
+  INPUT_UNSET,                  /* include */
+  false,                        /* in_place */
+  "",                           /* output_filename */
+  OUTPUT_LEAVE,                 /* output_format */
+  false,                        /* preserve */
+  false,                        /* quiet */
+  false,                        /* recursive */
+  "",                           /* temp_dir */
+  1,                            /* verbose */
+  IGNORE_CASE,                  /* ignore_case */
+  false,                        /* stdin */
+  false,                        /* stdout */
+  false,                        /* wildcard_found */
 #ifdef CONV_SUPPORT_ENABLED
-  , false,			/* _auto */
-  false				/* conv_mode */
+  , false,                      /* _auto */
+  false                         /* conv_mode */
 #endif /* CONV_SUPPORT_ENABLED */
 };
 
@@ -624,7 +624,7 @@ usage (int exit_value)
     {
       printf ("Press any key: ");
       while (!getch ())
-	;
+        ;
       printf ("\r");
     }
 #endif
@@ -664,7 +664,7 @@ basename (char *s)
   do
     {
       if (IS_PATH_SEPARATOR (*rv))
-	return rv + 1;
+        return rv + 1;
       --rv;
     }
   while (rv >= s);
@@ -697,7 +697,7 @@ dirname (char *path)
   while (IS_PATH_SEPARATOR (*p))
     {
       if (p == path)
-	return path;
+        return path;
       *p-- = '\0';
       --i;
     }
@@ -763,7 +763,7 @@ dirname (char *path)
 /****************************************************************************/
 
 #if !defined(HAVE_STRUCT_TIMEVAL) && defined(HAVE_WINSOCK_H) && !defined(__CYGWIN__)
-#include <winsock.h>		/* struct timeval */
+#include <winsock.h>            /* struct timeval */
 #endif
 
 #define MAKE_ULONGLONG(hi, lo) ((((ulonglong_t) hi) << 32) + ((ulonglong_t) lo))
@@ -788,7 +788,7 @@ gettimeofday (struct timeval *tv, void *timezone)
 
   if (!then)
     {
-      SYSTEMTIME thenst = { 1970, 1, 4, 1, 0, 0, 0, 0 };	/* 00:00:00 Jan 1st 1970 */
+      SYSTEMTIME thenst = { 1970, 1, 4, 1, 0, 0, 0, 0 };        /* 00:00:00 Jan 1st 1970 */
       FILETIME thenft;
 
       SystemTimeToFileTime (&thenst, &thenft);
@@ -799,7 +799,7 @@ gettimeofday (struct timeval *tv, void *timezone)
   SystemTimeToFileTime (&nowst, &nowft);
   now = MAKE_ULONGLONG (nowft.dwHighDateTime, nowft.dwLowDateTime);
 
-  diff = now - then;		/* time from 00:00:00 Jan 1st 1970 to now in 100 nanos */
+  diff = now - then;            /* time from 00:00:00 Jan 1st 1970 to now in 100 nanos */
 
   /* 100 nanos / 10 = 1 micro / 1000 = 1 milli / 1000 = 1 second */
   tv->tv_sec = (long) (diff / 10000000);
@@ -819,7 +819,7 @@ gettimeofday (struct timeval *tv, void *timezone)
 /****************************************************************************/
 
 #ifdef HAVE_PROCESS_H
-#include <process.h>		/* getpid() */
+#include <process.h>            /* getpid() */
 #endif /* HAVE_PROCESS_H */
 
 #ifndef TMP_MAX
@@ -877,7 +877,7 @@ mkstemps (char *templat, int suffix_len)
 
       fd = open (templat, O_RDWR | O_CREAT | O_EXCL | O_BINARY, 0600);
       if (fd >= 0)
-	return fd;
+        return fd;
 
       value += 7777;
     }
@@ -1017,7 +1017,7 @@ readdir (DIR * dh)
   if (_findnext (dh->findfirst_handle, dh->finddata) == -1)
     {
       if (errno == ENOENT)
-	errno = 0;
+        errno = 0;
       return NULL;
     }
 
@@ -1056,7 +1056,7 @@ version (void)
   printf ("%s - Version %s - %s", progname, VERSION, __DATE__);
 #ifdef _DEBUG
   printf (" (debug build: %s=" COMPILER_PRINTF ")", COMPILER,
-	  COMPILER_VERSION);
+          COMPILER_VERSION);
 #endif
   printf ("\n%s\n", COPYRIGHT);
 }
@@ -1179,7 +1179,7 @@ write_nl (int fh, char c, output_t output_format)
 
 static int
 convert (int fh, int fh2, input_t * input_format, bool * rewrite,
-	 bool * binary, int include, output_t output_format)
+         bool * binary, int include, output_t output_format)
 {
   int rv = 0;
   char c = -1;
@@ -1204,155 +1204,155 @@ convert (int fh, int fh2, input_t * input_format, bool * rewrite,
   for (;;)
     {
       if (read_next_char)
-	if ((rv = read1 (fh, &c)) <= 0)
-	  break;
+        if ((rv = read1 (fh, &c)) <= 0)
+          break;
 
       /* Does the file contain ASCII 0x00-0x08, 0x0e-0x1f, or 0x7f ? */
       if (check_binary && iscntrl (c) && !isspace (c))
-	{
-	  /* A Ctrl-D or Ctrl-Z at the end of the file, does not make it a binary file */
-	  if (c == CTRL_D || c == CTRL_Z)
-	    {
-	      write1 (fh2, c);
-	      if ((rv = read1 (fh, &c)) <= 0)
-		break;
-	    }
-	  *binary = true;
-	  if ((include & INPUT_BINARY) != INPUT_BINARY)
-	    {
-	      *rewrite = false;
-	      break;
-	    }
-	  check_binary = false;
-	}
+        {
+          /* A Ctrl-D or Ctrl-Z at the end of the file, does not make it a binary file */
+          if (c == CTRL_D || c == CTRL_Z)
+            {
+              write1 (fh2, c);
+              if ((rv = read1 (fh, &c)) <= 0)
+                break;
+            }
+          *binary = true;
+          if ((include & INPUT_BINARY) != INPUT_BINARY)
+            {
+              *rewrite = false;
+              break;
+            }
+          check_binary = false;
+        }
 
       read_next_char = true;
 
       switch (c)
-	{
-	case CTRL_J:
+        {
+        case CTRL_J:
 #ifdef CONV_SUPPORT_ENABLED
-	  if (first_line && opt._auto)
-	    {
-	      /* UNIX to DOS */
-	      output_format = OUTPUT_DOS;
-	      first_line = false;
-	    }
+          if (first_line && opt._auto)
+            {
+              /* UNIX to DOS */
+              output_format = OUTPUT_DOS;
+              first_line = false;
+            }
 #endif /* CONV_SUPPORT_ENABLED */
-	  *input_format = (input_t) (*input_format | INPUT_UNIX);
-	  /* LF: rewrite if DOS or Mac */
-	  *rewrite |=
-	    (output_format & OUTPUT_DOS) | (output_format & OUTPUT_MAC);
-	  write_nl (fh2, CTRL_J, output_format);
-	  break;
+          *input_format = (input_t) (*input_format | INPUT_UNIX);
+          /* LF: rewrite if DOS or Mac */
+          *rewrite |=
+            (output_format & OUTPUT_DOS) | (output_format & OUTPUT_MAC);
+          write_nl (fh2, CTRL_J, output_format);
+          break;
 
-	case CTRL_M:
-	  /* CR: rewrite if Unix */
-	  *rewrite |= (output_format & OUTPUT_UNIX);
-	  if ((rv = read1 (fh, &c)) <= 0)
-	    {
-	      if (*input_format == INPUT_NONE)
-		*input_format = (input_t) (*input_format | INPUT_MAC);
-	      *rewrite |= (output_format & OUTPUT_DOS);
-	      write_nl (fh2, CTRL_M, output_format);
-	      break;
-	    }
+        case CTRL_M:
+          /* CR: rewrite if Unix */
+          *rewrite |= (output_format & OUTPUT_UNIX);
+          if ((rv = read1 (fh, &c)) <= 0)
+            {
+              if (*input_format == INPUT_NONE)
+                *input_format = (input_t) (*input_format | INPUT_MAC);
+              *rewrite |= (output_format & OUTPUT_DOS);
+              write_nl (fh2, CTRL_M, output_format);
+              break;
+            }
 
-	  if (c == CTRL_J)
-	    {			/* CR / LF */
+          if (c == CTRL_J)
+            {                   /* CR / LF */
 #ifdef CONV_SUPPORT_ENABLED
-	      if (first_line && opt._auto)
-		{
-		  /* DOS to UNIX */
-		  output_format = OUTPUT_UNIX;
-		  first_line = false;
-		}
-#endif /* CONV_SUPPORT_ENABLED */
-
-	      *input_format = (input_t) (*input_format | INPUT_DOS);
-	      /* rewrite if Mac */
-	      *rewrite |= (output_format & OUTPUT_MAC);
-	      if (output_format == OUTPUT_LEAVE)
-		{
-		  write1 (fh2, CTRL_M);
-		  write1 (fh2, CTRL_J);
-		  continue;
-		}
-	      write_nl (fh2, CTRL_J, output_format);
-	      continue;
-	    }
-
-#ifdef CONV_SUPPORT_ENABLED
-	  if (first_line && opt._auto)
-	    {
-	      /* MAC/varied to UNIX */
-	      output_format = OUTPUT_UNIX;
-	      first_line = false;
-	    }
+              if (first_line && opt._auto)
+                {
+                  /* DOS to UNIX */
+                  output_format = OUTPUT_UNIX;
+                  first_line = false;
+                }
 #endif /* CONV_SUPPORT_ENABLED */
 
-	  *input_format = (input_t) (*input_format | INPUT_MAC);
+              *input_format = (input_t) (*input_format | INPUT_DOS);
+              /* rewrite if Mac */
+              *rewrite |= (output_format & OUTPUT_MAC);
+              if (output_format == OUTPUT_LEAVE)
+                {
+                  write1 (fh2, CTRL_M);
+                  write1 (fh2, CTRL_J);
+                  continue;
+                }
+              write_nl (fh2, CTRL_J, output_format);
+              continue;
+            }
 
-	  if (c != CTRL_M)
-	    {			/* CR / not CR or LF */
-	      /* rewrite if Unix or DOS */
-	      *rewrite |=
-		(output_format & OUTPUT_UNIX) | (output_format & OUTPUT_DOS);
-	      write_nl (fh2, CTRL_M, output_format);
-	      read_next_char = false;
-	      continue;
-	    }
+#ifdef CONV_SUPPORT_ENABLED
+          if (first_line && opt._auto)
+            {
+              /* MAC/varied to UNIX */
+              output_format = OUTPUT_UNIX;
+              first_line = false;
+            }
+#endif /* CONV_SUPPORT_ENABLED */
 
-	  /* CR / CR, reading the 3rd character */
-	  if ((rv = read1 (fh, &c)) <= 0)
-	    {
-	      /* rewrite if Unix or DOS */
-	      *rewrite |=
-		(output_format & OUTPUT_UNIX) | (output_format & OUTPUT_DOS);
-	      write_nl (fh2, CTRL_M, output_format);
-	      write_nl (fh2, CTRL_M, output_format);
-	      break;
-	    }
+          *input_format = (input_t) (*input_format | INPUT_MAC);
 
-	  if (c == CTRL_J)
-	    {			/* CR / CR / LF: bad perforce sync, treat as one EOL */
-	      *input_format = (input_t) (*input_format | INPUT_DOS);
-	      /* rewrite if Unix or DOS or Mac */
-	      *rewrite |= OUTPUT_UNIX | OUTPUT_DOS | OUTPUT_MAC;
-	      if (output_format == OUTPUT_LEAVE)
-		{
-		  write1 (fh2, CTRL_M);
-		  write1 (fh2, CTRL_M);
-		  write1 (fh2, CTRL_J);
-		  continue;
-		}
-	      write_nl (fh2, CTRL_M, output_format);
-	      continue;
-	    }
+          if (c != CTRL_M)
+            {                   /* CR / not CR or LF */
+              /* rewrite if Unix or DOS */
+              *rewrite |=
+                (output_format & OUTPUT_UNIX) | (output_format & OUTPUT_DOS);
+              write_nl (fh2, CTRL_M, output_format);
+              read_next_char = false;
+              continue;
+            }
 
-	  if (c == CTRL_M)
-	    {			/* CR / CR / CR: must be a mac file, treat as three EOLs */
-	      /* rewrite if Unix or DOS */
-	      *rewrite |=
-		(output_format & OUTPUT_UNIX) | (output_format & OUTPUT_DOS);
-	      write_nl (fh2, CTRL_M, output_format);
-	      write_nl (fh2, CTRL_M, output_format);
-	      write_nl (fh2, CTRL_M, output_format);
-	      continue;
-	    }
+          /* CR / CR, reading the 3rd character */
+          if ((rv = read1 (fh, &c)) <= 0)
+            {
+              /* rewrite if Unix or DOS */
+              *rewrite |=
+                (output_format & OUTPUT_UNIX) | (output_format & OUTPUT_DOS);
+              write_nl (fh2, CTRL_M, output_format);
+              write_nl (fh2, CTRL_M, output_format);
+              break;
+            }
 
-	  /* CR / CR / not CR or LF: treat as two EOLs */
-	  *rewrite |=
-	    (output_format & OUTPUT_UNIX) | (output_format & OUTPUT_DOS);
-	  write_nl (fh2, CTRL_M, output_format);
-	  write_nl (fh2, CTRL_M, output_format);
-	  read_next_char = false;
-	  break;
+          if (c == CTRL_J)
+            {                   /* CR / CR / LF: bad perforce sync, treat as one EOL */
+              *input_format = (input_t) (*input_format | INPUT_DOS);
+              /* rewrite if Unix or DOS or Mac */
+              *rewrite |= OUTPUT_UNIX | OUTPUT_DOS | OUTPUT_MAC;
+              if (output_format == OUTPUT_LEAVE)
+                {
+                  write1 (fh2, CTRL_M);
+                  write1 (fh2, CTRL_M);
+                  write1 (fh2, CTRL_J);
+                  continue;
+                }
+              write_nl (fh2, CTRL_M, output_format);
+              continue;
+            }
 
-	default:
-	  write1 (fh2, c);
-	  break;
-	}
+          if (c == CTRL_M)
+            {                   /* CR / CR / CR: must be a mac file, treat as three EOLs */
+              /* rewrite if Unix or DOS */
+              *rewrite |=
+                (output_format & OUTPUT_UNIX) | (output_format & OUTPUT_DOS);
+              write_nl (fh2, CTRL_M, output_format);
+              write_nl (fh2, CTRL_M, output_format);
+              write_nl (fh2, CTRL_M, output_format);
+              continue;
+            }
+
+          /* CR / CR / not CR or LF: treat as two EOLs */
+          *rewrite |=
+            (output_format & OUTPUT_UNIX) | (output_format & OUTPUT_DOS);
+          write_nl (fh2, CTRL_M, output_format);
+          write_nl (fh2, CTRL_M, output_format);
+          read_next_char = false;
+          break;
+
+        default:
+          write1 (fh2, c);
+          break;
+        }
     }
 
   return rv == -1 ? -1 : 0;
@@ -1388,21 +1388,21 @@ copy_file (char *src, char *dst, int dst_options)
       bytes = read (fh, buf, sizeof (buf));
 
       if (bytes < 0)
-	{
-	  error ("cannot read %s", src);
-	  rv = errno;
-	  break;
-	}
+        {
+          error ("cannot read %s", src);
+          rv = errno;
+          break;
+        }
 
-      if (bytes == 0)		/* EOF */
-	break;
+      if (bytes == 0)           /* EOF */
+        break;
 
       if (write (fh2, buf, bytes) < 0)
-	{
-	  error ("cannot write to %s", dst);
-	  rv = errno;
-	  break;
-	}
+        {
+          error ("cannot write to %s", dst);
+          rv = errno;
+          break;
+        }
     }
 
   if (close (fh) == -1)
@@ -1440,7 +1440,7 @@ preserve (char *name, struct stat *statbuf)
     {
       rv |= errno;
       if (opt.verbose >= 1)
-	warning ("cannot set ownership for %s", name);
+        warning ("cannot set ownership for %s", name);
     }
 #endif
 
@@ -1547,7 +1547,7 @@ filespec_new (char *filespec, output_t output_format, int include)
 
 static List *
 filespec_append (List ** head, char *filespec, output_t output_format,
-		 int include, bool dont_alloc)
+                 int include, bool dont_alloc)
 {
   char *p;
   void *data;
@@ -1570,22 +1570,22 @@ filespec_append (List ** head, char *filespec, output_t output_format,
       bool filespecs_equal;
 
       if (opt.ignore_case)
-	{
-	  filespecs_equal = strcasecmp (data->filespec, filespec) == 0;
-	}
+        {
+          filespecs_equal = strcasecmp (data->filespec, filespec) == 0;
+        }
       else
-	{
-	  filespecs_equal = strcmp (data->filespec, filespec) == 0;
-	}
+        {
+          filespecs_equal = strcmp (data->filespec, filespec) == 0;
+        }
 
       if (filespecs_equal)
-	{
-	  /* free(data->filespec); */
-	  data->filespec = p;
-	  data->include = include;
-	  data->output_format = output_format;
-	  return node;
-	}
+        {
+          /* free(data->filespec); */
+          data->filespec = p;
+          data->include = include;
+          data->output_format = output_format;
+          return node;
+        }
       node = node->next;
     }
 
@@ -1625,7 +1625,7 @@ get_filename (char *filename, char *real_filename)
 
 static int
 process_file (char *filename, output_t output_format, int include,
-	      bool do_file, bool * is_directory)
+              bool do_file, bool * is_directory)
 {
   int fh;
   struct stat statbuf;
@@ -1653,325 +1653,325 @@ process_file (char *filename, output_t output_format, int include,
 
 #ifndef HAVE_LSTAT
       if (stat (tmp_filename, &statbuf) != -1)
-	strncpy (real_filename, tmp_filename, sizeof (real_filename));
+        strncpy (real_filename, tmp_filename, sizeof (real_filename));
 #ifdef DEBUG_STAT
       _DBG ("real_filename='%s'", real_filename);
 #endif
 #else
       while (errno == 0)
-	{
-	  if (lstat (tmp_filename, &statbuf) == -1)
-	    break;
+        {
+          if (lstat (tmp_filename, &statbuf) == -1)
+            break;
 
-	  if (!S_ISLNK (statbuf.st_mode))
-	    {
-	      strcpy (real_filename, tmp_filename);
-	      break;
-	    }
+          if (!S_ISLNK (statbuf.st_mode))
+            {
+              strcpy (real_filename, tmp_filename);
+              break;
+            }
 
-	  memset (real_filename, 0, sizeof (real_filename));	/* Cygwin bugfix */
-	  if (readlink (tmp_filename, real_filename, sizeof (real_filename))
-	      == -1)
-	    break;
+          memset (real_filename, 0, sizeof (real_filename));    /* Cygwin bugfix */
+          if (readlink (tmp_filename, real_filename, sizeof (real_filename))
+              == -1)
+            break;
 
 #ifdef DEBUG_STAT
-	  _DBG ("real_filename='%s'", real_filename);
+          _DBG ("real_filename='%s'", real_filename);
 #endif
 
-	  strncpy (tmp_filename, real_filename, sizeof (tmp_filename));
-	}
+          strncpy (tmp_filename, real_filename, sizeof (tmp_filename));
+        }
 #endif
 
       if (errno)
-	{
-	  if (strcmp (filename, tmp_filename) == 0)
-	    error ("cannot access %s", get_filename (filename, tmp_filename));
-	  break;
-	}
+        {
+          if (strcmp (filename, tmp_filename) == 0)
+            error ("cannot access %s", get_filename (filename, tmp_filename));
+          break;
+        }
 
       if ((statbuf.st_mode & S_IFDIR) == S_IFDIR)
-	{
-	  *is_directory = true;
-	  errno = 0;
-	  break;
-	}
+        {
+          *is_directory = true;
+          errno = 0;
+          break;
+        }
 
       if (!do_file)
-	{
-	  errno = 0;
-	  break;
-	}
+        {
+          errno = 0;
+          break;
+        }
 
       if ((statbuf.st_mode & S_IFREG) != S_IFREG)
-	{
-	  error ("%s is not a regular file", filename);
-	  break;
-	}
+        {
+          error ("%s is not a regular file", filename);
+          break;
+        }
 
       if ((statbuf.st_mode & S_IRUSR) != S_IRUSR)
-	{
-	  error ("cannot read %s", filename);
-	  break;
-	}
+        {
+          error ("cannot read %s", filename);
+          break;
+        }
 
       if (do_write && (statbuf.st_mode & S_IWUSR) != S_IWUSR)
-	{
-	  error ("cannot write to %s", filename);
-	  break;
-	}
+        {
+          error ("cannot write to %s", filename);
+          break;
+        }
 
       output_handle = -1;
 
       if (do_write)
-	{
-	  char *dir;
+        {
+          char *dir;
 
-	  if (*opt.temp_dir)
-	    {
-	      dir = opt.temp_dir;
-	    }
-	  else
-	    {
-	      dir = dirname (filename);
-	      if (dir == NULL)
-		{
-		  errno = ENAMETOOLONG;
-		  error ("path too long: %s", filename);
-		  break;
-		}
+          if (*opt.temp_dir)
+            {
+              dir = opt.temp_dir;
+            }
+          else
+            {
+              dir = dirname (filename);
+              if (dir == NULL)
+                {
+                  errno = ENAMETOOLONG;
+                  error ("path too long: %s", filename);
+                  break;
+                }
 
-	      if (!*dir)
-		dir = ".";
-	    }
+              if (!*dir)
+                dir = ".";
+            }
 
-	  strcpy (temp_filename, dir);
-	  if (strlen (temp_filename) + strlen (TEMP_FILE_TEMPLATE) >
-	      sizeof (temp_filename) - 1)
-	    {
-	      errno = ENAMETOOLONG;
-	      error ("path too long: %s", filename);
-	      break;
-	    }
+          strcpy (temp_filename, dir);
+          if (strlen (temp_filename) + strlen (TEMP_FILE_TEMPLATE) >
+              sizeof (temp_filename) - 1)
+            {
+              errno = ENAMETOOLONG;
+              error ("path too long: %s", filename);
+              break;
+            }
 
-	  strcat (temp_filename, TEMP_FILE_TEMPLATE);
-	  output_handle =
-	    mkstemps (temp_filename, TEMP_FILE_TEMPLATE_SUFFIX_LEN);
-	  if (output_handle == -1)
-	    {
-	      error ("cannot open %s", temp_filename);
-	      break;
-	    }
-	}
+          strcat (temp_filename, TEMP_FILE_TEMPLATE);
+          output_handle =
+            mkstemps (temp_filename, TEMP_FILE_TEMPLATE_SUFFIX_LEN);
+          if (output_handle == -1)
+            {
+              error ("cannot open %s", temp_filename);
+              break;
+            }
+        }
 
       fh = open (real_filename, O_RDONLY | O_BINARY, 0600);
       if (fh == -1)
-	{
-	  int e = errno;
-	  error ("cannot open %s", filename);
-	  if (do_write)
-	    {
-	      close (output_handle);
-	      output_handle = -1;
-	      unlink (temp_filename);
-	    }
-	  errno = e;
-	  break;
-	}
+        {
+          int e = errno;
+          error ("cannot open %s", filename);
+          if (do_write)
+            {
+              close (output_handle);
+              output_handle = -1;
+              unlink (temp_filename);
+            }
+          errno = e;
+          break;
+        }
 
       convert (fh, output_handle, &input_format, &rewrite, &binary, include,
-	       output_format);
+               output_format);
 
       if (close (fh) == -1)
-	{
-	  int e = errno;
-	  error ("cannot close %s", filename);
-	  if (do_write)
-	    {
-	      close (output_handle);
-	      output_handle = -1;
-	      unlink (temp_filename);
-	    }
-	  errno = e;
-	  break;
-	}
+        {
+          int e = errno;
+          error ("cannot close %s", filename);
+          if (do_write)
+            {
+              close (output_handle);
+              output_handle = -1;
+              unlink (temp_filename);
+            }
+          errno = e;
+          break;
+        }
 
       if (input_format == INPUT_NONE)
-	{
-	  rewrite = false;
-	  if (include != INPUT_ALL_ASCII)
-	    excluded = true;
-	}
+        {
+          rewrite = false;
+          if (include != INPUT_ALL_ASCII)
+            excluded = true;
+        }
       else
-	{
-	  if (binary)
-	    {
-	      if ((include & INPUT_BINARY) != INPUT_BINARY)
-		{
-		  rewrite = false;
-		  excluded = true;
-		}
-	    }
-	  else
-	    if (input_format == INPUT_UNIX || input_format == INPUT_DOS
-		|| input_format == INPUT_MAC)
-	    {
-	      if ((include & input_format) != input_format)
-		{
-		  rewrite = false;
-		  excluded = true;
-		}
-	    }
-	  else if ((include & INPUT_VARIED) != INPUT_VARIED)
-	    {
-	      rewrite = false;
-	      excluded = true;
-	    }
-	}
+        {
+          if (binary)
+            {
+              if ((include & INPUT_BINARY) != INPUT_BINARY)
+                {
+                  rewrite = false;
+                  excluded = true;
+                }
+            }
+          else
+            if (input_format == INPUT_UNIX || input_format == INPUT_DOS
+                || input_format == INPUT_MAC)
+            {
+              if ((include & input_format) != input_format)
+                {
+                  rewrite = false;
+                  excluded = true;
+                }
+            }
+          else if ((include & INPUT_VARIED) != INPUT_VARIED)
+            {
+              rewrite = false;
+              excluded = true;
+            }
+        }
 
       if (opt.force)
-	rewrite = true;
+        rewrite = true;
 
       if (!excluded && !opt.quiet)
-	{
-	  char *input_str;
-	  char *output_str;
+        {
+          char *input_str;
+          char *output_str;
 
-	  input_str =
-	    opt.verbose >=
-	    2 ? input_descv[input_format] : input_desc[input_format];
-	  output_str = output_desc[rewrite ? output_format : OUTPUT_LEAVE];
+          input_str =
+            opt.verbose >=
+            2 ? input_descv[input_format] : input_desc[input_format];
+          output_str = output_desc[rewrite ? output_format : OUTPUT_LEAVE];
 
-	  if (binary)
-	    {
-	      input_str = T_BINARY;
-	      if ((include & INPUT_BINARY) != INPUT_BINARY)
-		output_str = T_UNCHANGED;
-	    }
+          if (binary)
+            {
+              input_str = T_BINARY;
+              if ((include & INPUT_BINARY) != INPUT_BINARY)
+                output_str = T_UNCHANGED;
+            }
 
-	  if (opt.verbose >= 1 || rewrite)
-	    {
-	      if (do_write || opt.dry_run)
-		printf ("%-13s: %-6s > %s\n", filename, input_str,
-			output_str);
-	      else
-		printf ("%-13s: %-6s\n", filename, input_str);
-	    }
-	}
+          if (opt.verbose >= 1 || rewrite)
+            {
+              if (do_write || opt.dry_run)
+                printf ("%-13s: %-6s > %s\n", filename, input_str,
+                        output_str);
+              else
+                printf ("%-13s: %-6s\n", filename, input_str);
+            }
+        }
 
       if (!do_write)
-	{
-	  errno = 0;
-	  break;
-	}
+        {
+          errno = 0;
+          break;
+        }
 
       if (close (output_handle) == -1)
-	{
-	  int e = errno;
-	  error ("cannot close %s", temp_filename);
-	  unlink (temp_filename);
-	  errno = e;
-	  break;
-	}
+        {
+          int e = errno;
+          error ("cannot close %s", temp_filename);
+          unlink (temp_filename);
+          errno = e;
+          break;
+        }
 
       if (excluded || !rewrite)
-	{
-	  if (unlink (temp_filename) == -1)
-	    if (errno != ENOENT)
-	      {
-		error ("cannot delete %s", temp_filename);
-		/* ignore */
-	      }
-	  errno = 0;
-	  break;
-	}
+        {
+          if (unlink (temp_filename) == -1)
+            if (errno != ENOENT)
+              {
+                error ("cannot delete %s", temp_filename);
+                /* ignore */
+              }
+          errno = 0;
+          break;
+        }
 
       if (opt.backup)
-	{
-	  /* todo strip off file extension if 8.3 filesystem? */
+        {
+          /* todo strip off file extension if 8.3 filesystem? */
 
-	  strcpy (backup_filename, filename);
-	  if (strlen (backup_filename) + strlen (opt.bak_ext) >
-	      sizeof (backup_filename) - 1)
-	    {
-	      errno = ENAMETOOLONG;
-	      error ("path too long: %s", filename);
-	      break;
-	    }
-	  strcat (backup_filename, opt.bak_ext);
+          strcpy (backup_filename, filename);
+          if (strlen (backup_filename) + strlen (opt.bak_ext) >
+              sizeof (backup_filename) - 1)
+            {
+              errno = ENAMETOOLONG;
+              error ("path too long: %s", filename);
+              break;
+            }
+          strcat (backup_filename, opt.bak_ext);
 
-	  if (unlink (backup_filename) == -1)
-	    if (errno != ENOENT)
-	      {
-		warning ("cannot delete %s", backup_filename);
-		errno = 0;
-		/* ignore */
-	      }
-	}
+          if (unlink (backup_filename) == -1)
+            if (errno != ENOENT)
+              {
+                warning ("cannot delete %s", backup_filename);
+                errno = 0;
+                /* ignore */
+              }
+        }
 
       if (opt.in_place)
-	{
-	  if (opt.backup)
-	    if (copy_file (filename, backup_filename, O_CREAT) != 0)
-	      break;
+        {
+          if (opt.backup)
+            if (copy_file (filename, backup_filename, O_CREAT) != 0)
+              break;
 
-	  if (copy_file (temp_filename, filename, 0) != 0)
-	    {
-	      if (opt.backup)
-		{
-		  if (copy_file (backup_filename, filename, 0) == 0)
-		    unlink (backup_filename);
-		}
-	      break;
-	    }
+          if (copy_file (temp_filename, filename, 0) != 0)
+            {
+              if (opt.backup)
+                {
+                  if (copy_file (backup_filename, filename, 0) == 0)
+                    unlink (backup_filename);
+                }
+              break;
+            }
 
-	  if (unlink (temp_filename) == -1)
-	    {
-	      error ("cannot delete %s", temp_filename);
-	      break;
-	    }
-	}
+          if (unlink (temp_filename) == -1)
+            {
+              error ("cannot delete %s", temp_filename);
+              break;
+            }
+        }
       else
-	{			/* !opt.in_place */
-	  if (opt.backup)
-	    {
-	      if (rename (filename, backup_filename) == -1)
-		{
-		  error ("cannot rename %s to %s", filename, backup_filename);
-		  break;
-		}
-	    }
-	  else
-	    {
-	      if (unlink (filename) == -1)
-		if (errno != ENOENT)
-		  {
-		    warning ("cannot delete %s", filename);
-		    errno = 0;
-		    /* ignore */
-		  }
-	    }
+        {                       /* !opt.in_place */
+          if (opt.backup)
+            {
+              if (rename (filename, backup_filename) == -1)
+                {
+                  error ("cannot rename %s to %s", filename, backup_filename);
+                  break;
+                }
+            }
+          else
+            {
+              if (unlink (filename) == -1)
+                if (errno != ENOENT)
+                  {
+                    warning ("cannot delete %s", filename);
+                    errno = 0;
+                    /* ignore */
+                  }
+            }
 
-	  if (rename (temp_filename, filename) == -1)
-	    {
-	      bool failed = true;
-	      if (*opt.temp_dir)
-		{
-		  /* maybe rename failed because temp_dir is on another
-		     filesystem, so let's try to copy */
-		  failed = (bool) copy_file (temp_filename, filename, 0);
-		}
-	      if (!failed)
-		{
-		  if (opt.backup)
-		    rename (backup_filename, filename);
-		  error ("cannot rename %s to %s", temp_filename, filename);
-		  break;
-		}
-	    }
-	}			/* opt.in_place */
+          if (rename (temp_filename, filename) == -1)
+            {
+              bool failed = true;
+              if (*opt.temp_dir)
+                {
+                  /* maybe rename failed because temp_dir is on another
+                     filesystem, so let's try to copy */
+                  failed = (bool) copy_file (temp_filename, filename, 0);
+                }
+              if (!failed)
+                {
+                  if (opt.backup)
+                    rename (backup_filename, filename);
+                  error ("cannot rename %s to %s", temp_filename, filename);
+                  break;
+                }
+            }
+        }                       /* opt.in_place */
 
       if (opt.preserve)
-	preserve (filename, &statbuf);
+        preserve (filename, &statbuf);
 
       break;
     }
@@ -2022,69 +2022,69 @@ process_directory (char *directory, List * file_list)
       errno = 0;
       dp = readdir (dirp);
       if (dp == NULL)
-	{
-	  if (errno == 0)
-	    break;
-	  error ("error reading directory %s", directory);
-	  break;
-	}
+        {
+          if (errno == 0)
+            break;
+          error ("error reading directory %s", directory);
+          break;
+        }
 
       if (strcmp (dp->d_name, ".") == 0)
-	continue;
+        continue;
 
       if (strcmp (dp->d_name, "..") == 0)
-	continue;
+        continue;
 
       do_file = false;
       skip = false;
       node = file_list;
       while (node)
-	{
-	  file = (File *) node->data;
+        {
+          file = (File *) node->data;
 
-	  if (fnmatch (file->filespec, dp->d_name, fnmatch_flags) ==
-	      FNM_NOMATCH)
-	    {
-	      node = node->next;
-	      continue;
-	    }
+          if (fnmatch (file->filespec, dp->d_name, fnmatch_flags) ==
+              FNM_NOMATCH)
+            {
+              node = node->next;
+              continue;
+            }
 
-	  if (file->output_format == OUTPUT_SKIP)
-	    skip = true;
-	  else
-	    do_file = true;
+          if (file->output_format == OUTPUT_SKIP)
+            skip = true;
+          else
+            do_file = true;
 
-	  output_format = file->output_format;
-	  break;
-	}
+          output_format = file->output_format;
+          break;
+        }
 
       if (strcmp (directory, ".") == 0)
-	{
-	  path = xstrdup (dp->d_name);
-	}
+        {
+          path = xstrdup (dp->d_name);
+        }
       else
-	{
-	  len = strlen (directory) + strlen (dp->d_name) + 1;
+        {
+          len = strlen (directory) + strlen (dp->d_name) + 1;
 
-	  if (len > PATH_MAX - 1)
-	    {
-	      errno = ENAMETOOLONG;
-	      error ("path too long: %s/%s", directory, dp->d_name);
-	      continue;
-	    }
+          if (len > PATH_MAX - 1)
+            {
+              errno = ENAMETOOLONG;
+              error ("path too long: %s/%s", directory, dp->d_name);
+              continue;
+            }
 
-	  path = (char *) xalloc (len + 1);
+          path = (char *) xalloc (len + 1);
 
-	  sprintf (path, "%s/%s", directory, dp->d_name);
-	}
+          sprintf (path, "%s/%s", directory, dp->d_name);
+        }
 
       rv |=
-	process_file (path, output_format, file->include,
-		      (bool) (do_file && !skip), &is_directory);
+        process_file (path, output_format, file->include,
+                      (bool) (do_file && !skip), &is_directory);
 
       if (is_directory && opt.recursive)
-	filespec_append (&dir_list, path, file->output_format, file->include,
-			 true);
+        filespec_append (&dir_list, path, file->output_format, file->include,
+                         true);
     }
 
   node = dir_list;
@@ -2140,36 +2140,36 @@ process_filelist (List ** file_list, char *filename)
       pstart = fgets (buf, sizeof (buf), fp);
 
       if (pstart == NULL)
-	{
-	  if (ferror (fp))
-	    {
-	      error ("read error reading %s", filename);
-	      return errno;
-	    }
-	  fclose (fp);
-	  break;
-	}
+        {
+          if (ferror (fp))
+            {
+              error ("read error reading %s", filename);
+              return errno;
+            }
+          fclose (fp);
+          break;
+        }
 
       pend = strstr (pstart, "//");
       if (pend)
-	*pend = '\0';
+        *pend = '\0';
 
       while (isspace (*pstart))
-	++pstart;
+        ++pstart;
       if (!*pstart)
-	continue;
+        continue;
 
       pend = pstart + strlen (pstart) - 1;
       while (isspace (*pend))
-	--pend;
+        --pend;
       ++pend;
       *pend = '\0';
 
       if (!*pstart)
-	continue;
+        continue;
 
       filespec_append (file_list, pstart, opt.output_format, opt.include,
-		       false);
+                       false);
     }
 
   return 0;
@@ -2186,7 +2186,7 @@ str_trim (char *p)
     {
       pend = p + strlen (p) - 1;
       while (isspace (*pend))
-	--pend;
+        --pend;
       ++pend;
       *pend = '\0';
     }
@@ -2235,10 +2235,10 @@ process_envvar (List ** file_list, char *envvar)
       token = str_trim (token);
 
       if (strlen (token))
-	{
-	  ++argc;
-	  list_append (&argv_list, (void *) token);
-	}
+        {
+          ++argc;
+          list_append (&argv_list, (void *) token);
+        }
 
       token = strtok (NULL, TOKEN_DELIMETERS);
     }
@@ -2294,49 +2294,49 @@ process_option_file (List ** file_list, char *filename)
       pstart = fgets (buf, sizeof (buf), fp);
 
       if (pstart == NULL)
-	{
-	  if (ferror (fp))
-	    {
-	      error ("read error reading %s", filename);
-	      return errno;
-	    }
-	  fclose (fp);
-	  break;
-	}
+        {
+          if (ferror (fp))
+            {
+              error ("read error reading %s", filename);
+              return errno;
+            }
+          fclose (fp);
+          break;
+        }
 
       pend = strstr (pstart, COMMENT_DELIMETER);
       if (pend)
-	*pend = '\0';
+        *pend = '\0';
 
       pstart = str_trim (pstart);
 
       if (strlen (pstart) == 0)
-	continue;
+        continue;
 
       if (*pstart == '-')
-	{
-	  pnew = xstrdup (pstart);
-	}
+        {
+          pnew = xstrdup (pstart);
+        }
       else
-	{
-	  pnew = (char *) xalloc (strlen (pstart) + 3);
-	  strcpy (pnew, "--");
-	  strcat (pnew, pstart);
-	}
+        {
+          pnew = (char *) xalloc (strlen (pstart) + 3);
+          strcpy (pnew, "--");
+          strcat (pnew, pstart);
+        }
 
       token = strtok (pnew, TOKEN_DELIMETERS);
       while (token != NULL)
-	{
-	  token = str_trim (token);
+        {
+          token = str_trim (token);
 
-	  if (strlen (token))
-	    {
-	      ++argc;
-	      list_append (&argv_list, (void *) xstrdup (token));
-	    }
+          if (strlen (token))
+            {
+              ++argc;
+              list_append (&argv_list, (void *) xstrdup (token));
+            }
 
-	  token = strtok (NULL, TOKEN_DELIMETERS);
-	}
+          token = strtok (NULL, TOKEN_DELIMETERS);
+        }
 
       free (pnew);
     }
@@ -2399,9 +2399,9 @@ long_option_name (int c)
   for (i = 0; i < (sizeof (long_options) / sizeof (long_options[0])); ++i)
     {
       if (long_options[i].val == c)
-	{
-	  return (char *) long_options[i].name;
-	}
+        {
+          return (char *) long_options[i].name;
+        }
     }
 
   return NULL;
@@ -2414,17 +2414,17 @@ unimplemented_option (int c)
   if (long_option_name (c))
     {
       if (c > CHAR_MAX)
-	error ("%s %d (--%s)", UNIMPLEMENTED_OPTION, c, long_option_name (c));
+        error ("%s %d (--%s)", UNIMPLEMENTED_OPTION, c, long_option_name (c));
       else
-	error ("%s -%c (--%s)", UNIMPLEMENTED_OPTION, c,
-	       long_option_name (c));
+        error ("%s -%c (--%s)", UNIMPLEMENTED_OPTION, c,
+               long_option_name (c));
     }
   else
     {
       if (c > CHAR_MAX)
-	error ("%s %d", UNIMPLEMENTED_OPTION, c);
+        error ("%s %d", UNIMPLEMENTED_OPTION, c);
       else
-	error ("%s -%c", UNIMPLEMENTED_OPTION, c);
+        error ("%s -%c", UNIMPLEMENTED_OPTION, c);
     }
   exit (EINVAL);
 }
@@ -2472,350 +2472,350 @@ process_options (List ** file_list, int argc, char **argv)
 //      optind = last_optind + 1;
 
       if (optind >= argc)
-	break;
+        break;
 
       if (last_optind < optind)
-	last_optind = optind;
+        last_optind = optind;
 
 #if defined(__WINDOWS__)
       if (optind < argc && argv[optind] && argv[optind][0] == '/')
-	argv[optind][0] = '-';
+        argv[optind][0] = '-';
 #endif
 
       c =
-	getopt_long (argc, argv, short_options, long_options, &option_index);
+        getopt_long (argc, argv, short_options, long_options, &option_index);
 
       if (opterr)
-	{
-	  usage (EINVAL);
-	}
+        {
+          usage (EINVAL);
+        }
 
       if (c <= 1)
-	{
-	  if (strcmp (argv[optind - 1], "--") == 0)
-	    {
-	      ++last_optind;
-	      for (; last_optind < argc; ++last_optind)
-		{
-		  process_filename (file_list, argv[last_optind]);
-		}
-	      break;
-	    }
-	  if (last_optind >= argc)
-	    {
-	      break;
-	    }
-	  process_filename (file_list, argv[last_optind]);
-	  ++optind;
-	  ++last_optind;
-	  continue;
-	}
+        {
+          if (strcmp (argv[optind - 1], "--") == 0)
+            {
+              ++last_optind;
+              for (; last_optind < argc; ++last_optind)
+                {
+                  process_filename (file_list, argv[last_optind]);
+                }
+              break;
+            }
+          if (last_optind >= argc)
+            {
+              break;
+            }
+          process_filename (file_list, argv[last_optind]);
+          ++optind;
+          ++last_optind;
+          continue;
+        }
 
       for (; last_optind < optind - 1; ++last_optind)
-	{
-	  if (*argv[last_optind] == '-')
-	    {
-	      continue;
-	    }
-	  process_filename (file_list, argv[last_optind]);
-	}
+        {
+          if (*argv[last_optind] == '-')
+            {
+              continue;
+            }
+          process_filename (file_list, argv[last_optind]);
+        }
 
 #ifdef _DEBUG
       if (long_option_name (c))
-	{
-	  if (c > CHAR_MAX)
-	    _DBG ("%s %d (--%s) (%s)", PROCESSING_OPTION, c,
-		  long_option_name (c), argv[optind - 1]);
-	  else
-	    _DBG ("%s -%c (--%s) (%s)", PROCESSING_OPTION, c,
-		  long_option_name (c), argv[optind - 1]);
-	}
+        {
+          if (c > CHAR_MAX)
+            _DBG ("%s %d (--%s) (%s)", PROCESSING_OPTION, c,
+                  long_option_name (c), argv[optind - 1]);
+          else
+            _DBG ("%s -%c (--%s) (%s)", PROCESSING_OPTION, c,
+                  long_option_name (c), argv[optind - 1]);
+        }
       else
-	{
-	  if (c > CHAR_MAX)
-	    _DBG ("%s %d (%s)", PROCESSING_OPTION, c, argv[optind - 1]);
-	  else
-	    _DBG ("%s -%c (%s)", PROCESSING_OPTION, c, argv[optind - 1]);
-	}
+        {
+          if (c > CHAR_MAX)
+            _DBG ("%s %d (%s)", PROCESSING_OPTION, c, argv[optind - 1]);
+          else
+            _DBG ("%s -%c (%s)", PROCESSING_OPTION, c, argv[optind - 1]);
+        }
 #endif
 
       switch (c)
-	{
-	case '-':		/* - */
-	  /* read from stdin */
-	  opt.std_in = true;
-	  break;
-	case 'a':		/* --abort */
-	  opt.abort = true;
-	  break;
-	case 'b':		/* --backup */
-	  opt.backup = true;
-	  break;
-	case 'c':		/* --compress */
-	  unimplemented_option (c);
-	  opt.compress = true;
-	  break;
-	case 'd':		/* --dos */
-	case 'w':		/* --windows (undocumented) */
-	  opt.output_format = OUTPUT_DOS;
+        {
+        case '-':              /* - */
+          /* read from stdin */
+          opt.std_in = true;
+          break;
+        case 'a':              /* --abort */
+          opt.abort = true;
+          break;
+        case 'b':              /* --backup */
+          opt.backup = true;
+          break;
+        case 'c':              /* --compress */
+          unimplemented_option (c);
+          opt.compress = true;
+          break;
+        case 'd':              /* --dos */
+        case 'w':              /* --windows (undocumented) */
+          opt.output_format = OUTPUT_DOS;
 #ifdef CONV_SUPPORT_ENABLED
-	  opt._auto = false;
+          opt._auto = false;
 #endif /* CONV_SUPPORT_ENABLED */
-	  break;
-	case 'e':		/* --exclude */
-	  init_include ();
+          break;
+        case 'e':              /* --exclude */
+          init_include ();
 
-	  while (optarg && *optarg)
-	    {
-	      _DBG ("Processing exclude option %c (%s)", *optarg, optarg);
-	      if (opt_compare (&optarg, T_UNIX))
-		opt.include &= ~INPUT_UNIX;
-	      else if (opt_compare (&optarg, T_DOS))
-		opt.include &= ~INPUT_DOS;
-	      else if (opt_compare (&optarg, T_MAC))
-		opt.include &= ~INPUT_MAC;
-	      else if (opt_compare (&optarg, T_VARIED))
-		opt.include &= ~INPUT_VARIED;
-	      else if (opt_compare (&optarg, T_BINARY))
-		opt.include &= ~INPUT_BINARY;
-	      else if (opt_compare (&optarg, T_ALL))
-		opt.include = INPUT_NONE;
-	      else if (opt_compare (&optarg, T_NONE))
-		opt.include = INPUT_ALL;
-	      else
-		{
-		  errno = 0;
-		  error ("invalid exclude option: %s", optarg);
-		  usage (EINVAL);
-		}
-	    }
-	  break;
-	case 'f':		/* --force */
-	  opt.force = true;
-	  break;
-	case 'g':		/* --config */
-	  process_option_file (file_list, optarg);
-	  break;
-	  /* case 'h': --help (undocumented) */
-	case 'i':		/* --include */
-	  while (optarg && *optarg)
-	    {
-	      _DBG ("Processing include option %c (%s)", *optarg, optarg);
-	      if (opt_compare (&optarg, T_UNIX))
-		opt.include |= INPUT_UNIX;
-	      else if (opt_compare (&optarg, T_DOS))
-		opt.include |= INPUT_DOS;
-	      else if (opt_compare (&optarg, T_MAC))
-		opt.include |= INPUT_MAC;
-	      else if (opt_compare (&optarg, T_VARIED))
-		opt.include |= INPUT_VARIED;
-	      else if (opt_compare (&optarg, T_BINARY))
-		opt.include |= INPUT_BINARY;
-	      else if (opt_compare (&optarg, T_ALL))
-		opt.include = INPUT_ALL;
-	      else if (opt_compare (&optarg, T_NONE))
-		opt.include = INPUT_NONE;
-	      else
-		{
-		  errno = 0;
-		  error ("invalid include option: %s", optarg);
-		  usage (EINVAL);
-		}
-	    }
-	  break;
-	case 'j':		/* --in-place */
-	  opt.in_place = true;
-	  break;
-	case 'k':		/* --backup-ext */
-	  if (strlen (optarg) >= sizeof (opt.bak_ext))
-	    {
-	      errno = ENAMETOOLONG;
-	      error ("backup-ext argument too long: '%s", optarg);
-	    }
-	  else
-	    strcpy (opt.bak_ext, optarg);
-	  break;
-	case 'l':		/* --leave */
-	  opt.output_format = OUTPUT_LEAVE;
+          while (optarg && *optarg)
+            {
+              _DBG ("Processing exclude option %c (%s)", *optarg, optarg);
+              if (opt_compare (&optarg, T_UNIX))
+                opt.include &= ~INPUT_UNIX;
+              else if (opt_compare (&optarg, T_DOS))
+                opt.include &= ~INPUT_DOS;
+              else if (opt_compare (&optarg, T_MAC))
+                opt.include &= ~INPUT_MAC;
+              else if (opt_compare (&optarg, T_VARIED))
+                opt.include &= ~INPUT_VARIED;
+              else if (opt_compare (&optarg, T_BINARY))
+                opt.include &= ~INPUT_BINARY;
+              else if (opt_compare (&optarg, T_ALL))
+                opt.include = INPUT_NONE;
+              else if (opt_compare (&optarg, T_NONE))
+                opt.include = INPUT_ALL;
+              else
+                {
+                  errno = 0;
+                  error ("invalid exclude option: %s", optarg);
+                  usage (EINVAL);
+                }
+            }
+          break;
+        case 'f':              /* --force */
+          opt.force = true;
+          break;
+        case 'g':              /* --config */
+          process_option_file (file_list, optarg);
+          break;
+          /* case 'h': --help (undocumented) */
+        case 'i':              /* --include */
+          while (optarg && *optarg)
+            {
+              _DBG ("Processing include option %c (%s)", *optarg, optarg);
+              if (opt_compare (&optarg, T_UNIX))
+                opt.include |= INPUT_UNIX;
+              else if (opt_compare (&optarg, T_DOS))
+                opt.include |= INPUT_DOS;
+              else if (opt_compare (&optarg, T_MAC))
+                opt.include |= INPUT_MAC;
+              else if (opt_compare (&optarg, T_VARIED))
+                opt.include |= INPUT_VARIED;
+              else if (opt_compare (&optarg, T_BINARY))
+                opt.include |= INPUT_BINARY;
+              else if (opt_compare (&optarg, T_ALL))
+                opt.include = INPUT_ALL;
+              else if (opt_compare (&optarg, T_NONE))
+                opt.include = INPUT_NONE;
+              else
+                {
+                  errno = 0;
+                  error ("invalid include option: %s", optarg);
+                  usage (EINVAL);
+                }
+            }
+          break;
+        case 'j':              /* --in-place */
+          opt.in_place = true;
+          break;
+        case 'k':              /* --backup-ext */
+          if (strlen (optarg) >= sizeof (opt.bak_ext))
+            {
+              errno = ENAMETOOLONG;
+              error ("backup-ext argument too long: '%s", optarg);
+            }
+          else
+            strcpy (opt.bak_ext, optarg);
+          break;
+        case 'l':              /* --leave */
+          opt.output_format = OUTPUT_LEAVE;
 #ifdef CONV_SUPPORT_ENABLED
-	  opt._auto = false;
+          opt._auto = false;
 #endif /* CONV_SUPPORT_ENABLED */
-	  break;
-	case 'm':		/* --mac */
-	  opt.output_format = OUTPUT_MAC;
+          break;
+        case 'm':              /* --mac */
+          opt.output_format = OUTPUT_MAC;
 #ifdef CONV_SUPPORT_ENABLED
-	  opt._auto = false;
+          opt._auto = false;
 #endif /* CONV_SUPPORT_ENABLED */
-	  break;
-	case 'n':		/* --native */
-	  opt.output_format = OUTPUT_NATIVE;
+          break;
+        case 'n':              /* --native */
+          opt.output_format = OUTPUT_NATIVE;
 #ifdef CONV_SUPPORT_ENABLED
-	  opt._auto = false;
+          opt._auto = false;
 #endif /* CONV_SUPPORT_ENABLED */
-	  break;
-	case 'o':		/* --output */
-	  if (strlen (optarg) >= PATH_MAX)
-	    {
-	      errno = ENAMETOOLONG;
-	      error ("output argument too long: '%s", optarg);
-	    }
-	  else
-	    {
-	      if (strcmp (optarg, "-") == 0)
-		{
-		  opt.std_out = true;
-		}
-	      else
-		{
-		  opt.std_out = false;
-		  strcpy (opt.output_filename, optarg);
-		}
-	    }
-	  break;
-	case 'p':		/* --preserve */
-	  opt.preserve = true;
-	  break;
-	case 'q':		/* --quiet */
-	  opt.quiet = true;
-	  opt.verbose = 0;
-	  break;
-	case 'r':		/* --recursive */
-	  opt.recursive = true;
-	  break;
-	case 's':		/* --skip */
-	  opt.output_format = OUTPUT_SKIP;
-	  break;
-	case 't':		/* --temp-dir */
-	  if (strlen (optarg) >= PATH_MAX - strlen (TEMP_FILE_TEMPLATE))
-	    {
-	      errno = ENAMETOOLONG;
-	      error ("temp-dir argument too long: '%s", optarg);
-	    }
-	  else
-	    strcpy (opt.temp_dir, optarg);
-	  break;
-	case 'u':		/* --unix */
-	  opt.output_format = OUTPUT_UNIX;
+          break;
+        case 'o':              /* --output */
+          if (strlen (optarg) >= PATH_MAX)
+            {
+              errno = ENAMETOOLONG;
+              error ("output argument too long: '%s", optarg);
+            }
+          else
+            {
+              if (strcmp (optarg, "-") == 0)
+                {
+                  opt.std_out = true;
+                }
+              else
+                {
+                  opt.std_out = false;
+                  strcpy (opt.output_filename, optarg);
+                }
+            }
+          break;
+        case 'p':              /* --preserve */
+          opt.preserve = true;
+          break;
+        case 'q':              /* --quiet */
+          opt.quiet = true;
+          opt.verbose = 0;
+          break;
+        case 'r':              /* --recursive */
+          opt.recursive = true;
+          break;
+        case 's':              /* --skip */
+          opt.output_format = OUTPUT_SKIP;
+          break;
+        case 't':              /* --temp-dir */
+          if (strlen (optarg) >= PATH_MAX - strlen (TEMP_FILE_TEMPLATE))
+            {
+              errno = ENAMETOOLONG;
+              error ("temp-dir argument too long: '%s", optarg);
+            }
+          else
+            strcpy (opt.temp_dir, optarg);
+          break;
+        case 'u':              /* --unix */
+          opt.output_format = OUTPUT_UNIX;
 #ifdef CONV_SUPPORT_ENABLED
-	  opt._auto = false;
+          opt._auto = false;
 #endif /* CONV_SUPPORT_ENABLED */
-	  break;
-	case 'v':		/* --verbose */
-	  ++opt.verbose;
-	  opt.quiet = false;
-	  break;
-	  /* case 'w': --windows (undocumented) */
-	case 'y':		/* --dry-run */
-	  opt.dry_run = true;
-	  break;
-	case 'z':		/* --ignore_case */
-	  opt.ignore_case = true;
-	  break;
-	case '?':		/* --help */
-	case 'h':		/* --help (undocumented) */
-	  usage (EXIT_SUCCESS);
-	  break;
-	case OPT_LICENSE:	/* --license */
-	  license ();
-	  exit (EXIT_SUCCESS);
-	  break;
-	case OPT_VERSION:	/* --version */
-	  version ();
-	  exit (EXIT_SUCCESS);
-	  break;
+          break;
+        case 'v':              /* --verbose */
+          ++opt.verbose;
+          opt.quiet = false;
+          break;
+          /* case 'w': --windows (undocumented) */
+        case 'y':              /* --dry-run */
+          opt.dry_run = true;
+          break;
+        case 'z':              /* --ignore_case */
+          opt.ignore_case = true;
+          break;
+        case '?':              /* --help */
+        case 'h':              /* --help (undocumented) */
+          usage (EXIT_SUCCESS);
+          break;
+        case OPT_LICENSE:      /* --license */
+          license ();
+          exit (EXIT_SUCCESS);
+          break;
+        case OPT_VERSION:      /* --version */
+          version ();
+          exit (EXIT_SUCCESS);
+          break;
 
-	  /* negate options */
-	case 'A':		/* --no-abort */
-	  opt.abort = false;
-	  break;
-	case 'B':		/* --no-backup */
-	  opt.backup = false;
-	  break;
-	case 'C':		/* --no-compress */
-	  unimplemented_option (c);
-	  opt.compress = false;
-	  break;
-	case 'F':		/* --no-force */
-	  opt.force = false;
-	  break;
-	case 'K':		/* --no-backup-ext */
-	  strcpy (opt.bak_ext, BACKUP_EXT);
-	  break;
-	case 'J':		/* --no-in-place */
-	  opt.in_place = false;
-	  break;
-	case 'O':		/* --no-output */
-	  strcpy (opt.output_filename, "");
-	  break;
-	case 'P':		/* --no-preserve */
-	  opt.preserve = false;
-	  break;
-	case 'Q':		/* --no-quiet */
-	  opt.quiet = false;
-	  break;
-	case 'R':		/* --no-recursive */
-	  opt.recursive = false;
-	  break;
-	case 'T':		/* --no-temp-dir */
-	  strcpy (opt.temp_dir, "");
-	  break;
-	case 'V':		/* --no-verbose */
-	  --opt.verbose;
-	  break;
-	case 'Y':		/* --no-dry-run */
-	  opt.dry_run = false;
-	  break;
-	case 'Z':		/* --no-ignore_case */
-	  opt.ignore_case = false;
-	  break;
+          /* negate options */
+        case 'A':              /* --no-abort */
+          opt.abort = false;
+          break;
+        case 'B':              /* --no-backup */
+          opt.backup = false;
+          break;
+        case 'C':              /* --no-compress */
+          unimplemented_option (c);
+          opt.compress = false;
+          break;
+        case 'F':              /* --no-force */
+          opt.force = false;
+          break;
+        case 'K':              /* --no-backup-ext */
+          strcpy (opt.bak_ext, BACKUP_EXT);
+          break;
+        case 'J':              /* --no-in-place */
+          opt.in_place = false;
+          break;
+        case 'O':              /* --no-output */
+          strcpy (opt.output_filename, "");
+          break;
+        case 'P':              /* --no-preserve */
+          opt.preserve = false;
+          break;
+        case 'Q':              /* --no-quiet */
+          opt.quiet = false;
+          break;
+        case 'R':              /* --no-recursive */
+          opt.recursive = false;
+          break;
+        case 'T':              /* --no-temp-dir */
+          strcpy (opt.temp_dir, "");
+          break;
+        case 'V':              /* --no-verbose */
+          --opt.verbose;
+          break;
+        case 'Y':              /* --no-dry-run */
+          opt.dry_run = false;
+          break;
+        case 'Z':              /* --no-ignore_case */
+          opt.ignore_case = false;
+          break;
 #ifdef CONV_SUPPORT_ENABLED
-	case OPT_AUTO:		/* --auto */
-	  opt._auto = true;
-	  break;
-	case 'D':		/* -D (conv_mode) */
-	  opt.output_format = OUTPUT_DOS;
-	  opt._auto = false;
-	  break;
-	case OPT_FORCE:	/* --force */
-	  init_include ();
-	  opt.include |= INPUT_BINARY;
-	  break;
-	case 'M':		/* -M */
-	  opt.output_format = OUTPUT_MAC;
-	  opt._auto = false;
-	  break;
-	case OPT_SAFE:		/* --safe */
-	  init_include ();
-	  opt.include &= ~INPUT_BINARY;
-	  break;
-	case 'U':		/* -U */
-	  opt.output_format = OUTPUT_UNIX;
-	  opt._auto = false;
-	  break;
-	case OPT_NO_AUTO:	/* --no-auto */
-	  opt._auto = false;
-	  break;
-	case OPT_NO_FORCE:	/* --no-force */
-	  init_include ();
-	  opt.include &= ~INPUT_BINARY;
-	  break;
-	case OPT_NO_SAFE:	/* --no-safe */
-	  init_include ();
-	  opt.include |= INPUT_BINARY;
-	  break;
+        case OPT_AUTO:         /* --auto */
+          opt._auto = true;
+          break;
+        case 'D':              /* -D (conv_mode) */
+          opt.output_format = OUTPUT_DOS;
+          opt._auto = false;
+          break;
+        case OPT_FORCE:        /* --force */
+          init_include ();
+          opt.include |= INPUT_BINARY;
+          break;
+        case 'M':              /* -M */
+          opt.output_format = OUTPUT_MAC;
+          opt._auto = false;
+          break;
+        case OPT_SAFE:         /* --safe */
+          init_include ();
+          opt.include &= ~INPUT_BINARY;
+          break;
+        case 'U':              /* -U */
+          opt.output_format = OUTPUT_UNIX;
+          opt._auto = false;
+          break;
+        case OPT_NO_AUTO:      /* --no-auto */
+          opt._auto = false;
+          break;
+        case OPT_NO_FORCE:     /* --no-force */
+          init_include ();
+          opt.include &= ~INPUT_BINARY;
+          break;
+        case OPT_NO_SAFE:      /* --no-safe */
+          init_include ();
+          opt.include |= INPUT_BINARY;
+          break;
 
 #endif /* CONV_SUPPORT_ENABLED */
-	case ':':
-	  error ("Option -%c requires an operand\n", optopt);
-	  usage (EINVAL);
-	  break;
-	default:
-	  errno = 0;
-	  error ("invalid option: %c", c);
-	  usage (EINVAL);
-	}			/* switch (c) { */
+        case ':':
+          error ("Option -%c requires an operand\n", optopt);
+          usage (EINVAL);
+          break;
+        default:
+          errno = 0;
+          error ("invalid option: %c", c);
+          usage (EINVAL);
+        }                       /* switch (c) { */
 
-    }				/* while (optind < argc) { */
+    }                           /* while (optind < argc) { */
 
   init_include ();
 
@@ -2866,45 +2866,45 @@ main (int argc, char **argv)
 #ifdef __DOS__
       int len = strlen (progname);
       if (len > 4 && strcasecmp (progname + len - 4, ".exe") == 0)
-	progname[len - 4] = '\0';
+        progname[len - 4] = '\0';
 #endif
 #ifdef CONV_SUPPORT_ENABLED
       if (strcasecmp (progname, "conv") == 0)
-	{
-	  opt.conv_mode = true;
-	}
+        {
+          opt.conv_mode = true;
+        }
 #endif /* CONV_SUPPORT_ENABLED */
 
       if (strcasecmp (progname, "dos2unix") == 0 ||
-	  strcasecmp (progname, "d2u") == 0 ||
-	  strcasecmp (progname, "m2u") == 0)
-	{
-	  opt.output_format = OUTPUT_UNIX;
+          strcasecmp (progname, "d2u") == 0 ||
+          strcasecmp (progname, "m2u") == 0)
+        {
+          opt.output_format = OUTPUT_UNIX;
 #ifdef CONV_SUPPORT_ENABLED
-	  opt.conv_mode = true;
+          opt.conv_mode = true;
 #endif /* CONV_SUPPORT_ENABLED */
-	}
+        }
 
       if (strcasecmp (progname, "unix2dos") == 0 ||
-	  strcasecmp (progname, "u2d") == 0 ||
-	  strcasecmp (progname, "m2d") == 0)
-	{
-	  opt.output_format = OUTPUT_DOS;
+          strcasecmp (progname, "u2d") == 0 ||
+          strcasecmp (progname, "m2d") == 0)
+        {
+          opt.output_format = OUTPUT_DOS;
 #ifdef CONV_SUPPORT_ENABLED
-	  opt.conv_mode = true;
+          opt.conv_mode = true;
 #endif /* CONV_SUPPORT_ENABLED */
-	}
+        }
 
       if (strcasecmp (progname, "unix2mac") == 0 ||
-	  strcasecmp (progname, "dos2mac") == 0 ||
-	  strcasecmp (progname, "u2m") == 0 ||
-	  strcasecmp (progname, "d2m") == 0)
-	{
-	  opt.output_format = OUTPUT_MAC;
+          strcasecmp (progname, "dos2mac") == 0 ||
+          strcasecmp (progname, "u2m") == 0 ||
+          strcasecmp (progname, "d2m") == 0)
+        {
+          opt.output_format = OUTPUT_MAC;
 #ifdef CONV_SUPPORT_ENABLED
-	  opt.conv_mode = true;
+          opt.conv_mode = true;
 #endif /* CONV_SUPPORT_ENABLED */
-	}
+        }
     }
 
   process_envvar (&file_list, EOLFIX_ENVVAR);
@@ -2930,35 +2930,35 @@ main (int argc, char **argv)
       input_filename = "<standard input>";
 
       if (*opt.output_filename)
-	{
-	  strcpy (temp_filename, opt.output_filename);
-	  output_handle =
-	    open (temp_filename, O_CREAT | O_WRONLY | O_TRUNC | O_BINARY,
-		  0600);
-	  if (output_handle == -1)
-	    {
-	      error ("cannot open %s", temp_filename);
-	      close (output_handle);
-	      return errno;
-	    }
-	}
+        {
+          strcpy (temp_filename, opt.output_filename);
+          output_handle =
+            open (temp_filename, O_CREAT | O_WRONLY | O_TRUNC | O_BINARY,
+                  0600);
+          if (output_handle == -1)
+            {
+              error ("cannot open %s", temp_filename);
+              close (output_handle);
+              return errno;
+            }
+        }
       else
-	{
-	  opt.std_out = true;
-	  output_handle = fileno (stdout);
-	  strcpy (temp_filename, "<standard ouput>");
-	}
+        {
+          opt.std_out = true;
+          output_handle = fileno (stdout);
+          strcpy (temp_filename, "<standard ouput>");
+        }
 
       /* since we're processing standard input we should not abort if there
          is binary data in the stream */
       convert (fh, output_handle, &input_format, &rewrite, &binary,
-	       INPUT_BINARY, opt.output_format);
+               INPUT_BINARY, opt.output_format);
 
       if (close (fh) == -1)
-	error ("cannot close %s", input_filename);
+        error ("cannot close %s", input_filename);
 
       if (close (output_handle) == -1)
-	error ("cannot close %s", temp_filename);
+        error ("cannot close %s", temp_filename);
 
       return exit_value;
     }
@@ -2966,7 +2966,7 @@ main (int argc, char **argv)
   if (file_list == NULL)
     {
       filespec_append (&file_list, "*", opt.output_format, opt.include,
-		       false);
+                       false);
     }
 
   if (opt.wildcards_used)
@@ -2980,18 +2980,18 @@ main (int argc, char **argv)
 
       node = file_list;
       while (node)
-	{
-	  bool is_directory = false;
-	  File *file = (File *) node->data;
+        {
+          bool is_directory = false;
+          File *file = (File *) node->data;
 
-	  process_file (file->filespec, file->output_format, file->include,
-			true, &is_directory);
+          process_file (file->filespec, file->output_format, file->include,
+                        true, &is_directory);
 
-	  node = node->next;
-	}
+          node = node->next;
+        }
 
       if (opt.recursive)
-	process_directory (".", file_list);
+        process_directory (".", file_list);
     }
 
   filespec_free (file_list);
