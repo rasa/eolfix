@@ -10,4 +10,4 @@ title %~n0
 
 call "%VS120COMNTOOLS%\vsvars32.bat"
 
-nmake -f msvc12.mak %targets%
+nmake -f msvc8.mak %targets%

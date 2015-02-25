@@ -8,7 +8,6 @@ if not defined targets set targets=clean all
 
 title %~n0
 
-call "%VS130COMNTOOLS%\vsvars32.bat"
+call "%VS120COMNTOOLS%\vsvars32.bat"
 
-nmake -f msvc13.mak %targets%
-
+nmake -f msvc8.mak %targets%
