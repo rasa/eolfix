@@ -2429,7 +2429,7 @@ unimplemented_option (int c)
   exit (EINVAL);
 }
 
-static inline void
+static void
 init_include ()
 {
   if (opt.include == INPUT_UNSET)
