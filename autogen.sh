@@ -15,7 +15,7 @@ else
 	LIBTOOLIZE_NAME="$1"
 fi
 
-AUTOCONF=$"(which autoconf)"
+AUTOCONF="$(which autoconf)"
 
 if [[ -n "${AUTOCONF}" && -f "${AUTOCONF}" ]]; then
 	AUTOCONF=autoconf
