@@ -1,8 +1,12 @@
 @if defined EOLFIX_DEBUG (@echo on) else (@echo off)
 
+set EOLFIX_OUTPUT_DIR=output
+
 set _ProgramFiles=%ProgramFiles(x86)%
 if not defined _ProgramFiles set _ProgramFiles=%ProgramFiles%
 if not exist "%_ProgramFiles%" set _ProgramFiles=%ProgramFiles%
+
+set original_path=%path%
 
 if not defined bcc_home		set bcc_home=c:\bcc55
 if not defined cygwin_home	set cygwin_home=c:\cygwin
@@ -64,7 +68,7 @@ if exist "%VS90COMNTOOLS%"	set COMPILERS=%COMPILERS% msvc9
 if exist "%VS100COMNTOOLS%"	set COMPILERS=%COMPILERS% msvc10
 if exist "%VS110COMNTOOLS%"	set COMPILERS=%COMPILERS% msvc11
 if exist "%VS120COMNTOOLS%"	set COMPILERS=%COMPILERS% msvc12
-if exist "%VS130COMNTOOLS%"	set COMPILERS=%COMPILERS% msvc13
+if exist "%VS140COMNTOOLS%"	set COMPILERS=%COMPILERS% msvc14
 
 ::if "%1" == "dontsave" goto :eof
 

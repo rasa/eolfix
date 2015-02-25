@@ -3,9 +3,7 @@
 
 call config.cmd
 
-set OUTPUT=output
-
 for %%d in (%COMPILERS%) do (
-	if exist %OUTPUT%\%%d\eolfix.exe %OUTPUT%\%%d\eolfix.exe --version
+	if exist "%EOLFIX_OUTPUT_DIR%\%%d\eolfix.exe" "%EOLFIX_OUTPUT_DIR%\%%d\eolfix.exe" --version
 )
 

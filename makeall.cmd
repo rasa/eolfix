@@ -5,13 +5,11 @@ set debug=%1
 
 call config.cmd
 
-set OUTPUT=output
+if not exist "%EOLFIX_OUTPUT_DIR%" mkdir "%EOLFIX_OUTPUT_DIR%"
 
-if not exist "%OUTPUT%" mkdir "%OUTPUT%"
+for %%d in (%COMPILERS%) do if not exist "%EOLFIX_OUTPUT_DIR%\%%d" mkdir "%EOLFIX_OUTPUT_DIR%\%%d"
 
-for %%d in (%COMPILERS%) do if not exist "%OUTPUT%\%%d" mkdir "%OUTPUT%\%%d"
-
-for %%d in (%COMPILERS%) do if exist "%OUTPUT%\%%d\eolfix.exe" del "%OUTPUT%\%%d\eolfix.exe"
+for %%d in (%COMPILERS%) do if exist "%EOLFIX_OUTPUT_DIR%\%%d\eolfix.exe" del "%EOLFIX_OUTPUT_DIR%\%%d\eolfix.exe"
 
 for %%d in (%COMPILERS%) do call %%d.cmd clean
 
@@ -20,6 +18,6 @@ for %%d in (%COMPILERS%) do (
 	call %%d.cmd clean
 	call %%d.cmd
 	if not exist eolfix.exe exit /b
-	copy /y eolfix.exe %output%\%%d
+	copy /y eolfix.exe "%EOLFIX_OUTPUT_DIR%\%%d"
 	del eolfix.exe
 )

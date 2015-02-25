@@ -10,5 +10,5 @@ title %~n0
 
 call "%VS90COMNTOOLS%\vsvars32.bat"
 
-nmake -f msvc9.mak %targets%
+nmake -f msvc8.mak %targets%
 

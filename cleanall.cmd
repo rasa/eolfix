@@ -3,9 +3,8 @@
 
 call config.cmd
 
-set OUTPUT=output\
-
 for %%d in (%COMPILERS%) do (
 	echo %%d
 	call %%d.cmd clean
+	if exist "%EOLFIX_OUTPUT_DIR%\%%d" rmdir /s /q "%EOLFIX_OUTPUT_DIR%\%%d"
 )
