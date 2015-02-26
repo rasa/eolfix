@@ -1,15 +1,17 @@
-# eolfix [![Flattr this][4]][3]
+# eolfix [![Flattr this][flatter_png]][flatter]
 
-eolfix is a command line utility to report, and optionally convert,
-the line endings of text files between Unix, Windows (MS-DOS), and Macintosh formats.
-It detects and ignores binary files unless instructed to include them.
-It does not modify files if the file is already in the requested format.
-It properly handles "mixed" format files (files having more than one type of line ending format).
+Report, and optionally convert, the line endings of text files between Unix, Windows (MS-DOS),
+and Macintosh formats.
+
+Eolfix detects and ignores binary files unless instructed to include them.
+Eolfix does not modify files if the file is already in the requested format.
+Eolfix properly handles "mixed" format files (files having more than one type of line ending format).
+Eolfix does not currently work with non-ASCII files (UTF-8 etc).
 
 ## Quick Start
 
 To compile and install eolfix in `~/bin`, type:
-````
+````bash
 git clone https://github.com/rasa/eolfix
 cd eolfix
 ./autogen.sh
@@ -19,7 +21,7 @@ make install
 ````
 
 To compile and install eolfix in `/usr/local/bin`, type:
-````
+````bash
 git clone https://github.com/rasa/eolfix
 cd eolfix
 ./autogen.sh
@@ -63,14 +65,6 @@ Options:
      --                Stop processing options
 ````
 
-## Contributing
-
-To contribute to this project, please see [CONTRIBUTING.md](CONTRIBUTING.md).
-
-## Bugs
-
-To view existing bugs, or report a new bug, please see the [issues](/issues) page for this project.
-
 ## Supported Platforms
 
 * FreeBSD
@@ -97,27 +91,30 @@ To view existing bugs, or report a new bug, please see the [issues](/issues) pag
 * Microsoft Visual Studio 2013, 2012, 2010, 2008, 2005, .NET
 * Open Watcom C/C++ NMAKE Clone for 386  Version 1.3 - 1.9
 
+## Contributing
+
+To contribute to this project, please see [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## Bugs
+
+To view existing bugs, or report a new bug, please see [issues](../../issues).
+
+## Changelog
+
+To view the version history for this project, please see [CHANGELOG.md](CHANGELOG.md).
+
 ## License
 
 This project is [MIT licensed](LICENSE).
 
-## Changelog
-
-Please see [CHANGELOG.md](CHANGELOG.md) for the version history for this project.
-
 ## Contact
 
-Current Maintainer: [Ross Smith II][2] [![endorse][5]][6] 
-
-Original Author:    [Ross Smith II][2] [![endorse][5]][6]
+This project was created and is maintained by [Ross Smith II][] [![endorse][endorse_png]][endorse]
 
 Feedback, suggestions, and enhancements are welcome.
 
-  [2]: mailto:ross@smithii.com
-  [3]: https://flattr.com/submit/auto?user_id=rasa&url=https%3A%2F%2Fgithub.com%2Frasa%2Feolfix
-  [4]: http://button.flattr.com/flattr-badge-large.png (Flattr this)
-  [5]: https://api.coderwall.com/rasa/endorsecount.png
-  [6]: https://coderwall.com/rasa
-
-
-
+[Ross Smith II]: mailto:ross@smithii.com "ross@smithii.com"
+[flatter]: https://flattr.com/submit/auto?user_id=rasa&url=https%3A%2F%2Fgithub.com%2Frasa%2Feolfix
+[flatter_png]: http://button.flattr.com/flattr-badge-large.png "Flattr this"
+[endorse]: https://coderwall.com/rasa
+[endorse_png]: https://api.coderwall.com/rasa/endorsecount.png "endorse"
