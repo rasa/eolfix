@@ -1,0 +1,114 @@
+MAKE Version 5.2  Copyright (c) 1987, 2000 Borland
+
+Macros:
+INTEL_DEV_REDIST = C:\Program Files (x86)\Common Files\Intel\Shared Libraries\
+  VS90COMNTOOLS = C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\Tools\
+     USERDOMAIN = WINDOWS-AT7MJU0
+   COMPUTERNAME = WINDOWS-AT7MJU0
+COMMONPROGRAMFILES = C:\Program Files (x86)\Common Files
+   PROGRAMW6432 = C:\Program Files
+   PSMODULEPATH = C:\Windows\system32\WindowsPowerShell\v1.0\Modules\
+      MAKEFLAGS = l -o -p 
+MIC_LD_LIBRARY_PATH = C:\Program Files (x86)\Common Files\Intel\Shared Libraries\compiler\lib\mic
+        INCLUDE = C:\Program Files\Microsoft Platform SDK\Include\.;C:\Program Files (x86)\Microsoft Visual Studio\VC98\atl\include;C:\Program Files (x86)\Microsoft Visual Studio\VC98\mfc\include;C:\Program Files (x86)\Microsoft Visual Studio\VC98\include;C:\Users\vagrant\Documents\src\shared
+      HOMEDRIVE = C:
+     MSVC6_HOME = C:\Program Files (x86)\Microsoft Visual Studio\VC98
+             OS = Windows_NT
+     __DPMI32__ = 1
+           MAKE = make
+   PROGRAMFILES = C:\Program Files (x86)
+ VS130COMNTOOLS = C:\Program Files (x86)\Microsoft Visual Studio 13.0\Common7\Tools
+    MSVC10_HOME = C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC
+            LIB = C:\Program Files (x86)\Microsoft Visual Studio\VC98\mfc\lib;C:\Program Files (x86)\Microsoft Visual Studio\VC98\lib;C:\Program Files\Microsoft Platform SDK\Lib;C:\Users\vagrant\Documents\src\shared
+        APPDATA = C:\Users\vagrant\AppData\Roaming
+PROCESSOR_ARCHITECTURE = x86
+     MSVC7_HOME = C:\Program Files (x86)\Microsoft Visual C++ Toolkit 2003
+INTEL_LICENSE_FILE = C:\Program Files (x86)\Common Files\Intel\Licenses
+    MSVC13_HOME = C:\Program Files (x86)\Microsoft Visual Studio 13.0\VC
+       HOMEPATH = \Users\vagrant
+         CYGWIN = mintty
+COMMONPROGRAMW6432 = C:\Program Files\Common Files
+        COMSPEC = C:\Windows\system32\cmd.exe
+EOLFIX_OUTPUT_DIR = output
+     MINGW_HOME = c:\mingw
+PROCESSOR_ARCHITEW6432 = AMD64
+     INTEL_HOME = C:\Program Files (x86)\Intel\Composer XE 2015
+       LCC_HOME = c:\lcc
+             RC = brcc32
+        DM_HOME = c:\dm
+WINDOWS_TRACING_LOGFILE = C:\BVTBin\Tests\installpackage\csilogfile.log
+PROCESSOR_REVISION = 3a09
+     DJGPP_HOME = c:\djgpp
+ VS100COMNTOOLS = C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\Tools\
+    MSVC12_HOME = C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC
+    CYGWIN_HOME = c:\cygwin
+  VS80COMNTOOLS = C:\Program Files (x86)\Microsoft Visual Studio 8\Common7\Tools\
+         WINDIR = C:\Windows
+       USERNAME = vagrant
+PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 58 Stepping 9, GenuineIntel
+         PROMPT = $P$G
+NUMBER_OF_PROCESSORS = 1
+ VS110COMNTOOLS = C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\Tools\
+   LOCALAPPDATA = C:\Users\vagrant\AppData\Local
+           PATH = c:\bcc55\bin;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\ia32\compiler;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\OpenSSH\bin;C:\git\cmd;C:\Program Files\7-Zip;C:\Program Files\Microsoft Platform SDK\Bin\.;C:\Program Files\Microsoft Platform SDK\Bin\WinNT\.;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files (x86)\Microsoft SDKs\TypeScript\1.1\;C:\Program Files (x86)\Microsoft Visual Studio\Common\Tools\WinNT;C:\Program Files (x86)\Microsoft Visual Studio\Common\MSDev98\Bin;C:\Program Files (x86)\Microsoft Visual Studio\Common\Tools;C:\Program Files (x86)\Microsoft Visual Studio\VC98\bin;C:\Program Files (x86)\NirSoft;C:\Program Files\Microsoft Platform SDK\Bin\.;C:\Program Files\Microsoft Platform SDK\Bin\WinNT\.;C:\Program Files (x86)\SysInternals
+    USERPROFILE = C:\Users\vagrant
+    MSVC11_HOME = C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC
+ VS140COMNTOOLS = C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\
+     MSVC8_HOME = C:\Program Files (x86)\Microsoft Visual Studio 8\VC
+       COMPILER = bcc55
+            TMP = C:\Users\vagrant\AppData\Local\Temp
+       __MAKE__ = 0x0520
+  ORIGINAL_PATH = C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\ia32\compiler;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\OpenSSH\bin;C:\git\cmd;C:\Program Files\7-Zip;C:\Program Files\Microsoft Platform SDK\Bin\.;C:\Program Files\Microsoft Platform SDK\Bin\WinNT\.;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files (x86)\Microsoft SDKs\TypeScript\1.1\;C:\Program Files (x86)\Microsoft Visual Studio\Common\Tools\WinNT;C:\Program Files (x86)\Microsoft Visual Studio\Common\MSDev98\Bin;C:\Program Files (x86)\Microsoft Visual Studio\Common\Tools;C:\Program Files (x86)\Microsoft Visual Studio\VC98\bin;C:\Program Files (x86)\NirSoft;C:\Program Files\Microsoft Platform SDK\Bin\.;C:\Program Files\Microsoft Platform SDK\Bin\WinNT\.;C:\Program Files (x86)\SysInternals
+    SYSTEMDRIVE = C:
+COMMONPROGRAMFILES(X86) = C:\Program Files (x86)\Common Files
+    PROGRAMDATA = C:\ProgramData
+        PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+         OUTPUT = help\
+     SYSTEMROOT = C:\Windows
+ALLUSERSPROFILE = C:\ProgramData
+PROGRAMFILES(X86) = C:\Program Files (x86)
+     MSVC9_HOME = C:\Program Files (x86)\Microsoft Visual Studio 9.0\VC
+       LINK_EXE = ilink32
+       BASEMAKE = C:\Program Files\Microsoft Platform SDK\Include\BKOffice.Mak
+       MSDEVDIR = C:\Program Files (x86)\Microsoft Visual Studio\Common\MSDev98
+WINDOWS_TRACING_FLAGS = 3
+          MSSDK = C:\Program Files\Microsoft Platform SDK\.
+    LOGONSERVER = \\WINDOWS-AT7MJU0
+       BCC_HOME = c:\bcc55
+  _PROGRAMFILES = C:\Program Files (x86)
+ICPP_COMPILER15 = C:\Program Files (x86)\Intel\Composer XE 2015\
+ VS120COMNTOOLS = C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\Tools\
+      COMPILERS =  bcc55 cygwin dm lcc mingw watcom msvc6 msvc8 msvc9 msvc10 msvc11 msvc12 msvc14
+    WATCOM_HOME = c:\watcom
+        MAKEDIR = c:\bcc55\bin
+          DJGPP = C:\DJGPP\\DJGPP.ENV
+      MSYS_HOME = c:\mingw\msys\1.0
+             AS = tasm32
+PROCESSOR_LEVEL = 6
+        MSTOOLS = C:\Program Files\Microsoft Platform SDK\.
+       BKOFFICE = C:\Program Files\Microsoft Platform SDK\.
+           TEMP = C:\Users\vagrant\AppData\Local\Temp
+        INETSDK = C:\Program Files\Microsoft Platform SDK\.
+         PUBLIC = C:\Users\Public
+        CPP_EXE = bcc32
+FP_NO_HOST_CHECK = NO
+   BCEXAMPLEDIR = c:\bcc55\bin\..\EXAMPLES
+             CC = bcc32
+    SESSIONNAME = Console
+Implicit Rules:
+    .cpp.obj:
+        commands:    $(CC) $(CPPFLAGS) /c $&.cpp
+    .c.obj:
+        commands:    $(CC) $(CFLAGS) /c $&.c
+    .asm.obj:
+        commands:    $(AS) $(AFLAGS) $&.asm
+    .cpp.exe:
+        commands:    $(CC) $(CFLAGS) $&.cpp
+    .c.exe:
+        commands:    $(CC) $(CFLAGS) $&.c
+    .rc.res:
+        commands:    $(RC) $(RFLAGS) /r $&
+
+Targets:
+
+

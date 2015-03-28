@@ -1,0 +1,21 @@
+Open Watcom C/C++ LINK Clone for 386  Version 1.9
+Portions Copyright (c) 1995-2002 Sybase, Inc. All Rights Reserved.
+Source code is available under the Sybase Open Watcom Public License.
+See http://www.openwatcom.org/ for details.
+Compatible with LINK Version 7.0.0
+Usage: link [options] file [options]
+Options:
+            ( /option is also accepted )
+-align:<num>                specify alignment of each section
+-base:<arg>                 set program base address
+-comment:<string>           embed comment string into image
+-debug                      link in debugging information
+-def:<file>                 process .def file
+-defaultlib                 add one or more libraries to search
+-dll                        build DLL
+-entry:<symbol>             set starting address
+-export:<exportdef>         export a symbol
+-force:multiple             allow multiply defined symbols
+-force:undefined            allow undefined symbols
+-heap:<reserve>[,<commit>]  set heap size in bytes
+	(Press return to continue)^C

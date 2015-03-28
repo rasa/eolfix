@@ -10,5 +10,5 @@ title %~n0
 
 set path=%mingw_home%\bin;%msys_home%\bin;%path%
 
-make -f mingw.mak %targets%
+make -f mingw.mk %targets%
 

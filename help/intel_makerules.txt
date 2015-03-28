@@ -1,0 +1,184 @@
+
+Microsoft (R) Program Maintenance Utility Version 12.00.21005.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+MACROS:
+
+PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 58 Stepping 9, GenuineIntel
+      LIBPATH = C:\Windows\Microsoft.NET\Framework\v4.0.30319;C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\LIB;C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\ATLMFC\LIB;C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral;C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\Microsoft.VCLibs\12.0\References\CommonConfiguration\neutral;C:\Windows\Microsoft.NET\Framework\v4.0.30319;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\LIB;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\LIB;C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral;\Microsoft.VCLibs\14.0\References\CommonConfiguration\neutral;
+   INTEL_HOME = C:\Program Files (x86)\Intel\Composer XE 2015
+      INCLUDE = C:\Program Files (x86)\Intel\Composer XE 2015\compiler\include;C:\Program Files (x86)\Intel\Composer XE 2015\compiler\include\ia32;C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\INCLUDE;C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\ATLMFC\INCLUDE;C:\Program Files (x86)\Windows Kits\8.1\include\shared;C:\Program Files (x86)\Windows Kits\8.1\include\um;C:\Program Files (x86)\Windows Kits\8.1\include\winrt;C:\Program Files (x86)\Intel\Composer XE 2015\ipp\include;C:\Program Files (x86)\Intel\Composer XE 2015\mkl\include;C:\Program Files (x86)\Intel\Composer XE 2015\tbb\bin\..\include;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE;C:\Program Files (x86)\Windows Kits\8.1\include\shared;C:\Program Files (x86)\Windows Kits\8.1\include\um;C:\Program Files (x86)\Windows Kits\8.1\include\winrt;C:\Program Files\Microsoft Platform SDK\Include\.;C:\Program Files (x86)\Microsoft Visual Studio\VC98\atl\include;C:\Program Files (x86)\Microsoft Visual Studio\VC98\mfc\include;C:\Program Files (x86)\Microsoft Visual Studio\VC98\include;C:\Users\vagrant\Documents\src\shared
+TBB_TARGET_VS = vc12
+COMMONPROGRAMW6432 = C:\Program Files\Common Files
+   MINGW_HOME = c:\mingw
+      COMSPEC = C:\Windows\system32\cmd.exe
+      INETSDK = C:\Program Files\Microsoft Platform SDK\.
+   _NMAKE_VER = 12.00.21005.1
+TBB_ARCH_PLATFORM = ia32\vc12
+      DM_HOME = c:\dm
+      TBBROOT = C:\Program Files (x86)\Intel\Composer XE 2015\tbb\bin\..
+      PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+         MAKE = nmake
+		"C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\BIN\nmake.exe"
+  MSVC10_HOME = C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC
+  MSVC11_HOME = C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC
+  MSVC12_HOME = C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC
+      CPP_EXE = icl /?
+  MSVC13_HOME = C:\Program Files (x86)\Microsoft Visual Studio 13.0\VC
+      MKLROOT = C:\Program Files (x86)\Intel\Composer XE 2015\mkl
+   SYSTEMROOT = C:\Windows
+         PATH = C:\Program Files (x86)\Intel\Composer XE 2015\bin\ia32;C:\Program Files (x86)\Intel\Composer XE 2015\redist\ia32\compiler;C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\CommonExtensions\Microsoft\TestWindow;C:\Program Files (x86)\Microsoft SDKs\F#\3.1\Framework\v4.0\;C:\Program Files (x86)\MSBuild\12.0\bin;C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\;C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\BIN;C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\Tools;C:\Windows\Microsoft.NET\Framework\v4.0.30319;C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\VCPackages;C:\Program Files (x86)\HTML Help Workshop;C:\Program Files (x86)\Microsoft Visual Studio 12.0\Team Tools\Performance Tools;C:\Program Files (x86)\Windows Kits\8.1\bin\x86;C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1A\bin\NETFX 4.5.1 Tools\;C:\Program Files (x86)\Intel\Composer XE 2015\ipp\..\redist\ia32\ipp;C:\Program Files (x86)\Intel\Composer XE 2015\ipp\..\redist\ia32\compiler;C:\Program Files (x86)\Intel\Composer XE 2015\redist\ia32\mkl;C:\Program Files (x86)\Intel\Composer XE 2015\redist\ia32\compiler;C:\Program Files (x86)\Intel\Composer XE 2015\tbb\bin\..\..\redist\ia32\tbb\vc12;C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\CommonExtensions\Microsoft\TestWindow;C:\Program Files (x86)\Microsoft SDKs\F#\4.0\Framework\v4.0\;C:\Program Files (x86)\MSBuild\14.0\bin;C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\BIN;C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools;C:\Windows\Microsoft.NET\Framework\v4.0.30319;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\VCPackages;C:\Program Files (x86)\HTML Help Workshop;C:\Program Files (x86)\Microsoft Visual Studio 14.0\Team Tools\Performance Tools;C:\Program Files (x86)\Windows Kits\8.1\bin\x86;C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1A\bin\NETFX 4.5.1 Tools\;c:\dm\bin;c:\cygwin\bin;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\ia32\compiler;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\OpenSSH\bin;C:\git\cmd;C:\Program Files\7-Zip;C:\Program Files\Microsoft Platform SDK\Bin\.;C:\Program Files\Microsoft Platform SDK\Bin\WinNT\.;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files (x86)\Microsoft SDKs\TypeScript\1.1\;C:\Program Files (x86)\Microsoft Visual Studio\Common\Tools\WinNT;C:\Program Files (x86)\Microsoft Visual Studio\Common\MSDev98\Bin;C:\Program Files (x86)\Microsoft Visual Studio\Common\Tools;C:\Program Files (x86)\Microsoft Visual Studio\VC98\bin;C:\Program Files (x86)\NirSoft;C:\Program Files\Microsoft Platform SDK\Bin\.;C:\Program Files\Microsoft Platform SDK\Bin\WinNT\.;C:\Program Files (x86)\SysInternals;C:\Program Files (x86)\Intel\Composer XE 2015\redist\ia32\mpirt;
+      IPPROOT = C:\Program Files (x86)\Intel\Composer XE 2015\ipp
+NUMBER_OF_PROCESSORS = 1
+      MSTOOLS = C:\Program Files\Microsoft Platform SDK\.
+  PROGRAMDATA = C:\ProgramData
+PRODUCT_NAME_FULL = Intel(R) Parallel Studio XE 2015 Update 2 Composer Edition (package 179)
+         TEMP = C:\Users\vagrant\AppData\Local\Temp
+FRAMEWORK40VERSION = v4.0
+FRAMEWORKVERSION32 = v4.0.30319
+     BKOFFICE = C:\Program Files\Microsoft Platform SDK\.
+     BASEMAKE = C:\Program Files\Microsoft Platform SDK\Include\BKOffice.Mak
+  BUNDLE_NAME = Intel(R) Parallel Studio XE 2015
+ PROGRAMW6432 = C:\Program Files
+  TARGET_ARCH = ia32
+         ROOT = C:\Program Files (x86)\Intel\Composer XE 2015
+  SESSIONNAME = Console
+PROCESSOR_ARCHITEW6432 = AMD64
+WIN_TITLE_ARCH = IA-32
+TARGET_VS_ARCH = x86
+ICPP_COMPILER15 = C:\Program Files (x86)\Intel\Composer XE 2015\
+  TBB_BIN_DIR = C:\Program Files (x86)\Intel\Composer XE 2015\tbb\bin\
+  USERPROFILE = C:\Users\vagrant
+     BCC_HOME = c:\bcc55
+  WATCOM_HOME = c:\watcom
+COMMONPROGRAMFILES = C:\Program Files (x86)\Common Files
+  SCRIPT_NAME = compilervars_arch.bat
+EOLFIX_OUTPUT_DIR = output
+  LOGONSERVER = \\WINDOWS-AT7MJU0
+     HOMEPATH = \Users\vagrant
+  CYGWIN_HOME = c:\cygwin
+     LCC_HOME = c:\lcc
+     COMPILER = intel
+INTEL_LICENSE_FILE = C:\Program Files (x86)\Common Files\Intel\Licenses
+WINDOWS_TRACING_FLAGS = 3
+     MSDEVDIR = C:\Program Files (x86)\Microsoft Visual Studio\Common\MSDev98
+  SYSTEMDRIVE = C:
+     USERNAME = vagrant
+ LOCALAPPDATA = C:\Users\vagrant\AppData\Local
+     LINK_EXE = xilink /?
+        CPATH = C:\Program Files (x86)\Intel\Composer XE 2015\ipp\include;C:\Program Files (x86)\Intel\Composer XE 2015\tbb\bin\..\include;
+        DJGPP = C:\DJGPP\\DJGPP.ENV
+TBB_TARGET_ARCH = ia32
+     BIN_ROOT = C:\Program Files (x86)\Intel\Composer XE 2015\bin\
+ALLUSERSPROFILE = C:\ProgramData
+EXTENSIONSDKDIR = C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1\ExtensionSDKs
+        MSSDK = C:\Program Files\Microsoft Platform SDK\.
+           CC = cl
+ PROGRAMFILES = C:\Program Files (x86)
+    MAKEFLAGS = P                 
+IPP_TARGET_ARCH = ia32
+ FRAMEWORKDIR = C:\Windows\Microsoft.NET\Framework\
+PROCESSOR_REVISION = 3a09
+ VCINSTALLDIR = C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\
+ COMPUTERNAME = WINDOWS-AT7MJU0
+           AS = ml
+           RC = rc
+ PSMODULEPATH = C:\Windows\system32\WindowsPowerShell\v1.0\Modules\
+PROCESSOR_LEVEL = 6
+WINDOWSSDK_EXECUTABLEPATH_X64 = C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1A\bin\NETFX 4.5.1 Tools\x64\
+ VSINSTALLDIR = C:\Program Files (x86)\Microsoft Visual Studio 12.0\
+WINDOWSSDK_EXECUTABLEPATH_X86 = C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1A\bin\NETFX 4.5.1 Tools\
+ PRODUCT_NAME = Intel Parallel Studio XE 2015 Composer Edition
+ LIBRARY_PATH = C:\Program Files (x86)\Intel\Composer XE 2015\ipp\lib\ia32;C:\Program Files (x86)\Intel\Composer XE 2015\ipp\..\compiler\lib\ia32;
+PROCESSOR_ARCHITECTURE = x86
+           OS = Windows_NT
+    HOMEDRIVE = C:
+    DEVENVDIR = C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\
+    ARCH_PATH = ia32
+    COMPILERS =  bcc55 cygwin dm lcc mingw watcom msvc6 msvc8 msvc9 msvc10 msvc11 msvc12 msvc14
+FSHARPINSTALLDIR = C:\Program Files (x86)\Microsoft SDKs\F#\3.1\Framework\v4.0\
+       PUBLIC = C:\Users\Public
+MSVS_VAR_SCRIPT = "C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\Tools\..\..\VC\vcvarsall.bat"
+MIC_LD_LIBRARY_PATH = C:\Program Files (x86)\Intel\Composer XE 2015\compiler\lib\mic;C:\Program Files (x86)\Intel\Composer XE 2015\ipp\lib\mic;C:\Program Files (x86)\Intel\Composer XE 2015\tbb\bin\..\lib\mic;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\compiler\lib\mic
+       WINDIR = C:\Windows
+    WIN_TITLE = Intel Parallel Studio XE 2015 Composer Edition IA-32 Visual Studio 2013
+VS80COMNTOOLS = C:\Program Files (x86)\Microsoft Visual Studio 8\Common7\Tools\
+    TARGET_VS = vs2013
+VS90COMNTOOLS = C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\Tools\
+       CYGWIN = mintty
+VISUALSTUDIOVERSION = 12.0
+    MSYS_HOME = c:\mingw\msys\1.0
+FRAMEWORKVERSION = v4.0.30319
+ WIN_TITLE_VS = Visual Studio 2013
+          LIB = C:\Program Files (x86)\Intel\Composer XE 2015\compiler\lib;C:\Program Files (x86)\Intel\Composer XE 2015\compiler\lib\ia32;C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\LIB;C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\ATLMFC\LIB;C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86;C:\Program Files (x86)\Intel\Composer XE 2015\ipp\lib\ia32;C:\Program Files (x86)\Intel\Composer XE 2015\ipp\..\compiler\lib\ia32;C:\Program Files (x86)\Intel\Composer XE 2015\mkl\lib\ia32;C:\Program Files (x86)\Intel\Composer XE 2015\compiler\lib\ia32;C:\Program Files (x86)\Intel\Composer XE 2015\tbb\bin\..\lib\ia32\vc12;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\LIB;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\LIB;C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86;C:\Program Files (x86)\Microsoft Visual Studio\VC98\mfc\lib;C:\Program Files (x86)\Microsoft Visual Studio\VC98\lib;C:\Program Files\Microsoft Platform SDK\Lib;C:\Users\vagrant\Documents\src\shared
+MIC_LIBRARY_PATH = C:\Program Files (x86)\Intel\Composer XE 2015\compiler\lib\mic;C:\Program Files (x86)\Intel\Composer XE 2015\tbb\bin\..\lib\mic;
+ORIGINAL_PATH = C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\ia32\compiler;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\OpenSSH\bin;C:\git\cmd;C:\Program Files\7-Zip;C:\Program Files\Microsoft Platform SDK\Bin\.;C:\Program Files\Microsoft Platform SDK\Bin\WinNT\.;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files (x86)\Microsoft SDKs\TypeScript\1.1\;C:\Program Files (x86)\Microsoft Visual Studio\Common\Tools\WinNT;C:\Program Files (x86)\Microsoft Visual Studio\Common\MSDev98\Bin;C:\Program Files (x86)\Microsoft Visual Studio\Common\Tools;C:\Program Files (x86)\Microsoft Visual Studio\VC98\bin;C:\Program Files (x86)\NirSoft;C:\Program Files\Microsoft Platform SDK\Bin\.;C:\Program Files\Microsoft Platform SDK\Bin\WinNT\.;C:\Program Files (x86)\SysInternals
+       PROMPT = $P$G
+          CPP = cl
+INTEL_DEV_REDIST = C:\Program Files (x86)\Common Files\Intel\Shared Libraries\
+C_TARGET_ARCH = ia32
+_PROGRAMFILES = C:\Program Files (x86)
+WINDOWSSDKDIR = C:\Program Files (x86)\Windows Kits\8.1\
+FP_NO_HOST_CHECK = NO
+ARCH_PATH_MPI = ia32
+          TMP = C:\Users\vagrant\AppData\Local\Temp
+       OUTPUT = help\
+FRAMEWORKDIR32 = C:\Windows\Microsoft.NET\Framework\
+WINDOWS_TRACING_LOGFILE = C:\BVTBin\Tests\installpackage\csilogfile.log
+          CXX = cl
+   USERDOMAIN = WINDOWS-AT7MJU0
+   MSVC6_HOME = C:\Program Files (x86)\Microsoft Visual Studio\VC98
+VS100COMNTOOLS = C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\Tools\
+   MSVC7_HOME = C:\Program Files (x86)\Microsoft Visual C++ Toolkit 2003
+VS110COMNTOOLS = C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\Tools\
+   MSVC8_HOME = C:\Program Files (x86)\Microsoft Visual Studio 8\VC
+VS120COMNTOOLS = C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\Tools\
+   MSVC9_HOME = C:\Program Files (x86)\Microsoft Visual Studio 9.0\VC
+VS130COMNTOOLS = C:\Program Files (x86)\Microsoft Visual Studio 13.0\Common7\Tools
+      APPDATA = C:\Users\vagrant\AppData\Roaming
+VS140COMNTOOLS = C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\
+   DJGPP_HOME = c:\djgpp
+      MAKEDIR = C:\Users\vagrant\Documents\src.old\eolfix
+
+
+INFERENCE RULES:
+
+.asm.obj::
+	commands:	$(AS) $(AFLAGS) /c $<
+
+.asm.exe:
+	commands:	$(AS) $(AFLAGS) $<
+
+.c.obj::
+	commands:	$(CC) $(CFLAGS) /c $<
+
+.c.exe:
+	commands:	$(CC) $(CFLAGS) $<
+
+.cc.obj::
+	commands:	$(CC) $(CFLAGS) /c $<
+
+.cc.exe:
+	commands:	$(CC) $(CFLAGS) $<
+
+.cpp.obj::
+	commands:	$(CPP) $(CPPFLAGS) /c $<
+
+.cpp.exe:
+	commands:	$(CPP) $(CPPFLAGS) $<
+
+.cxx.obj::
+	commands:	$(CXX) $(CXXFLAGS) /c $<
+
+.cxx.exe:
+	commands:	$(CXX) $(CXXFLAGS) $<
+
+.rc.res:
+	commands:	$(RC) $(RFLAGS) /r $<
+
+.SUFFIXES: .obj .asm .c .cc .cpp .cxx .f .f90 .for .rc 
+
+TARGETS:
+
+

@@ -91,6 +91,31 @@ Options:
 * Microsoft Visual Studio 2013, 2012, 2010, 2008, 2005, .NET
 * Open Watcom C/C++ NMAKE Clone for 386  Version 1.3 - 1.9
 
+## Verify a Release
+
+To verify a release, download the .zip, .sha256, and .asc files for the release 
+(replacing eolfix-0.3.0-win32.zip with the release you are verifying):
+
+````
+$ wget https://github.com/rasa/eolfix/releases/download/v0.3.0/eolfix-0.3.0-win32.zip{,.sha256,.asc}
+````
+
+Next, check that sha256sum reports "OK":
+````
+$ sha256sum -c eolfix-0.3.0-win32.zip.sha256
+eolfix-0.3.0-win32.zip: OK
+````
+
+Lastly, check that GPG reports "Good signature":
+
+````
+$ gpg --keyserver hkps.pool.sks-keyservers.net --recv-key 0x105a5225b6ab4b22
+$ gpg --verify eolfix-0.3.0-win32.zip.asc eolfix-0.3.0-win32.zip
+gpg:                using RSA key 0xFF914F74B4BB6EF3
+gpg: Good signature from "Ross Smith II <ross@smithii.com>" [ultimate]
+...
+````
+
 ## Contributing
 
 To contribute to this project, please see [CONTRIBUTING.md](CONTRIBUTING.md).

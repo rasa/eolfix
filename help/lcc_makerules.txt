@@ -1,0 +1,54 @@
+MAKEFILE = empty.mak
+$ = $
+MAKE = make
+BUILDLIB = buildlib
+RC = lrc
+AS = lcc
+FFLAGS = -g -removec
+F2C = f2c
+CFLAGS = -O
+CC = lcc
+LCCROOT = C:\lcc
+
+.c.obj:
+:
+-	$(CC) $(CFLAGS) $<
+
+
+.asm.obj:
+:
+-	$(AS) $<
+
+
+.f.obj:
+:
+-	$(F2C) $(FFLAGS) $<
+
+
+.rc.res:
+:
+-	$(RC) $<
+
+
+.exp.lib:
+:
+-	$(BUILDLIB) $<
+
+
+.obj:
+
+.asm:
+
+.c:
+
+.exp:
+
+.rc:
+
+.f:
+
+.SUFFIXES:
+: .obj .asm .c .exp .rc .f
+
+
+make: No targets defined

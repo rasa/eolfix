@@ -13,5 +13,5 @@ set path=%lcc_home%\bin;%path%
 set _cflags=-A -O -DNDEBUG
 if defined debug set _cflags=-A -g5 -D_DEBUG
 
-make -f lcc.mak CFLAGS="%_cflags%" %targets%
+make -f lcc.mk CFLAGS="%_cflags%" %targets%
 

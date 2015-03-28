@@ -1,0 +1,159 @@
+
+Microsoft (R) Program Maintenance Utility Version 14.00.22310.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+MACROS:
+
+PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 58 Stepping 9, GenuineIntel
+      LIBPATH = C:\Windows\Microsoft.NET\Framework\v4.0.30319;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\LIB;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\LIB;C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral;\Microsoft.VCLibs\14.0\References\CommonConfiguration\neutral;C:\Windows\Microsoft.NET\Framework\v4.0.30319;C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\LIB;C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\ATLMFC\LIB;C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral;C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\Microsoft.VCLibs\12.0\References\CommonConfiguration\neutral;C:\Windows\Microsoft.NET\Framework\v4.0.30319;C:\Windows\Microsoft.NET\Framework\v3.5;C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\LIB;C:\Program Files (x86)\Windows Kits\8.0\References\CommonConfiguration\Neutral;C:\Program Files (x86)\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.VCLibs\11.0\References\CommonConfiguration\neutral;C:\Windows\Microsoft.NET\Framework\v4.0.30319;C:\Windows\Microsoft.NET\Framework\v3.5;C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\LIB;C:\Windows\Microsoft.NET\Framework\v3.5;C:\Windows\Microsoft.NET\Framework\v2.0.50727;C:\Program Files (x86)\Microsoft Visual Studio 9.0\VC\LIB;C:\Windows\Microsoft.NET\Framework\v2.0.50727
+      INCLUDE = C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE;C:\Program Files (x86)\Windows Kits\8.1\include\shared;C:\Program Files (x86)\Windows Kits\8.1\include\um;C:\Program Files (x86)\Windows Kits\8.1\include\winrt;C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\INCLUDE;C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\ATLMFC\INCLUDE;C:\Program Files (x86)\Windows Kits\8.1\include\shared;C:\Program Files (x86)\Windows Kits\8.1\include\um;C:\Program Files (x86)\Windows Kits\8.1\include\winrt;C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\INCLUDE;C:\Program Files (x86)\Windows Kits\8.0\include\shared;C:\Program Files (x86)\Windows Kits\8.0\include\um;C:\Program Files (x86)\Windows Kits\8.0\include\winrt;C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\INCLUDE;C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include;C:\Program Files (x86)\Microsoft Visual Studio 9.0\VC\INCLUDE;C:\Program Files\Microsoft SDKs\Windows\v6.0A\include;C:\Program Files (x86)\Microsoft Visual Studio 8\VC\INCLUDE;C:\PROGRA~2\MICROS~1\VC98\ATL\INCLUDE;C:\PROGRA~2\MICROS~1\VC98\INCLUDE;C:\PROGRA~2\MICROS~1\VC98\MFC\INCLUDE;C:\Program Files\Microsoft Platform SDK\Include\.;C:\Program Files (x86)\Microsoft Visual Studio\VC98\atl\include;C:\Program Files (x86)\Microsoft Visual Studio\VC98\mfc\include;C:\Program Files (x86)\Microsoft Visual Studio\VC98\include;C:\Users\vagrant\Documents\src\shared
+COMMONPROGRAMW6432 = C:\Program Files\Common Files
+   MINGW_HOME = c:\mingw
+      COMSPEC = C:\Windows\system32\cmd.exe
+      INETSDK = C:\Program Files\Microsoft Platform SDK\.
+   _NMAKE_VER = 14.00.22310.1
+      MSVCDIR = C:\PROGRA~2\MICROS~1\VC98
+      DM_HOME = c:\dm
+      PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+         MAKE = nmake
+		"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\BIN\nmake.exe"
+   SDKLIB_XXX = C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\Lib
+  MSVC10_HOME = C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC
+  MSVC11_HOME = C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC
+  MSVC12_HOME = C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC
+      CPP_EXE = cl /?
+  MSVC13_HOME = C:\Program Files (x86)\Microsoft Visual Studio 13.0\VC
+   SYSTEMROOT = C:\Windows
+WINDOWSSDKDIR_OLD = C:\Program Files (x86)\Microsoft SDKs\Windows\v8.0A\
+         PATH = C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\CommonExtensions\Microsoft\TestWindow;C:\Program Files (x86)\Microsoft SDKs\F#\4.0\Framework\v4.0\;C:\Program Files (x86)\MSBuild\14.0\bin;C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\BIN;C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools;C:\Windows\Microsoft.NET\Framework\v4.0.30319;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\VCPackages;C:\Program Files (x86)\HTML Help Workshop;C:\Program Files (x86)\Microsoft Visual Studio 14.0\Team Tools\Performance Tools;C:\Program Files (x86)\Windows Kits\8.1\bin\x86;C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1A\bin\NETFX 4.5.1 Tools\;C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\CommonExtensions\Microsoft\TestWindow;C:\Program Files (x86)\Microsoft SDKs\F#\3.1\Framework\v4.0\;C:\Program Files (x86)\MSBuild\12.0\bin;C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\;C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\BIN;C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\Tools;C:\Windows\Microsoft.NET\Framework\v4.0.30319;C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\VCPackages;C:\Program Files (x86)\HTML Help Workshop;C:\Program Files (x86)\Microsoft Visual Studio 12.0\Team Tools\Performance Tools;C:\Program Files (x86)\Windows Kits\8.1\bin\x86;C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1A\bin\NETFX 4.5.1 Tools\;C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE\CommonExtensions\Microsoft\TestWindow;C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE\;C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\BIN;C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\Tools;C:\Windows\Microsoft.NET\Framework\v4.0.30319;C:\Windows\Microsoft.NET\Framework\v3.5;C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\VCPackages;C:\Program Files (x86)\HTML Help Workshop;C:\Program Files (x86)\Microsoft Visual Studio 11.0\Team Tools\Performance Tools;C:\Program Files (x86)\Windows Kits\8.0\bin\x86;C:\Program Files (x86)\Microsoft SDKs\Windows\v8.0A\bin\NETFX 4.0 Tools;C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bin\;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\;C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\BIN;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\Tools;C:\Windows\Microsoft.NET\Framework\v4.0.30319;C:\Windows\Microsoft.NET\Framework\v3.5;C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\VCPackages;C:\Program Files (x86)\HTML Help Workshop;C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\NETFX 4.0 Tools;C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin;C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\IDE;C:\Program Files (x86)\Microsoft Visual Studio 9.0\VC\BIN;C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\Tools;C:\Windows\Microsoft.NET\Framework\v3.5;C:\Windows\Microsoft.NET\Framework\v2.0.50727;C:\Program Files (x86)\Microsoft Visual Studio 9.0\VC\VCPackages;C:\Program Files\Microsoft SDKs\Windows\v6.0A\bin;C:\Program Files (x86)\Microsoft Visual Studio 8\Common7\IDE;C:\Program Files (x86)\Microsoft Visual Studio 8\VC\BIN;C:\Program Files (x86)\Microsoft Visual Studio 8\Common7\Tools;C:\Program Files (x86)\Microsoft Visual Studio 8\SDK\v2.0\bin;C:\Windows\Microsoft.NET\Framework\v2.0.50727;C:\Program Files (x86)\Microsoft Visual Studio 8\VC\VCPackages;C:\PROGRA~2\MICROS~1\Common\msdev98\BIN;C:\PROGRA~2\MICROS~1\VC98\BIN;C:\PROGRA~2\MICROS~1\Common\TOOLS\WINNT;C:\PROGRA~2\MICROS~1\Common\TOOLS;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\OpenSSH\bin;C:\git\cmd;C:\Program Files\7-Zip;C:\Program Files\Microsoft Platform SDK\Bin\.;C:\Program Files\Microsoft Platform SDK\Bin\WinNT\.;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files (x86)\Microsoft SDKs\TypeScript\1.1\;C:\Program Files (x86)\MySQL\MySQL Fabric 1.5.2 
+NUMBER_OF_PROCESSORS = 1
+      MSTOOLS = C:\Program Files\Microsoft Platform SDK\.
+  PROGRAMDATA = C:\ProgramData
+         TEMP = C:\Users\vagrant\AppData\Local\Temp
+FRAMEWORK40VERSION = v4.0
+FRAMEWORKVERSION32 = v4.0.30319
+     BKOFFICE = C:\Program Files\Microsoft Platform SDK\.
+     BASEMAKE = C:\Program Files\Microsoft Platform SDK\Include\BKOffice.Mak
+FRAMEWORK35VERSION = v3.5
+ PROGRAMW6432 = C:\Program Files
+  SESSIONNAME = Console
+PROCESSOR_ARCHITEW6432 = AMD64
+     VSVARS32 = "C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\\vsvars32.bat"
+  USERPROFILE = C:\Users\vagrant
+     BCC_HOME = c:\bcc55
+  WATCOM_HOME = c:\watcom
+COMMONPROGRAMFILES = C:\Program Files (x86)\Common Files
+EOLFIX_OUTPUT_DIR = output
+  LOGONSERVER = \\WINDOWS-AT7MJU0
+     HOMEPATH = \Users\vagrant
+  CYGWIN_HOME = c:\cygwin
+     LCC_HOME = c:\lcc
+     COMPILER = msvc14
+INTEL_LICENSE_FILE = C:\Program Files (x86)\Common Files\Intel\Licenses
+WINDOWS_TRACING_FLAGS = 3
+     MSDEVDIR = C:\PROGRA~2\MICROS~1\Common\msdev98
+  SYSTEMDRIVE = C:
+     USERNAME = vagrant
+ LOCALAPPDATA = C:\Users\vagrant\AppData\Local
+     LINK_EXE = link /?
+FRAMEWORKSDKDIR = C:\Program Files (x86)\Microsoft Visual Studio 8\SDK\v2.0
+        DJGPP = C:\DJGPP\\DJGPP.ENV
+ALLUSERSPROFILE = C:\ProgramData
+        MSSDK = C:\Program Files\Microsoft Platform SDK\.
+           CC = cl
+ PROGRAMFILES = C:\Program Files (x86)
+    MAKEFLAGS = P                 
+ FRAMEWORKDIR = C:\Windows\Microsoft.NET\Framework\
+PROCESSOR_REVISION = 3a09
+ VCINSTALLDIR = C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\
+ COMPUTERNAME = WINDOWS-AT7MJU0
+           AS = ml
+           RC = rc
+ PSMODULEPATH = C:\Windows\system32\WindowsPowerShell\v1.0\Modules\
+PROCESSOR_LEVEL = 6
+WINDOWSSDK_EXECUTABLEPATH_X64 = C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1A\bin\NETFX 4.5.1 Tools\x64\
+ VSINSTALLDIR = C:\Program Files (x86)\Microsoft Visual Studio 14.0\
+WINDOWSSDK_EXECUTABLEPATH_X86 = C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1A\bin\NETFX 4.5.1 Tools\
+PROCESSOR_ARCHITECTURE = x86
+           OS = Windows_NT
+    HOMEDRIVE = C:
+    DEVENVDIR = C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\
+    COMPILERS =  bcc55 cygwin dm lcc mingw watcom msvc6 msvc8 msvc9 msvc10 msvc11 msvc12 msvc14
+WINDOWSSDKDIR_35 = C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bin\
+FSHARPINSTALLDIR = C:\Program Files (x86)\Microsoft SDKs\F#\4.0\Framework\v4.0\
+       PUBLIC = C:\Users\Public
+       WINDIR = C:\Windows
+VS80COMNTOOLS = C:\Program Files (x86)\Microsoft Visual Studio 8\Common7\Tools\
+VS90COMNTOOLS = C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\Tools\
+       CYGWIN = mintty
+VISUALSTUDIOVERSION = 14.0
+    MSYS_HOME = c:\mingw\msys\1.0
+FRAMEWORKVERSION = v4.0.30319
+          LIB = C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\LIB;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\LIB;C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86;C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\LIB;C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\ATLMFC\LIB;C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86;C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\LIB;C:\Program Files (x86)\Windows Kits\8.0\lib\win8\um\x86;C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\LIB;C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\lib;C:\Program Files (x86)\Microsoft Visual Studio 9.0\VC\LIB;C:\Program Files\Microsoft SDKs\Windows\v6.0A\lib;C:\Program Files (x86)\Microsoft Visual Studio 8\VC\LIB;C:\Program Files (x86)\Microsoft Visual Studio 8\SDK\v2.0\lib;C:\PROGRA~2\MICROS~1\VC98\LIB;C:\PROGRA~2\MICROS~1\VC98\MFC\LIB;C:\Users\vagrant\Documents\src\shared;C:\Program Files (x86)\Microsoft Visual Studio\VC98\mfc\lib;C:\Program Files (x86)\Microsoft Visual Studio\VC98\lib;C:\Program Files\Microsoft Platform SDK\Lib;
+ORIGINAL_PATH = C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\OpenSSH\bin;C:\git\cmd;C:\Program Files\7-Zip;C:\Program Files\Microsoft Platform SDK\Bin\.;C:\Program Files\Microsoft Platform SDK\Bin\WinNT\.;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files (x86)\Microsoft SDKs\TypeScript\1.1\;C:\Program Files (x86)\MySQL\MySQL Fabric 1.5.2 
+       PROMPT = $P$G
+          CPP = cl
+_PROGRAMFILES = C:\Program Files (x86)
+WINDOWSSDKDIR = C:\Program Files (x86)\Windows Kits\8.1\
+FP_NO_HOST_CHECK = NO
+          TMP = C:\Users\vagrant\AppData\Local\Temp
+       OUTPUT = help\
+FRAMEWORKDIR32 = C:\Windows\Microsoft.NET\Framework\
+WINDOWS_TRACING_LOGFILE = C:\BVTBin\Tests\installpackage\csilogfile.log
+          CXX = cl
+   USERDOMAIN = WINDOWS-AT7MJU0
+   MSVC6_HOME = C:\Program Files (x86)\Microsoft Visual Studio\VC98
+VS100COMNTOOLS = C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\Tools\
+   MSVC7_HOME = C:\Program Files (x86)\Microsoft Visual C++ Toolkit 2003
+VS110COMNTOOLS = C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\Tools\
+   MSVC8_HOME = C:\Program Files (x86)\Microsoft Visual Studio 8\VC
+VS120COMNTOOLS = C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\Tools\
+   MSVC9_HOME = C:\Program Files (x86)\Microsoft Visual Studio 9.0\VC
+VS130COMNTOOLS = C:\Program Files (x86)\Microsoft Visual Studio 13.0\Common7\Tools
+      APPDATA = C:\Users\vagrant\AppData\Roaming
+VS140COMNTOOLS = C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\
+   DJGPP_HOME = c:\djgpp
+      MAKEDIR = C:\Users\vagrant\Documents\src.old\eolfix
+
+
+INFERENCE RULES:
+
+.asm.obj::
+	commands:	$(AS) $(AFLAGS) /c $<
+
+.asm.exe:
+	commands:	$(AS) $(AFLAGS) $<
+
+.c.obj::
+	commands:	$(CC) $(CFLAGS) /c $<
+
+.c.exe:
+	commands:	$(CC) $(CFLAGS) $<
+
+.cc.obj::
+	commands:	$(CC) $(CFLAGS) /c $<
+
+.cc.exe:
+	commands:	$(CC) $(CFLAGS) $<
+
+.cpp.obj::
+	commands:	$(CPP) $(CPPFLAGS) /c $<
+
+.cpp.exe:
+	commands:	$(CPP) $(CPPFLAGS) $<
+
+.cxx.obj::
+	commands:	$(CXX) $(CXXFLAGS) /c $<
+
+.cxx.exe:
+	commands:	$(CXX) $(CXXFLAGS) $<
+
+.rc.res:
+	commands:	$(RC) $(RFLAGS) /r $<
+
+.SUFFIXES: .obj .asm .c .cc .cpp .cxx .f .f90 .for .rc 
+
+TARGETS:
+
+

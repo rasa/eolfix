@@ -1,0 +1,33 @@
+Lcclnk command line options.  Options are introduced with the character '-' or the character '/'.
+-o <filename> 
+   Sets the name of the output file to file name. Insert a space between the o and the
+   name of the file.
+-errout <filename> 
+   Write all warnings/error messages to the indicated file name.
+-subsystem <subsystem> 
+  Indicate the type of output file. Console or windows application
+-stack-commit <number> 
+   With this option, you can commit more pages than one (4096 bytes).
+-stack-reserve <number> 
+  The default stack size is 1MB. This changes this limit.
+-dynamic
+  Use lcclibc.dll as default library and link to it dynamically instead of linking to libc.lib.
+-dll 
+   This option indicates to the linker that a .dll should be created instead of an .exe.
+-map <filename> 
+   Indicates the name of the map file.This option is incompatible with the -s option.
+-nolibc
+  Do not include the standard C library.
+-s Strips all symbolic and debugging information from the executable. 
+-version nn.nn 
+   Adds the version number to the executable.
+-errout=<filename> 
+   Write all warnings or errors to the file name indicated.Note that no spaces
+   should separate the name from the equals sign.
+-nounderscores 
+   When creating a DLL for Visual Basic for instance, it is better to export names without 
+   underscores from a DLL. 
+-entry <fnname> 
+   Option fo setting the DLL entry point to the given function
+-version
+   Print the version name

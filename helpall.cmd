@@ -224,7 +224,7 @@ for %%i in (8 9 10 11 12 14) do (
 	echo make: %make% -p -f empty.mak help\!compiler!_makerules.txt
 	%make% -p -f empty.mak >help\!compiler!_makerules.txt 2>&1
 	echo cpp : %cpp_exe% help\!compiler!_cpp.txt
-	%cpp_exe% >help\!compiler!_cpp.txt 2>&1
+	echo.|%cpp_exe% >help\!compiler!_cpp.txt 2>&1
 	echo link: %link_exe% help\!compiler!_link.txt
 	%link_exe% >help\!compiler!_link.txt 2>&1
 )

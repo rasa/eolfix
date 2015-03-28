@@ -1,0 +1,69 @@
+Open Watcom C/C++ CL Clone for 386  Version 1.9
+Portions Copyright (c) 1995-2002 Sybase, Inc. All Rights Reserved.
+Source code is available under the Sybase Open Watcom Public License.
+See http://www.openwatcom.org/ for details.
+Compatible with CL Version 13.0.0
+Usage: cl [options] file [options]
+Options:
+            ( /option is also accepted )
+-C                   preserve comments
+-c                   compile only
+-D<macro>[=<value>]  same as #define <macro>[=<value>] before compilation
+-E                   preprocess and insert #line directives to stdout
+-EP                  preprocess without #line directives to stdout
+-F<size>             set stack size
+-Fe<file>            set executable or DLL file name
+-FI<file>            force <file> to be included
+-Fm[<file>]          set map file name
+-Fo<file>            set object output file name
+-Fp<file>            set precompiled header data file name
+-FR<file>            generate browsing information
+	(Press return to continue)
+-G3                  386 instructions
+-G4                  386 instructions, optimize for 486
+-G5                  386 instructions, optimize for Pentium
+-GB                  386 instructions, optimize for 486
+-Ge                  activate stack probes for all functions
+-Gf                  merge duplicate strings
+-GF                  merge duplicate read-only strings
+-Gh                  call __penter at the start of each function
+-Gs<distance>        set stack probe distance
+-GX                  destruct static objects during stack unwinding
+-Gy                  store each function in its own COMDAT
+-help                get help
+-I<path>             add another include path
+-J                   change char default from signed to unsigned
+-LD                  create DLL
+	(Press return to continue)
+-link                specify linker options
+-MD                  use multithreaded DLL version of C library
+-MDd                 use multithreaded debug DLL version of C library
+-ML                  use single-thread statically linked version of C library
+-MLd                 use single-thread debug static link version of C library
+-MT                  use multithreaded static version of C library
+-MTd                 use multithreaded debug static version of C library
+-noinvoke            don't invoke the Watcom tool
+-nologo              operate quietly
+-nowopts             disable default options
+-nowwarn             disable warning messages for ignored options
+-o<file>             set executable or DLL file name
+-O1                  minimize size
+-O2                  maximize speed
+-Oa                  assume no aliasing
+	(Press return to continue)
+-Ob<num>             control function inlining
+-Od                  disable all optimizations
+-Og                  enable global optimizations
+-Oi                  expand intrinsic functions inline
+-Op                  generate consistent floating-point results
+-Os                  favor code size over execution time in optimizations
+-Ot                  favor execution time over code size in optimizations
+-Ox                  equivalent to /Ob1 /Og /Oi /Ot /Oy /Gs
+-Oy                  disable stack frames
+-P                   preprocess to a file
+-passwopts:<options> pass <options> directly to the Watcom tools
+-QIfdiv              enable Pentium FDIV fix
+-showwopts           show translated options
+-TC                  force compilation of all files as C
+-Tc<file>            force compilation of <file> as C
+	(Press return to continue)^C

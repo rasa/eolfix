@@ -8,7 +8,7 @@
 #define PACKAGE "eolfix"
 
 /* Define to the version of this package. */
-#define PACKAGE_VERSION "0.2.0"
+#define PACKAGE_VERSION "0.3.0"
 
 /* Define to the address where bug reports for this package should be sent. */
 #define PACKAGE_BUGREPORT "ross@smithii.com"

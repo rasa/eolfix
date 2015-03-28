@@ -1,0 +1,1279 @@
+# GNU Make 3.81
+# Copyright (C) 2006  Free Software Foundation, Inc.
+# This is free software; see the source for copying conditions.
+# There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.
+
+# This program built for i686-pc-msys
+make: *** No targets.  Stop.
+
+# Make data base, printed on Wed Feb 25 12:34:46 2015
+
+# Variables
+
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# environment
+MSVC12_HOME = C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC
+# environment
+PRODUCT_NAME = Intel Parallel Studio XE 2015 Composer Edition
+# environment
+DM_HOME = c:\dm
+# environment
+MSYS_HOME = c:\mingw\msys\1.0
+# makefile
+MAKEFLAGS = p
+# environment
+LINK_EXE = gcc --help
+# environment
+BKOFFICE = C:\Program Files\Microsoft Platform SDK\.
+# environment
+MSDEVDIR = C:\Program Files (x86)\Microsoft Visual Studio\Common\MSDev98
+# default
+CWEAVE = cweave
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# environment
+ARCH_PATH_MPI = ia32
+# environment
+!:: = ::\
+# environment
+MSVC7_HOME = C:\Program Files (x86)\Microsoft Visual C++ Toolkit 2003
+# environment
+WATCOM_HOME = c:\watcom
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+HOMEDRIVE = C:
+# automatic
+@F = $(notdir $@)
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# makefile
+CURDIR := /c/Users/vagrant/Documents/src.old/eolfix
+# default
+SHELL := /bin/sh
+# default
+RM = rm -f
+# environment
+CYGWIN = mintty
+# default
+CO = co
+# default
+COMPILE.mod = $(M2C) $(M2FLAGS) $(MODFLAGS) $(TARGET_ARCH)
+# environment
+WINDIR = C:\Windows
+# environment
+FP_NO_HOST_CHECK = NO
+# environment
+INTEL_HOME = C:\Program Files (x86)\Intel\Composer XE 2015
+# environment
+INTEL_LICENSE_FILE = C:\Program Files (x86)\Common Files\Intel\Licenses
+# default
+PREPROCESS.F = $(FC) $(FFLAGS) $(CPPFLAGS) $(TARGET_ARCH) -F
+# environment
+VS140COMNTOOLS = C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\
+# default
+LINK.o = $(CC) $(LDFLAGS) $(TARGET_ARCH)
+# default
+OUTPUT_OPTION = -o $@
+# environment
+FRAMEWORKDIR32 = C:\Windows\Microsoft.NET\Framework\
+# default
+COMPILE.cpp = $(COMPILE.cc)
+# environment
+PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+# makefile (from `empty.mak', line 1)
+MAKEFILE_LIST :=  empty.mak
+# environment
+PRODUCT_NAME_FULL = Intel(R) Parallel Studio XE 2015 Update 2 Composer Edition (package 179)
+# environment
+VSINSTALLDIR = C:\Program Files (x86)\Microsoft Visual Studio 12.0\
+# environment
+TMP = /tmp
+# default
+LINK.p = $(PC) $(PFLAGS) $(CPPFLAGS) $(LDFLAGS) $(TARGET_ARCH)
+# environment
+TBBROOT = C:\Program Files (x86)\Intel\Composer XE 2015\tbb\bin\..
+# environment
+FRAMEWORK40VERSION = v4.0
+# default
+CC = cc
+# environment
+CPP_EXE = gcc --help
+# environment
+MSVC9_HOME = C:\Program Files (x86)\Microsoft Visual Studio 9.0\VC
+# environment
+PROGRAMW6432 = C:\Program Files
+# environment
+WIN_TITLE_VS = Visual Studio 2013
+# environment
+VS100COMNTOOLS = C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\Tools\
+# environment
+MSVC13_HOME = C:\Program Files (x86)\Microsoft Visual Studio 13.0\VC
+# default
+CHECKOUT,v = +$(if $(wildcard $@),,$(CO) $(COFLAGS) $< $@)
+# environment
+PROGRAMDATA = C:\ProgramData
+# default
+CPP = $(CC) -E
+# environment
+CYGWIN_HOME = c:\cygwin
+# default
+LINK.cc = $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(LDFLAGS) $(TARGET_ARCH)
+# environment
+PATH = /c/mingw/bin:/usr/bin:/c/lcc/bin:/c/Program Files (x86)/Intel/Composer XE 2015/bin/ia32:/c/Program Files (x86)/Intel/Composer XE 2015/redist/ia32/compiler:/c/Program Files (x86)/Microsoft Visual Studio 12.0/Common7/IDE/CommonExtensions/Microsoft/TestWindow:/c/Program Files (x86)/Microsoft SDKs/F#/3.1/Framework/v4.0/:/c/Program Files (x86)/MSBuild/12.0/bin:/c/Program Files (x86)/Microsoft Visual Studio 12.0/Common7/IDE/:/c/Program Files (x86)/Microsoft Visual Studio 12.0/VC/BIN:/c/Program Files (x86)/Microsoft Visual Studio 12.0/Common7/Tools:/c/Windows/Microsoft.NET/Framework/v4.0.30319:/c/Program Files (x86)/Microsoft Visual Studio 12.0/VC/VCPackages:/c/Program Files (x86)/HTML Help Workshop:/c/Program Files (x86)/Microsoft Visual Studio 12.0/Team Tools/Performance Tools:/c/Program Files (x86)/Windows Kits/8.1/bin/x86:/c/Program Files (x86)/Microsoft SDKs/Windows/v8.1A/bin/NETFX 4.5.1 Tools/:/c/Program Files (x86)/Intel/Composer XE 2015/redist/ia32/ipp:/c/Program Files (x86)/Intel/Composer XE 2015/redist/ia32/compiler:/c/Program Files (x86)/Intel/Composer XE 2015/redist/ia32/mkl:/c/Program Files (x86)/Intel/Composer XE 2015/redist/ia32/compiler:/c/Program Files (x86)/Intel/Composer XE 2015/redist/ia32/tbb/vc12:/c/Program Files (x86)/Microsoft Visual Studio 14.0/Common7/IDE/CommonExtensions/Microsoft/TestWindow:/c/Program Files (x86)/Microsoft SDKs/F#/4.0/Framework/v4.0/:/c/Program Files (x86)/MSBuild/14.0/bin:/c/Program Files (x86)/Microsoft Visual Studio 14.0/Common7/IDE/:/c/Program Files (x86)/Microsoft Visual Studio 14.0/VC/BIN:/c/Program Files (x86)/Microsoft Visual Studio 14.0/Common7/Tools:/c/Windows/Microsoft.NET/Framework/v4.0.30319:/c/Program Files (x86)/Microsoft Visual Studio 14.0/VC/VCPackages:/c/Program Files (x86)/HTML Help Workshop:/c/Program Files (x86)/Microsoft Visual Studio 14.0/Team Tools/Performance Tools:/c/Program Files (x86)/Windows Kits/8.1/bin/x86:/c/Program Files (x86)/Microsoft SDKs/Windows/v8.1A/bin/NETFX 4.5.1 Tools/:/c/dm/bin:/c/cygwin/bin:/c/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler:/c/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/ia32/compiler:/c/Windows/system32:/c/Windows:/c/Windows/System32/Wbem:/c/Windows/System32/WindowsPowerShell/v1.0/:/c/Program Files/OpenSSH/bin:/c/git/cmd:/c/Program Files/7-Zip:/c/Program Files/Microsoft Platform SDK/Bin/.:/c/Program Files/Microsoft Platform SDK/Bin/WinNT/.:/c/Program Files/Microsoft SQL Server/110/Tools/Binn/:/c/Program Files/Microsoft SQL Server/120/Tools/Binn/:/c/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/:/c/Program Files (x86)/Microsoft SDKs/TypeScript/1.1/:/c/Program Files (x86)/Microsoft Visual Studio/Common/Tools/WinNT:/c/Program Files (x86)/Microsoft Visual Studio/Common/MSDev98/Bin:/c/Program Files (x86)/Microsoft Visual Studio/Common/Tools:/c/Program Files (x86)/Microsoft Visual Studio/VC98/bin:/c/Program Files (x86)/NirSoft:/c/Program Files/Microsoft Platform SDK/Bin/.:/c/Program Files/Microsoft Platform SDK/Bin/WinNT/.:/c/Program Files (x86)/SysInternals:/c/Program Files (x86)/Intel/Composer XE 2015/redist/ia32/mpirt:.
+# environment
+VS110COMNTOOLS = C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\Tools\
+# default
+LD = ld
+# environment
+COMMONPROGRAMW6432 = C:\Program Files\Common Files
+# environment
+BCC_HOME = c:\bcc55
+# default
+YACC = yacc
+# environment
+BUNDLE_NAME = Intel(R) Parallel Studio XE 2015
+# environment
+VISUALSTUDIOVERSION = 12.0
+# environment
+PROCESSOR_ARCHITECTURE = x86
+# default
+LINK.r = $(FC) $(FFLAGS) $(RFLAGS) $(LDFLAGS) $(TARGET_ARCH)
+# environment
+LIBRARY_PATH = C:\Program Files (x86)\Intel\Composer XE 2015\ipp\lib\ia32;C:\Program Files (x86)\Intel\Composer XE 2015\ipp\..\compiler\lib\ia32;
+# environment
+USERPROFILE = C:\Users\vagrant
+# default
+LINT = lint
+# default
+COMPILE.f = $(FC) $(FFLAGS) $(TARGET_ARCH) -c
+# environment
+TBB_ARCH_PLATFORM = ia32\vc12
+# environment
+CPATH = C:\Program Files (x86)\Intel\Composer XE 2015\ipp\include;C:\Program Files (x86)\Intel\Composer XE 2015\tbb\bin\..\include;
+# environment
+FRAMEWORKDIR = C:\Windows\Microsoft.NET\Framework\
+# environment
+!C: = C:\Users\vagrant\Documents\src.old\eolfix
+# environment
+ALLUSERSPROFILE = C:\ProgramData
+# default
+YACC.y = $(YACC) $(YFLAGS)
+# environment
+WINDOWSSDK_EXECUTABLEPATH_X64 = C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1A\bin\NETFX 4.5.1 Tools\x64\
+# default
+AR = ar
+# environment
+VS130COMNTOOLS = C:\Program Files (x86)\Microsoft Visual Studio 13.0\Common7\Tools
+# environment
+LCC_HOME = c:\lcc
+# environment
+NUMBER_OF_PROCESSORS = 1
+# environment
+VS120COMNTOOLS = C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\Tools\
+# environment
+MINGW_HOME = c:\mingw
+# environment
+C_TARGET_ARCH = ia32
+# default
+.FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
+# default
+TANGLE = tangle
+# environment
+MIC_LIBRARY_PATH = C:\Program Files (x86)\Intel\Composer XE 2015\compiler\lib\mic;C:\Program Files (x86)\Intel\Composer XE 2015\tbb\bin\..\lib\mic;
+# default
+GET = get
+# automatic
+%F = $(notdir $%)
+# default
+COMPILE.F = $(FC) $(FFLAGS) $(CPPFLAGS) $(TARGET_ARCH) -c
+# environment
+FSHARPINSTALLDIR = C:\Program Files (x86)\Microsoft SDKs\F#\3.1\Framework\v4.0\
+# environment
+WIN_TITLE_ARCH = IA-32
+# default
+CTANGLE = ctangle
+# environment
+FRAMEWORKVERSION32 = v4.0.30319
+# default
+.LIBPATTERNS = lib%.so lib%.a
+# environment
+ORIGINAL_PATH = C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\ia32\compiler;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\OpenSSH\bin;C:\git\cmd;C:\Program Files\7-Zip;C:\Program Files\Microsoft Platform SDK\Bin\.;C:\Program Files\Microsoft Platform SDK\Bin\WinNT\.;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files (x86)\Microsoft SDKs\TypeScript\1.1\;C:\Program Files (x86)\Microsoft Visual Studio\Common\Tools\WinNT;C:\Program Files (x86)\Microsoft Visual Studio\Common\MSDev98\Bin;C:\Program Files (x86)\Microsoft Visual Studio\Common\Tools;C:\Program Files (x86)\Microsoft Visual Studio\VC98\bin;C:\Program Files (x86)\NirSoft;C:\Program Files\Microsoft Platform SDK\Bin\.;C:\Program Files\Microsoft Platform SDK\Bin\WinNT\.;C:\Program Files (x86)\SysInternals
+# environment
+COMPUTERNAME = WINDOWS-AT7MJU0
+# default
+LINK.C = $(LINK.cc)
+# environment
+PROGRAMFILES = C:\Program Files (x86)
+# environment
+MSVC8_HOME = C:\Program Files (x86)\Microsoft Visual Studio 8\VC
+# default
+LINK.S = $(CC) $(ASFLAGS) $(CPPFLAGS) $(LDFLAGS) $(TARGET_MACH)
+# environment
+COMPILERS =  bcc55 cygwin dm lcc mingw watcom msvc6 msvc8 msvc9 msvc10 msvc11 msvc12 msvc14
+# default
+PREPROCESS.r = $(FC) $(FFLAGS) $(RFLAGS) $(TARGET_ARCH) -F
+# default
+LINK.c = $(CC) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) $(TARGET_ARCH)
+# environment
+USERNAME = vagrant
+# environment
+PUBLIC = C:\Users\Public
+# default
+LINK.s = $(CC) $(ASFLAGS) $(LDFLAGS) $(TARGET_MACH)
+# environment
+TARGET_VS_ARCH = x86
+# environment
+DJGPP = C:\DJGPP\\DJGPP.ENV
+# environment
+WINDOWSSDK_EXECUTABLEPATH_X86 = C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1A\bin\NETFX 4.5.1 Tools\
+# environment
+VS90COMNTOOLS = C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\Tools\
+# environment
+IPP_TARGET_ARCH = ia32
+# environment
+!EXITCODE = 00000002
+# environment
+COMMONPROGRAMFILES = C:\Program Files (x86)\Common Files
+# environment
+LOGONSERVER = \\WINDOWS-AT7MJU0
+# automatic
++F = $(notdir $+)
+# environment
+_PROGRAMFILES = C:\Program Files (x86)
+# environment
+USERDOMAIN = WINDOWS-AT7MJU0
+# environment
+INETSDK = C:\Program Files\Microsoft Platform SDK\.
+# environment
+MIC_LD_LIBRARY_PATH = C:\Program Files (x86)\Intel\Composer XE 2015\compiler\lib\mic;C:\Program Files (x86)\Intel\Composer XE 2015\ipp\lib\mic;C:\Program Files (x86)\Intel\Composer XE 2015\tbb\bin\..\lib\mic;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\compiler\lib\mic
+# environment
+EOLFIX_OUTPUT_DIR = output
+# environment
+MAKE = make
+# environment
+WIN_TITLE = Intel Parallel Studio XE 2015 Composer Edition IA-32 Visual Studio 2013
+# environment
+MSTOOLS = C:\Program Files\Microsoft Platform SDK\.
+# default
+LINT.c = $(LINT) $(LINTFLAGS) $(CPPFLAGS) $(TARGET_ARCH)
+# default
+AS = as
+# environment
+LIBPATH = C:\Windows\Microsoft.NET\Framework\v4.0.30319;C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\LIB;C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\ATLMFC\LIB;C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral;C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\Microsoft.VCLibs\12.0\References\CommonConfiguration\neutral;C:\Windows\Microsoft.NET\Framework\v4.0.30319;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\LIB;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\LIB;C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral;\Microsoft.VCLibs\14.0\References\CommonConfiguration\neutral;
+# default
+PREPROCESS.S = $(CC) -E $(CPPFLAGS)
+# default
+COMPILE.p = $(PC) $(PFLAGS) $(CPPFLAGS) $(TARGET_ARCH) -c
+# default
+MAKE_VERSION := 3.81
+# default
+FC = f77
+# environment
+MKLROOT = C:\Program Files (x86)\Intel\Composer XE 2015\mkl
+# makefile
+.DEFAULT_GOAL := 
+# environment
+INCLUDE = C:\Program Files (x86)\Intel\Composer XE 2015\compiler\include;C:\Program Files (x86)\Intel\Composer XE 2015\compiler\include\ia32;C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\INCLUDE;C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\ATLMFC\INCLUDE;C:\Program Files (x86)\Windows Kits\8.1\include\shared;C:\Program Files (x86)\Windows Kits\8.1\include\um;C:\Program Files (x86)\Windows Kits\8.1\include\winrt;C:\Program Files (x86)\Intel\Composer XE 2015\ipp\include;C:\Program Files (x86)\Intel\Composer XE 2015\mkl\include;C:\Program Files (x86)\Intel\Composer XE 2015\tbb\bin\..\include;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE;C:\Program Files (x86)\Windows Kits\8.1\include\shared;C:\Program Files (x86)\Windows Kits\8.1\include\um;C:\Program Files (x86)\Windows Kits\8.1\include\winrt;C:\Program Files\Microsoft Platform SDK\Include\.;C:\Program Files (x86)\Microsoft Visual Studio\VC98\atl\include;C:\Program Files (x86)\Microsoft Visual Studio\VC98\mfc\include;C:\Program Files (x86)\Microsoft Visual Studio\VC98\include;C:\Users\vagrant\Documents\src\shared
+# environment
+MSSDK = C:\Program Files\Microsoft Platform SDK\.
+# environment
+DJGPP_HOME = c:\djgpp
+# environment
+FRAMEWORKVERSION = v4.0.30319
+# environment
+PROGRAMFILES(X86) = C:\Program Files (x86)
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+TARGET_VS = vs2013
+# environment
+LOCALAPPDATA = C:\Users\vagrant\AppData\Local
+# environment
+PSMODULEPATH = C:\Windows\system32\WindowsPowerShell\v1.0\Modules\
+# default
+ARFLAGS = rv
+# default
+WEAVE = weave
+# default
+MAKE_COMMAND := make
+# default
+LINK.cpp = $(LINK.cc)
+# environment
+PROCESSOR_ARCHITEW6432 = AMD64
+# default
+F77 = $(FC)
+# default
+COMPILE.cc = $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(TARGET_ARCH) -c
+# default
+TEXI2DVI = texi2dvi
+# environment
+BIN_ROOT = C:\Program Files (x86)\Intel\Composer XE 2015\bin\
+# default
+.VARIABLES := 
+# default
+PC = pc
+# automatic
+*F = $(notdir $*)
+# environment
+PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 58 Stepping 9, GenuineIntel
+# environment
+OS = Windows_NT
+# default
+COMPILE.def = $(M2C) $(M2FLAGS) $(DEFFLAGS) $(TARGET_ARCH)
+# environment
+DEVENVDIR = C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\
+# default
+LEX = lex
+# environment
+TEMP = /tmp
+# environment
+HOMEPATH = \
+# environment
+COMMONPROGRAMFILES(X86) = C:\Program Files (x86)\Common Files
+# environment
+PROMPT = $P$G
+# environment
+MFLAGS = -p
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+TBB_TARGET_VS = vc12
+# environment
+INTEL_DEV_REDIST = C:\Program Files (x86)\Common Files\Intel\Shared Libraries\
+# default
+LEX.l = $(LEX) $(LFLAGS) -t
+# environment
+SYSTEMROOT = C:\Windows
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# default
+COMPILE.r = $(FC) $(FFLAGS) $(RFLAGS) $(TARGET_ARCH) -c
+# environment
+VS80COMNTOOLS = C:\Program Files (x86)\Microsoft Visual Studio 8\Common7\Tools\
+# environment
+WINDOWSSDKDIR = C:\Program Files (x86)\Windows Kits\8.1\
+# default
+M2C = m2c
+# environment
+ROOT = C:\Program Files (x86)\Intel\Composer XE 2015
+# environment
+APPDATA = C:\Users\vagrant\AppData\Roaming
+# environment
+IPPROOT = C:\Program Files (x86)\Intel\Composer XE 2015\ipp
+# environment
+COMSPEC = C:\Windows\system32\cmd.exe
+# environment
+OUTPUT = help\
+# environment
+BASEMAKE = C:\Program Files\Microsoft Platform SDK\Include\BKOffice.Mak
+# environment
+VCINSTALLDIR = C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\
+# environment
+COMPILER = mingw
+# default
+MAKEFILES := 
+# environment
+EXTENSIONSDKDIR = C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1\ExtensionSDKs
+# environment
+TBB_BIN_DIR = C:\Program Files (x86)\Intel\Composer XE 2015\tbb\bin\
+# automatic
+<F = $(notdir $<)
+# default
+CXX = g++
+# default
+COFLAGS = 
+# environment
+LIB = C:\Program Files (x86)\Intel\Composer XE 2015\compiler\lib;C:\Program Files (x86)\Intel\Composer XE 2015\compiler\lib\ia32;C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\LIB;C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\ATLMFC\LIB;C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86;C:\Program Files (x86)\Intel\Composer XE 2015\ipp\lib\ia32;C:\Program Files (x86)\Intel\Composer XE 2015\ipp\..\compiler\lib\ia32;C:\Program Files (x86)\Intel\Composer XE 2015\mkl\lib\ia32;C:\Program Files (x86)\Intel\Composer XE 2015\compiler\lib\ia32;C:\Program Files (x86)\Intel\Composer XE 2015\tbb\bin\..\lib\ia32\vc12;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\LIB;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\LIB;C:\Program Files (x86)\Windows Kits\8.1\lib\winv6.3\um\x86;C:\Program Files (x86)\Microsoft Visual Studio\VC98\mfc\lib;C:\Program Files (x86)\Microsoft Visual Studio\VC98\lib;C:\Program Files\Microsoft Platform SDK\Lib;C:\Users\vagrant\Documents\src\shared
+# environment
+WINDOWS_TRACING_FLAGS = 3
+# environment
+SCRIPT_NAME = compilervars_arch.bat
+# environment
+MSVC10_HOME = C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC
+# environment
+TARGET_ARCH = ia32
+# environment
+MSVC6_HOME = C:\Program Files (x86)\Microsoft Visual Studio\VC98
+# default
+COMPILE.C = $(COMPILE.cc)
+# environment
+MSVS_VAR_SCRIPT = "C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\Tools\..\..\VC\vcvarsall.bat"
+# automatic
+^F = $(notdir $^)
+# default
+COMPILE.S = $(CC) $(ASFLAGS) $(CPPFLAGS) $(TARGET_MACH) -c
+# default
+LINK.F = $(FC) $(FFLAGS) $(CPPFLAGS) $(LDFLAGS) $(TARGET_ARCH)
+# default
+SUFFIXES := .out .a .ln .o .c .cc .C .cpp .p .f .F .r .y .l .s .S .mod .sym .def .h .info .dvi .tex .texinfo .texi .txinfo .w .ch .web .sh .elc .el
+# environment
+SYSTEMDRIVE = C:
+# default
+COMPILE.c = $(CC) $(CFLAGS) $(CPPFLAGS) $(TARGET_ARCH) -c
+# environment
+SESSIONNAME = Console
+# environment
+MSVC11_HOME = C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC
+# environment
+PROCESSOR_REVISION = 3a09
+# environment
+ICPP_COMPILER15 = C:\Program Files (x86)\Intel\Composer XE 2015\
+# default
+COMPILE.s = $(AS) $(ASFLAGS) $(TARGET_MACH)
+# default
+.INCLUDE_DIRS = /usr/include /usr/include
+# environment
+TBB_TARGET_ARCH = ia32
+# environment
+MAKELEVEL := 0
+# default
+MAKEINFO = makeinfo
+# environment
+WINDOWS_TRACING_LOGFILE = C:\BVTBin\Tests\installpackage\csilogfile.log
+# default
+TEX = tex
+# environment
+PROCESSOR_LEVEL = 6
+# environment
+TERM = cygwin
+# default
+F77FLAGS = $(FFLAGS)
+# default
+LINK.f = $(FC) $(FFLAGS) $(LDFLAGS) $(TARGET_ARCH)
+# environment
+ARCH_PATH = ia32
+# variable set hash-table stats:
+# Load=218/1024=21%, Rehash=0, Collisions=29/242=12%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# SCCS: could not be stat'd.
+# . (device 4241, inode 293386): 98 files, 17 impossibilities.
+# RCS: could not be stat'd.
+
+# 98 files, 17 impossibilities in 3 directories.
+
+# Implicit Rules
+
+%.out:
+
+%.a:
+
+%.ln:
+
+%.o:
+
+%: %.o
+#  commands to execute (built-in):
+	$(LINK.o) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.c:
+
+%: %.c
+#  commands to execute (built-in):
+	$(LINK.c) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.ln: %.c
+#  commands to execute (built-in):
+	$(LINT.c) -C$* $<
+
+%.o: %.c
+#  commands to execute (built-in):
+	$(COMPILE.c) $(OUTPUT_OPTION) $<
+
+%.cc:
+
+%: %.cc
+#  commands to execute (built-in):
+	$(LINK.cc) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.cc
+#  commands to execute (built-in):
+	$(COMPILE.cc) $(OUTPUT_OPTION) $<
+
+%.C:
+
+%: %.C
+#  commands to execute (built-in):
+	$(LINK.C) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.C
+#  commands to execute (built-in):
+	$(COMPILE.C) $(OUTPUT_OPTION) $<
+
+%.cpp:
+
+%: %.cpp
+#  commands to execute (built-in):
+	$(LINK.cpp) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.cpp
+#  commands to execute (built-in):
+	$(COMPILE.cpp) $(OUTPUT_OPTION) $<
+
+%.p:
+
+%: %.p
+#  commands to execute (built-in):
+	$(LINK.p) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.p
+#  commands to execute (built-in):
+	$(COMPILE.p) $(OUTPUT_OPTION) $<
+
+%.f:
+
+%: %.f
+#  commands to execute (built-in):
+	$(LINK.f) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.f
+#  commands to execute (built-in):
+	$(COMPILE.f) $(OUTPUT_OPTION) $<
+
+%.F:
+
+%: %.F
+#  commands to execute (built-in):
+	$(LINK.F) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.F
+#  commands to execute (built-in):
+	$(COMPILE.F) $(OUTPUT_OPTION) $<
+
+%.f: %.F
+#  commands to execute (built-in):
+	$(PREPROCESS.F) $(OUTPUT_OPTION) $<
+
+%.r:
+
+%: %.r
+#  commands to execute (built-in):
+	$(LINK.r) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.r
+#  commands to execute (built-in):
+	$(COMPILE.r) $(OUTPUT_OPTION) $<
+
+%.f: %.r
+#  commands to execute (built-in):
+	$(PREPROCESS.r) $(OUTPUT_OPTION) $<
+
+%.y:
+
+%.ln: %.y
+#  commands to execute (built-in):
+	$(YACC.y) $< 
+	$(LINT.c) -C$* y.tab.c 
+	$(RM) y.tab.c
+
+%.c: %.y
+#  commands to execute (built-in):
+	$(YACC.y) $< 
+	mv -f y.tab.c $@
+
+%.l:
+
+%.ln: %.l
+#  commands to execute (built-in):
+	@$(RM) $*.c
+	$(LEX.l) $< > $*.c
+	$(LINT.c) -i $*.c -o $@
+	$(RM) $*.c
+
+%.c: %.l
+#  commands to execute (built-in):
+	@$(RM) $@ 
+	$(LEX.l) $< > $@
+
+%.r: %.l
+#  commands to execute (built-in):
+	$(LEX.l) $< > $@ 
+	mv -f lex.yy.r $@
+
+%.s:
+
+%: %.s
+#  commands to execute (built-in):
+	$(LINK.s) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.s
+#  commands to execute (built-in):
+	$(COMPILE.s) -o $@ $<
+
+%.S:
+
+%: %.S
+#  commands to execute (built-in):
+	$(LINK.S) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.S
+#  commands to execute (built-in):
+	$(COMPILE.S) -o $@ $<
+
+%.s: %.S
+#  commands to execute (built-in):
+	$(PREPROCESS.S) $< > $@
+
+%.mod:
+
+%: %.mod
+#  commands to execute (built-in):
+	$(COMPILE.mod) -o $@ -e $@ $^
+
+%.o: %.mod
+#  commands to execute (built-in):
+	$(COMPILE.mod) -o $@ $<
+
+%.sym:
+
+%.def:
+
+%.sym: %.def
+#  commands to execute (built-in):
+	$(COMPILE.def) -o $@ $<
+
+%.h:
+
+%.info:
+
+%.dvi:
+
+%.tex:
+
+%.dvi: %.tex
+#  commands to execute (built-in):
+	$(TEX) $<
+
+%.texinfo:
+
+%.info: %.texinfo
+#  commands to execute (built-in):
+	$(MAKEINFO) $(MAKEINFO_FLAGS) $< -o $@
+
+%.dvi: %.texinfo
+#  commands to execute (built-in):
+	$(TEXI2DVI) $(TEXI2DVI_FLAGS) $<
+
+%.texi:
+
+%.info: %.texi
+#  commands to execute (built-in):
+	$(MAKEINFO) $(MAKEINFO_FLAGS) $< -o $@
+
+%.dvi: %.texi
+#  commands to execute (built-in):
+	$(TEXI2DVI) $(TEXI2DVI_FLAGS) $<
+
+%.txinfo:
+
+%.info: %.txinfo
+#  commands to execute (built-in):
+	$(MAKEINFO) $(MAKEINFO_FLAGS) $< -o $@
+
+%.dvi: %.txinfo
+#  commands to execute (built-in):
+	$(TEXI2DVI) $(TEXI2DVI_FLAGS) $<
+
+%.w:
+
+%.c: %.w
+#  commands to execute (built-in):
+	$(CTANGLE) $< - $@
+
+%.tex: %.w
+#  commands to execute (built-in):
+	$(CWEAVE) $< - $@
+
+%.ch:
+
+%.web:
+
+%.p: %.web
+#  commands to execute (built-in):
+	$(TANGLE) $<
+
+%.tex: %.web
+#  commands to execute (built-in):
+	$(WEAVE) $<
+
+%.sh:
+
+%: %.sh
+#  commands to execute (built-in):
+	cat $< >$@ 
+	chmod a+x $@
+
+%.elc:
+
+%.el:
+
+(%): %
+#  commands to execute (built-in):
+	$(AR) $(ARFLAGS) $@ $<
+
+%.out: %
+#  commands to execute (built-in):
+	@rm -f $@ 
+	cp $< $@
+
+%.c: %.w %.ch
+#  commands to execute (built-in):
+	$(CTANGLE) $^ $@
+
+%.tex: %.w %.ch
+#  commands to execute (built-in):
+	$(CWEAVE) $^ $@
+
+%:: %,v
+#  commands to execute (built-in):
+	$(CHECKOUT,v)
+
+%:: RCS/%,v
+#  commands to execute (built-in):
+	$(CHECKOUT,v)
+
+%:: RCS/%
+#  commands to execute (built-in):
+	$(CHECKOUT,v)
+
+%:: s.%
+#  commands to execute (built-in):
+	$(GET) $(GFLAGS) $(SCCS_OUTPUT_OPTION) $<
+
+%:: SCCS/s.%
+#  commands to execute (built-in):
+	$(GET) $(GFLAGS) $(SCCS_OUTPUT_OPTION) $<
+
+# 86 implicit rules, 5 (5.8%) terminal.
+
+# Files
+
+# Not a target:
+.web.p:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(TANGLE) $<
+
+# Not a target:
+.l.r:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(LEX.l) $< > $@ 
+	mv -f lex.yy.r $@
+
+# Not a target:
+.dvi:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.F.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(COMPILE.F) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.l:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.y.ln:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(YACC.y) $< 
+	$(LINT.c) -C$* y.tab.c 
+	$(RM) y.tab.c
+
+# Not a target:
+.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(LINK.o) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.y:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.def.sym:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(COMPILE.def) -o $@ $<
+
+# Not a target:
+.p.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(COMPILE.p) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.p:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(LINK.p) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.txinfo.dvi:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(TEXI2DVI) $(TEXI2DVI_FLAGS) $<
+
+# Not a target:
+empty.mak:
+#  Implicit rule search has been done.
+#  Last modified 2015-02-25 12:34:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+.a:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.l.ln:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	@$(RM) $*.c
+	$(LEX.l) $< > $*.c
+	$(LINT.c) -i $*.c -o $@
+	$(RM) $*.c
+
+# Not a target:
+.w.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(CTANGLE) $< - $@
+
+# Not a target:
+.texi.dvi:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(TEXI2DVI) $(TEXI2DVI_FLAGS) $<
+
+# Not a target:
+.sh:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	cat $< >$@ 
+	chmod a+x $@
+
+# Not a target:
+.cc:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(LINK.cc) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.cc.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(COMPILE.cc) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.def:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.SUFFIXES: .out .a .ln .o .c .cc .C .cpp .p .f .F .r .y .l .s .S .mod .sym .def .h .info .dvi .tex .texinfo .texi .txinfo .w .ch .web .sh .elc .el
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.c.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(COMPILE.c) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.r.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(COMPILE.r) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.r:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(LINK.r) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.info:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.elc:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.l.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	@$(RM) $@ 
+	$(LEX.l) $< > $@
+
+# Not a target:
+.out:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.C:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(LINK.C) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.r.f:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(PREPROCESS.r) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.S:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(LINK.S) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.texinfo.info:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(MAKEINFO) $(MAKEINFO_FLAGS) $< -o $@
+
+# Not a target:
+.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(LINK.c) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.w.tex:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(CWEAVE) $< - $@
+
+# Not a target:
+.c.ln:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(LINT.c) -C$* $<
+
+# Not a target:
+.s.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(COMPILE.s) -o $@ $<
+
+# Not a target:
+.s:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(LINK.s) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.texinfo.dvi:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(TEXI2DVI) $(TEXI2DVI_FLAGS) $<
+
+# Not a target:
+.el:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.texinfo:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.y.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(YACC.y) $< 
+	mv -f y.tab.c $@
+
+# Not a target:
+.web.tex:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(WEAVE) $<
+
+# Not a target:
+.texi.info:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(MAKEINFO) $(MAKEINFO_FLAGS) $< -o $@
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.tex.dvi:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(TEX) $<
+
+# Not a target:
+.cpp.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(COMPILE.cpp) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(LINK.cpp) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.C.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(COMPILE.C) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.ln:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.texi:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.txinfo:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.tex:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.txinfo.info:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(MAKEINFO) $(MAKEINFO_FLAGS) $< -o $@
+
+# Not a target:
+.ch:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.S.s:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(PREPROCESS.S) $< > $@
+
+# Not a target:
+.mod:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(COMPILE.mod) -o $@ -e $@ $^
+
+# Not a target:
+.mod.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(COMPILE.mod) -o $@ $<
+
+# Not a target:
+.F.f:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(PREPROCESS.F) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.w:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.S.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(COMPILE.S) -o $@ $<
+
+# Not a target:
+.F:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(LINK.F) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.web:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.sym:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.f:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(LINK.f) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.f.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (built-in):
+	$(COMPILE.f) $(OUTPUT_OPTION) $<
+
+# files hash-table stats:
+# Load=67/1024=7%, Rehash=0, Collisions=260/1554=17%
+# VPATH Search Paths
+
+# No `vpath' search paths.
+
+# No general (`VPATH' variable) search path.
+
+# # of strings in strcache: 1
+# # of strcache buffers: 1
+# strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
+# strcache free: total = 4086 / max = 4086 / min = 4086 / avg = 4086
+
+# Finished Make data base on Wed Feb 25 12:34:46 2015
+

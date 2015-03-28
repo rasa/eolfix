@@ -1,0 +1,88 @@
+$(CPP) has the value (cl)
+$(RC) has the value (rc)
+$(__MAKEFILES__) has the value (empty.mak)
+$(MAKEDIR) has the value (C:\Users\vagrant\Documents\src.old\eolfix)
+$(FOR) has the value (fl)
+$(AS) has the value (ml)
+$(__NT386__) has the value ()
+$(__MAKEOPTS__) has the value (-h -ms -p -z)
+$(MAKEFLAGS) has the value (P)
+$(__LOADDLL__) has the value ()
+$(CXX) has the value (cl)
+$(__NT__) has the value ()
+$(BC) has the value (bc)
+$(COBOL) has the value (cobol)
+$(CC) has the value (cl)
+$(__VERSION__) has the value (1290)
+$(MAKE) has the value (nmake)
+$(PASCAL) has the value (pl)
+
+Extension (.f):
+
+Extension (.cxx):
+
+Extension (.f90):
+
+Extension (.rc):
+
+Extension (.for):
+
+Extension (.asm):
+
+Extension (.res):
+    Can be made from extension (.rc):
+
+Extension (.bas):
+
+Extension (.obj):
+    Can be made from extension (.asm):
+
+    Can be made from extension (.c):
+
+    Can be made from extension (.cpp):
+
+    Can be made from extension (.cxx):
+
+    Can be made from extension (.bas):
+
+    Can be made from extension (.cbl):
+
+    Can be made from extension (.for):
+
+    Can be made from extension (.f):
+
+    Can be made from extension (.f90):
+
+    Can be made from extension (.pas):
+
+Extension (.pas):
+
+Extension (.c):
+
+Extension (.exe):
+    Can be made from extension (.asm):
+
+    Can be made from extension (.c):
+
+    Can be made from extension (.cpp):
+
+    Can be made from extension (.cxx):
+
+    Can be made from extension (.cbl):
+
+    Can be made from extension (.for):
+
+    Can be made from extension (.f):
+
+    Can be made from extension (.f90):
+
+    Can be made from extension (.pas):
+
+Extension (.cbl):
+
+Extension (.cpp):
+
+Open Watcom C/C++ NMAKE Clone for 386  Version 1.9
+Portions Copyright (c) 1995-2002 Sybase, Inc. All Rights Reserved.
+Source code is available under the Sybase Open Watcom Public License.
+See http://www.openwatcom.org/ for details.

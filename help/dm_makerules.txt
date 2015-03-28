@@ -1,0 +1,48 @@
+OBJS=eolfix.obj fnmatch.obj getopt.obj
+EXE=eolfix.exe
+CC=dmc.exe
+.c.obj:
+	dmc.exe $< -c 
+.PHONY: all clean
+all:	eolfix.exe
+eolfix.exe: eolfix.obj fnmatch.obj getopt.obj
+	dmc.exe $** -o$@
+eolfix.obj:	eolfix.c compiler.h version.h
+fnmatch.obj:	fnmatch.c fnmatch.h
+getopt.obj:	getopt.c getopt.h
+clean:
+	-del eolfix.exe eolfix.obj fnmatch.obj getopt.obj *.map >nul 2>nul
+File 'eolfix.obj' doesn't exist
+File 'eolfix.obj' doesn't exist
+File 'eolfix.obj' doesn't exist
+dmc.exe eolfix.c -c 
+
+File 'fnmatch.obj' doesn't exist
+File 'fnmatch.obj' doesn't exist
+dmc.exe fnmatch.c -c 
+	if ((negate = (*pattern == '!' || *pattern == '^')))
+	                                                   ^
+fnmatch.c(178) : Warning 2: possible unintended assignment
+
+File 'getopt.obj' doesn't exist
+File 'getopt.obj' doesn't exist
+dmc.exe getopt.c -c 
+      !(oli = strchr(ostr, optopt))) {
+                                   ^
+getopt.c(86) : Warning 2: possible unintended assignment
+    if ((has_equal = strchr(current_argv, '='))) {
+                                               ^
+getopt.c(163) : Warning 2: possible unintended assignment
+  for (count = 0; args[count]; count++);
+                                      ^
+getopt.c(247) : Warning 7: possible extraneous ';'
+
+File 'eolfix.exe' doesn't exist
+File 'eolfix.exe' doesn't exist
+File 'eolfix.exe' doesn't exist
+dmc.exe eolfix.obj fnmatch.obj getopt.obj  -oeolfix.exe
+link eolfix+fnmatch+getopt,eolfix.exe,,user32+kernel32/noi;
+
+
+File 'all' doesn't exist
+del eolfix.exe eolfix.obj fnmatch.obj getopt.obj *.map >nul 2>nul

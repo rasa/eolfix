@@ -1,3 +1,10 @@
+## 0.3.0 (27-Mar-2015)
+
+  * Executables signed with StartSSL code signing certificate
+  * Release zip files are gpg signed and sha256 hashed
+  * Standardize build scripts
+  * Update documentation
+
 ## 0.2.0 (23-Feb-2015)
 
   * Fix directory recursion issues

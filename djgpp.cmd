@@ -10,5 +10,5 @@ title %~n0
 set path=%djgpp_home%\bin;%path%
 set djgpp=%djgpp_home%\djgpp.env
 
-make -f djgpp.mak %targets%
+make -f djgpp.mk %targets%
 
