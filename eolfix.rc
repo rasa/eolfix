@@ -35,8 +35,8 @@ IDI_ICON                ICON    DISCARDABLE     "eolfix.ico"
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 0,2,0,0
- PRODUCTVERSION 0,2,0,0
+ FILEVERSION 0,4,0,0
+ PRODUCTVERSION 0,4,0,0
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -52,12 +52,12 @@ BEGIN
         BLOCK "000004b0"
         BEGIN
             VALUE "FileDescription", "View and Correct EOL characters\0"
-            VALUE "FileVersion", "0, 2, 0, 0\0"
+            VALUE "FileVersion", "0, 4, 0, 0\0"
             VALUE "InternalName", "eolfix\0"
-            VALUE "LegalCopyright", "Copyright © 2002-2015 Ross Smith II\0"
+            VALUE "LegalCopyright", "Copyright Â© 2002-2015 Ross Smith II\0"
             VALUE "OriginalFilename", "eolfix.exe\0"
             VALUE "ProductName", "View and Correct EOL characters\0"
-            VALUE "ProductVersion", "0, 2, 0, 0\0"
+            VALUE "ProductVersion", "0, 4, 0, 0\0"
         END
     END
     BLOCK "VarFileInfo"
