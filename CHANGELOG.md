@@ -1,3 +1,8 @@
+## 0.4.0 (unreleased)
+
+  * Added .vcproj file
+  * Add .ico file to build
+
 ## 0.3.0 (27-Mar-2015)
 
   * Executables signed with StartSSL code signing certificate
